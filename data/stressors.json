@@ -1,0 +1,42 @@
+[
+	{
+		"id": "bf",
+		"tags": "stress",
+		"name": "迷惑",
+		"desc": "你的研究完全混乱",
+		"reverse": true,
+		"max": 10
+	},
+	{
+		"id": "unease",
+		"desc": "一种不舒服的感觉",
+		"tags": "stress",
+		"reverse": true,
+		"max": 10,
+		"name": "不安"
+	},
+	{
+		"id": "weary",
+		"name": "疲倦",
+		"desc": "精神紧张的疲劳",
+		"tags": "stress",
+		"reverse": true,
+		"max": 10
+	},
+	{
+		"id": "rage",
+		"name": "挫败感",
+		"desc": "有种把书扔出去的冲动",
+		"tags": "stress",
+		"reverse": true,
+		"max": 10
+	},
+	{
+		"id": "madness",
+		"desc": "在魔法的影响下你的思想逐渐扭曲",
+		"tags": "stress",
+		"reverse": true,
+		"max": 10,
+		"name": "疯狂"
+	}
+]

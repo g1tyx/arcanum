@@ -1,0 +1,569 @@
+[
+	{
+		"id": "gold",
+		"desc": "金币",
+		"locked": false,
+		"max": 5,
+		"name": "黄金"
+	},
+	{
+		"id": "research",
+		"desc": "探索奥术之秘",
+		"max": 10,
+		"name": "研究"
+	},
+	{
+		"id": "arcana",
+		"school": "arcane",
+		"desc": "深奥的神秘知识",
+		"max": 0,
+		"name": "奥秘"
+	},
+	{
+		"id": "scrolls",
+		"group": "books",
+		"desc": "记载着奥术知识的卷轴",
+		"max": 10,
+		"mod": {
+			"research.rate": 0.005,
+			"research.max": 1
+		},
+		"name": "卷轴"
+	},
+	{
+		"id": "starcharts",
+		"desc": "星星的地图",
+		"max": 10,
+		"mod": {
+			"research.max": 1,
+			"astronomy.max": 0.1,
+			"astronomy.rate": 0.02,
+			"planeslore.max": 0.05,
+			"planeslore.rate": 0.02
+		},
+		"name": "星图"
+	},
+	{
+		"id": "tapestries",
+		"name": "挂毯",
+		"desc": "历史、传说，甚至咒语，都可以编织在它们的线中。",
+		"max": 3,
+		"mod": {
+			"research.max": 5
+		}
+	},
+	{
+		"id": "runestones",
+		"name": "符文石",
+		"group": "runes",
+		"desc": "刻在石头上的符文。",
+		"tags": "t_runes",
+		"max": 10,
+		"mod": {
+			"research.max": "1%",
+			"runelore.rate": 0.1,
+			"runelore.max": 0.03
+		},
+		"flavor": ""
+	},
+	{
+		"id": "firerune",
+		"name": "火符文",
+		"tags": "t_runes,elementalrunes,primaticrunes",
+		"group": "runes",
+		"desc": "刻有火线的符文",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "waterrune",
+		"name": "水符文",
+		"tags": "t_runes,elementalrunes,primaticrunes",
+		"group": "runes",
+		"desc": "符文在流水中排列",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "spiritrune",
+		"name": "精神符文",
+		"tags": "t_runes,primaticrunes",
+		"group": "runes",
+		"desc": "一块刻在骨头上的符石； 它似乎在耳语。",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "airrune",
+		"name": "气符文",
+		"tags": "t_runes,elementalrunes,primaticrunes",
+		"group": "runes",
+		"desc": "用固体空气蚀刻的符文",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "earthrune",
+		"name": "土符文",
+		"tags": "t_runes,elementalrunes,primaticrunes",
+		"group": "runes",
+		"desc": "带有月光石的符文",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "lightrune",
+		"name": "光符文",
+		"tags": "t_runes,primaticrunes",
+		"group": "runes",
+		"desc": "镶嵌闪亮钻石的符文",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "shadowrune",
+		"name": "暗影符文",
+		"tags": "t_runes,primaticrunes",
+		"group": "runes",
+		"desc": "黑色之上的黑色，只有训练有素的眼睛才能分辨出黑色深浅中最细微的差别。",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "manarune",
+		"name": "法力符文",
+		"tags": "t_runes,primaticrunes",
+		"group": "runes",
+		"desc": "即使是最没有天赋的法师，也能感受到这符文澎湃的能量。",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "naturerune",
+		"name": "自然符文",
+		"tags": "t_runes,primaticrunes",
+		"group": "runes",
+		"desc": "由复杂的茎叶缠结而成。",
+		"max": 10,
+		"mod": {
+			"research.max": 10
+		},
+		"flavor": ""
+	},
+	{
+		"id": "chaosrune",
+		"name": "混沌符文",
+		"tags": "primordialrunes",
+		"group": "runes",
+		"desc": "毫无疑问是一个符文，即使无法完全说出它的样子。",
+		"max": 10,
+		"mod": {
+			"chaos.max": 1
+		},
+		"flavor": "你可以做任何事情！"
+	},
+	{
+		"id": "timerune",
+		"name": "时间符文",
+		"tags": "primordialrunes",
+		"group": "runes",
+		"desc": "时间沿着符文的凹槽流淌",
+		"mod": {
+			"tempus.rate": 0.001,
+			"bf.rate": 0.01
+		},
+		"max": 3,
+		"flavor": "It's not easy to look at."
+	},
+	{
+		"id": "bodies",
+		"group": "necromancy",
+		"desc": "死亡魔法的尸体",
+		"max": 1,
+		"mod": {
+			"dissection.rate": 0.01,
+			"embalming.rate": 0.01
+		},
+		"name": "尸体"
+	},
+	{
+		"id": "bones",
+		"group": "necromancy",
+		"desc": "人类的骨头",
+		"max": 10,
+		"name": "骨头"
+	},
+	{
+		"id": "skulls",
+		"group": "necromancy",
+		"desc": "人类的头骨",
+		"max": 5,
+		"name": "头骨"
+	},
+	{
+		"id": "bonedust",
+		"name": "骨粉",
+		"group": "necromancy",
+		"desc": "人骨的灰尘。",
+		"max": 10
+	},
+	{
+		"id": "souls",
+		"group": "necromancy",
+		"desc": "被囚禁的生物的灵魂。",
+		"max": 1,
+		"mod": {
+			"shadow.rate": 0.001,
+			"spirit.rate": 0.001,
+			"spiritlore.rate": 0.01
+		},
+		"flavor": "这是错的吗？",
+		"name": "灵魂"
+	},
+	{
+		"id": "schematic",
+		"name": "原理图",
+		"desc": "图恩的发明示意图",
+		"max": 3,
+		"mod": {
+			"crafting.max": 0.1,
+			"crafting.rate": "5%"
+		}
+	},
+	{
+		"id": "codices",
+		"name": "手稿",
+		"group": "books",
+		"desc": "关于奥秘知识的手稿",
+		"max": 10,
+		"mod": {
+			"research.rate": 0.07,
+			"research.max": 5,
+			"lore.rate": 0.1
+		}
+	},
+	{
+		"id": "tomes",
+		"name": "著作",
+		"group": "books",
+		"desc": "一个关于知识的沉重的卷轴。",
+		"max": 5,
+		"mod": {
+			"research.max": 7,
+			"arcana.rate": 0.001,
+			"lore.rate": 0.1,
+			"lore.max": 0.1
+		}
+	},
+	{
+		"id": "gems",
+		"name": "宝石原石",
+		"group": "gems",
+		"desc": "各种精美的宝石。",
+		"max": 5
+	},
+	{
+		"id": "managem",
+		"tags": "magicgems,prismaticgems",
+		"group": "gems",
+		"name": "奥术宝石",
+		"desc": "充满了奥术能量的宝石",
+		"max": 2
+	},
+	{
+		"id": "firegem",
+		"tags": "magicgems,prismaticgems,elementalgems",
+		"group": "gems",
+		"name": "火之宝石",
+		"desc": "充满了火焰本质的宝石",
+		"max": 2
+	},
+	{
+		"id": "watergem",
+		"tags": "magicgems,prismaticgems,elementalgems",
+		"group": "gems",
+		"name": "水之宝石",
+		"desc": "充满了水本质的宝石",
+		"max": 2
+	},
+	{
+		"id": "naturegem",
+		"tags": "magicgems,prismaticgems",
+		"group": "gems",
+		"name": "自然宝石",
+		"desc": "生命的物理本质。",
+		"max": 2,
+		"flavor": "从一开始的力量"
+	},
+	{
+		"id": "earthgem",
+		"tags": "magicgems,prismaticgems,elementalgems",
+		"group": "gems",
+		"name": "土之宝石",
+		"desc": "充满了土地本质的宝石",
+		"max": 2
+	},
+	{
+		"id": "airgem",
+		"tags": "magicgems,prismaticgems,elementalgems",
+		"group": "gems",
+		"name": "气之宝石",
+		"desc": "充满了空气本质的宝石",
+		"max": 2
+	},
+	{
+		"id": "shadowgem",
+		"tags": "magicgems,prismaticgems",
+		"group": "gems",
+		"name": "暗影宝石",
+		"desc": "充满了黑暗本质的宝石",
+		"max": 2
+	},
+	{
+		"id": "lightgem",
+		"tags": "magicgems,prismaticgems",
+		"group": "gems",
+		"name": "光之宝石",
+		"desc": "充满了光明本质的宝石",
+		"max": 2
+	},
+	{
+		"id": "spiritgem",
+		"tags": "magicgems,prismaticgems",
+		"group": "gems",
+		"name": "精神宝石",
+		"desc": "充满了原始精神的宝石",
+		"max": 2
+	},
+	{
+		"id": "bloodgem",
+		"tags": "magicgems",
+		"group": "gems",
+		"name": "血之宝石",
+		"desc": "一点点魔法和大量的血",
+		"max": 2,
+		"mod": {
+			"hp.max": 1
+		}
+	},
+	{
+		"id": "timegem",
+		"name": "time gem",
+		"tags": "magicgems,primordialgems",
+		"group": "gems",
+		"desc": "由并不存在的宝石制成。",
+		"mod": {
+			"gems.rate": -0.005,
+			"tempus.rate": 0.01
+		},
+		"max": 3
+	},
+	{
+		"id": "voidgem",
+		"name": "虚空宝石",
+		"tags": "magicgems,primordialgems",
+		"group": "gems",
+		"desc": "宝石曾经所在的空间。",
+		"mod": {
+			"player.resist.void": 1
+		},
+		"max": 3,
+		"flavor": "这里曾有一个宝石！现在没了。"
+	},
+	{
+		"id": "chaosgem",
+		"name": "混沌宝石",
+		"tags": "magicgems,primordialgems",
+		"group": "gems",
+		"desc": "每次看它，它看起来都不一样。",
+		"mod": {
+			"chaos.rate": 0.01
+		},
+		"max": 3,
+		"flavor": "混沌,混沌!"
+	},
+	{
+		"id": "ichor",
+		"tags": "reagent",
+		"desc": "诸神之血。",
+		"flavor": "秘密的礼节，像灵液",
+		"max": 5,
+		"name": "神血"
+	},
+	{
+		"id": "sindel",
+		"name": "星星碎片",
+		"desc": "星星的一团发光的灰烬。",
+		"flavor": "柱子断了； 星星尖叫着从天而降",
+		"max": 3,
+		"mod": {
+			"light.rate": 0.1,
+			"player.resist.shadow": 1
+		}
+	},
+	{
+		"id": "dreams",
+		"desc": "我们是由梦想构成的东西。 我们的小生命因睡眠而圆满。",
+		"max": 3,
+		"mod": {
+			"weary.rate": -0.1,
+			"arcana.rate": "1%"
+		},
+		"flavor": "在你最狂野的...",
+		"name": "梦境"
+	},
+	{
+		"id": "herbs",
+		"group": "reagent",
+		"desc": "用于药水和炼金术的特殊植物。",
+		"max": 10,
+		"name": "草药"
+	},
+	{
+		"id": "potionessence",
+		"name": "药引",
+		"group": "reagent",
+		"desc": "制作高级药水的基本精髓。",
+		"flavor": "有淡淡的牛奶味。",
+		"max": 3
+	},
+	{
+		"id": "space",
+		"name": "房间面积",
+		"desc": "可用空间",
+		"hide": true,
+		"reverse": true,
+		"max": 0
+	},
+	{
+		"id": "mana",
+		"tags": "manas,prismatic",
+		"desc": "原始的魔法能量",
+		"unit": false,
+		"require": "lore",
+		"name": "法力",
+		"max": 5
+	},
+	{
+		"id": "fire",
+		"require": "firelore",
+		"unit": false,
+		"tags": "manas,element,prismatic",
+		"desc": "火魔力",
+		"max": 0,
+		"name": "火"
+	},
+	{
+		"id": "air",
+		"require": "airlore",
+		"unit": false,
+		"tags": "manas,element,prismatic",
+		"desc": "气魔力",
+		"max": 0,
+		"name": "气"
+	},
+	{
+		"id": "earth",
+		"unit": false,
+		"tags": "manas,element,prismatic",
+		"require": "earthlore",
+		"desc": "土魔力",
+		"max": 0,
+		"name": "土"
+	},
+	{
+		"id": "water",
+		"unit": false,
+		"tags": "manas,element,prismatic",
+		"desc": "水魔力",
+		"require": "waterlore",
+		"max": 0,
+		"name": "水"
+	},
+	{
+		"id": "nature",
+		"tags": "manas,prismatic",
+		"unit": false,
+		"require": "naturelore",
+		"desc": "自然魔力",
+		"max": 0,
+		"name": "自然"
+	},
+	{
+		"id": "shadow",
+		"name": "暗影",
+		"tags": "manas,prismatic",
+		"unit": false,
+		"require": "shadowlore",
+		"desc": "暗影魔力",
+		"max": 0
+	},
+	{
+		"id": "light",
+		"tags": "manas,prismatic",
+		"unit": false,
+		"require": "lightlore",
+		"desc": "光魔力",
+		"max": 0,
+		"name": "光"
+	},
+	{
+		"id": "spirit",
+		"tags": "manas,prismatic",
+		"unit": false,
+		"desc": "精神魔力",
+		"require": "spiritlore",
+		"max": 0,
+		"name": "精神"
+	},
+	{
+		"id": "tempus",
+		"require": "chronomancy",
+		"tags": "manas,primordial",
+		"unit": false,
+		"desc": "时间的体现，若能……",
+		"max": 0,
+		"name": "时源"
+	},
+	{
+		"id": "chaos",
+		"tags": "manas,primordial",
+		"unit": false,
+		"desc": "混沌。 目前没有使用。",
+		"max": 0,
+		"name": "混乱"
+	},
+	{
+		"id": "void",
+		"tags": "manas,primordial",
+		"unit": false,
+		"desc": "虚无。 目前没有使用。",
+		"flavor": "",
+		"max": 0,
+		"name": "虚空"
+	}
+]

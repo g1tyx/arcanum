@@ -1,0 +1,243 @@
+{
+	"module": "hall",
+	"sym": "🏰",
+	"data": {
+		"events": [
+			{
+				"id": "evt_hall",
+				"name": "巫师殿堂",
+				"desc": "跨越万世的巫师聚集在隐藏的大厅里，交流知识并增强他们的力量。"
+			}
+		],
+		"tasks": [
+			{
+				"id": "retire",
+				"warn": true,
+				"require": "g.planeslore>=999",
+				"desc": "",
+				"cost": {},
+				"flavor": "",
+				"name": "退休"
+			}
+		],
+		"upgrades": [
+			{
+				"id": "greatwing",
+				"name": "大塔尖",
+				"max": 3,
+				"desc": "礼堂的一个新塔尖，巫师可以在那里舒适地住宿。",
+				"require": "g.expandhall>=1",
+				"cost": {
+					"gold": 10000,
+					"schematic": 3,
+					"void": 3,
+					"prestige": 10
+				},
+				"mod": {
+					"expandhall.max": 1
+				}
+			},
+			{
+				"id": "starchamber",
+				"name": "星宫",
+				"require": "tier6",
+				"max": 3,
+				"desc": "一个宽敞的房间，用于观察天空。",
+				"cost": {
+					"sindel": 3,
+					"prestige": 10,
+					"dreams": 3
+				},
+				"mod": {
+					"fame.rate": 0.000034,
+					"sindel.rate": "10%"
+				}
+			},
+			{
+				"id": "expandhall",
+				"name": "扩展殿堂",
+				"require": "tier5",
+				"max": 3,
+				"cost": {
+					"prestige": 50
+				},
+				"mod": {
+					"hallSize": 1
+				}
+			},
+			{
+				"id": "spellspire",
+				"max": 3,
+				"require": "tier6",
+				"desc": "魔法能量的导管。",
+				"cost": {
+					"prestige": 15
+				},
+				"mod": {
+					"spellcraft.max": "20%"
+				},
+				"name": "法术尖塔"
+			},
+			{
+				"id": "dreamchamber",
+				"name": "梦境密室",
+				"desc": "在某些时间和地点，甚至梦想也曾经是真实的。",
+				"require": "tier5",
+				"max": 1,
+				"cost": {
+					"prestige": 40
+				},
+				"mod": {
+					"dreams.rate": 0.0001,
+					"dreams.max": 5
+				}
+			},
+			{
+				"id": "puppet_enhancedlabs",
+				"name": "强化实验室",
+				"desc": "机械助手和自动输送系统。",
+				"require": "g.mechamancer>0",
+				"max": 5,
+				"cost": {
+					"prestige": 80,
+					"automatas": 20,
+					"machinae": 20
+				},
+				"mod": {
+					"potions.max": 0.4,
+					"alchemy.max": 0.4
+				}
+			},
+			{
+				"id": "titan_foundations",
+				"name": "稳定地基",
+				"desc": "防止地震影响伙伴建筑物的程序。",
+				"require": "g.titan>0",
+				"max": 3,
+				"cost": {
+					"prestige": 120,
+					"mythicanvil": 1
+				},
+				"mod": {
+					"space.max": 2
+				}
+			},
+			{
+				"id": "magicstables",
+				"name": "魔法马厩",
+				"desc": "大厅坐骑专用马厩。 对辨别有魔法天赋的人很有用。",
+				"require": "tier5",
+				"max": 4,
+				"cost": {
+					"prestige": 30
+				},
+				"mod": {
+					"animals.max": 1,
+					"animals.rate": 1,
+					"cleanstables.result.gold": 0.05,
+					"chores.result.gold": 0.1,
+					"errands.effect.gold": 0.15
+				}
+			},
+			{
+				"id": "arcanacollectors",
+				"name": "奥秘收藏家",
+				"desc": "新法师练习奥秘吸收的专门设施。",
+				"require": "tier5",
+				"max": 4,
+				"cost": {
+					"prestige": 30
+				},
+				"mod": {
+					"arcana.rate": 0.0005
+				}
+			},
+			{
+				"id": "classrooms",
+				"name": "教室",
+				"desc": "专用于高效学习和知识转移的教室。",
+				"require": "tier5",
+				"max": 5,
+				"cost": {
+					"prestige": 30
+				},
+				"mod": {
+					"study.effect.research": 0.15,
+					"scrolls.mod.research.rate": 0.0005
+				}
+			},
+			{
+				"id": "timewell",
+				"require": "tier6",
+				"desc": "化身时间的深池。",
+				"max": 1,
+				"cost": {
+					"prestige": 75
+				},
+				"mod": {
+					"runner.max": 1
+				},
+				"name": "时间之井"
+			},
+			{
+				"id": "ritualchamber",
+				"name": "礼堂",
+				"require": "g.ritualist>0&&g.tier6>0",
+				"desc": "大厅深处的一个受保护的房间，专门用于安全地进行仪式。",
+				"max": 1,
+				"cost": {
+					"prestige": 30
+				},
+				"mod": {
+					"ritualism.max": 2,
+					"ritualnotes.max": 12,
+					"ritualward.max": 7
+				}
+			}
+		],
+		"stats": [
+			{
+				"id": "hallSize",
+				"locked": false,
+				"val": 3,
+				"name": "殿堂大小"
+			},
+			{
+				"id": "hallPoints",
+				"name": "声望",
+				"alias": "points",
+				"hide": true,
+				"locked": false,
+				"val": 0,
+				"mod": {
+					"prestige": 1
+				}
+			},
+			{
+				"id": "prestige",
+				"name": "殿堂声望",
+				"require": "evt_hall",
+				"val": 0,
+				"locked": false,
+				"mod": {
+					"skill.rate": "0.1%",
+					"stress.max": "0.1%"
+				}
+			}
+		],
+		"classes": [
+			{
+				"id": "pillarfire",
+				"name": "火柱",
+				"desc": "",
+				"max": 1,
+				"tags": "t_tier7",
+				"require": "g.planeslore>=999",
+				"cost": {},
+				"mod": {
+					"tier7": true
+				}
+			}
+		]
+	}
+}

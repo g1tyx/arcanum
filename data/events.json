@@ -1,0 +1,294 @@
+[
+	{
+		"id": "evt_intro",
+		"name": "序言",
+		"require": "hp",
+		"desc": "你是一个毫无前途，而又游手好闲的流浪汉..."
+	},
+	{
+		"id": "evt_scroll",
+		"name": "一个破烂的卷轴",
+		"desc": "You buy a strange scroll from a travelling peddler. If you could only decipher the cryptic symbols."
+	},
+	{
+		"id": "evt_alcove",
+		"name": "搬家",
+		"desc": "在拿走你的积蓄后，你的新导师让你住在楼梯下的碗柜里。",
+		"require": "alcove"
+	},
+	{
+		"id": "evt_helper",
+		"name": "晋升",
+		"desc": "作为对你新工作的回报，你的导师给了你一小笔零花钱。当然，这份职位需要一些初始开销……",
+		"lock": "t_job",
+		"result": {
+			"arcana.rate": 0.0001,
+			"research.max": 10,
+			"lore.max": 1,
+			"lore.rate": 0.1,
+			"player.exp": 10
+		}
+	},
+	{
+		"id": "evt_rangers",
+		"name": "Impudent Meddlers",
+		"require": "g.wicked>0&&g.player.level>=15&&g.evilamt>=75",
+		"desc": "Hearing of your wicked deeds, the rangers of the Ettinmarch plots your downfall. An assault on their camps should crush their presumption."
+	},
+	{
+		"id": "evt_cabal",
+		"name": "Vile Plotters",
+		"require": "g.respectable>0&&g.player.level>=15&&g.virtue>=75",
+		"desc": "诋毁你的美德，一群奥斯苏特祭司密谋毁灭你。到恶臭的巴罗斯去，揭开他们的阴谋。"
+	},
+	{
+		"id": "tier0",
+		"name": "特立独行",
+		"desc": "有人说，直到学徒制结束，魔法的研究才真正开始。他们话太多了。",
+		"disable": [
+			"study",
+			"chores",
+			"errands",
+			"leavemaster",
+			"slaymaster",
+			"pestcontrol",
+			"alcove",
+			"atticbedroom"
+		],
+		"lock": "t_tier0",
+		"result": {
+			"innroom": true,
+			"sp": 1,
+			"player.exp": 15,
+			"fame": 1
+		},
+		"mod": {
+			"research.max": 15,
+			"buyscroll.result.scrolls": 1,
+			"buyscroll.cost.gold": 20
+		}
+	},
+	{
+		"id": "tier1",
+		"name": "专业魔法师",
+		"desc": "每个领域都有不少落跑的学徒和失败的熟练者。游荡者和巡林客也对法术略知一二。但与真正的专业人士相比，根本算不了什么。",
+		"disable": [
+			"prestidigitation"
+		],
+		"lock": [
+			"t_tier1",
+			"t_tier0"
+		],
+		"result": {
+			"sp": 1,
+			"player.exp": 15,
+			"fame": 2
+		},
+		"mod": {
+			"crafting.max": 1,
+			"arcanebody.max": 1,
+			"occultendure.max": 1,
+			"crystalmind.max": 1,
+			"buyscroll.result.scrolls": 1,
+			"buyscroll.cost.gold": 30
+		}
+	},
+	{
+		"id": "tier2",
+		"name": "奥术支配者",
+		"desc": "大部分奥术半吊子从未达到的高度。",
+		"lock": "t_tier2",
+		"result": {
+			"fame": 3
+		},
+		"mod": {
+			"lore.max": 2,
+			"arcanebody.max": 1,
+			"occultendure.max": 1,
+			"crystalmind.max": 1,
+			"buyscroll.result.scrolls": 1,
+			"buyscroll.cost.gold": 40
+		}
+	},
+	{
+		"id": "tier3",
+		"name": "魔法精通者",
+		"desc": "在自己专攻的魔法领域，你就是大师。",
+		"lock": "t_tier3",
+		"result": {
+			"sp": 1,
+			"player.exp": 50,
+			"fame": 4
+		},
+		"mod": {
+			"lore.max": 3,
+			"crafting.max": 2,
+			"arcanebody.max": 1,
+			"occultendure.max": 1,
+			"crystalmind.max": 1,
+			"buyscroll.result.scrolls": 1,
+			"buyscroll.cost.gold": 50
+		}
+	},
+	{
+		"id": "tier4",
+		"name": "法术至高者",
+		"desc": "甚至大师们也不能挑战你的权威。",
+		"lock": "t_tier4",
+		"disable": [
+			"buyscroll"
+		],
+		"result": {
+			"sp": 1,
+			"player.exp": 75,
+			"fame": 5
+		},
+		"mod": {
+			"lore.max": 4,
+			"crafting.max": 2,
+			"arcanebody.max": 1,
+			"occultendure.max": 1,
+			"crystalmind.max": 1
+		}
+	},
+	{
+		"id": "tier5",
+		"name": "传说魔法师",
+		"desc": "来自被遗忘时代的魔法。",
+		"lock": "t_tier5",
+		"result": {
+			"sp": 1,
+			"player.exp": 100,
+			"fame": 6
+		},
+		"mod": {
+			"lore.max": 4,
+			"crafting.max": 2,
+			"arcanebody.max": 1,
+			"arcanebody2.max": 2,
+			"occultendure.max": 1,
+			"crystalmind.max": 2
+		}
+	},
+	{
+		"id": "tier6",
+		"name": "Ageless Magic",
+		"desc": "Ages of the world come and go; only these endure.",
+		"lock": "t_tier6",
+		"result": {
+			"sp": 1,
+			"player.exp": 100,
+			"fame": 7
+		},
+		"mod": {
+			"lore.max": 3,
+			"crafting.max": 4,
+			"arcanebody.max": 1,
+			"arcanebody2.max": 1,
+			"occultendure.max": 1,
+			"crystalmind.max": 1
+		}
+	},
+	{
+		"id": "tier7",
+		"name": "Dhrunic Pillar",
+		"desc": "A foundation of the world",
+		"lock": "t_tier7",
+		"result": {
+			"sp": 1,
+			"player.exp": 100,
+			"fame": 8
+		},
+		"mod": {
+			"lore.max": 4,
+			"crafting.max": 2,
+			"arcanebody.max": 1,
+			"arcanebody2.max": 2,
+			"occultendure.max": 1,
+			"crystalmind.max": 1
+		}
+	},
+	{
+		"id": "decent",
+		"require": "g.virtue>90&&g.evilamt<10",
+		"desc": "你正在变成一名正直的施法者",
+		"mod": {
+			"light.rate": 0.1
+		},
+		"name": "正直的"
+	},
+	{
+		"id": "respectable",
+		"require": "g.virtue>350&&g.evilamt<20",
+		"desc": "您已成为魔法世界中受人尊敬的人物。",
+		"result": {
+			"fame": 1
+		},
+		"mod": {
+			"light.rate": 0.1
+		},
+		"name": "可敬的"
+	},
+	{
+		"id": "good",
+		"name": "善良的",
+		"require": "g.virtue>750&&g.evil<=0",
+		"desc": "您的行为表明您是一位善良的巫师。",
+		"mod": {
+			"light.max": 1,
+			"lightlore.rate": 0.1,
+			"lightlore.max": 1
+		}
+	},
+	{
+		"id": "secretfire",
+		"name": "servant of the secret fire",
+		"desc": "",
+		"mod": {
+			"firelore.rate": 0.2,
+			"firelore.max": 1,
+			"lightlore.rate": 0.2,
+			"lightlore.max": 1
+		}
+	},
+	{
+		"id": "immoral",
+		"desc": "You have taken your first steps on the path of evil. It's a good thing.",
+		"require": "g.evilamt>=5",
+		"mod": {
+			"shadowlore.rate": 0.2
+		},
+		"name": "immoral"
+	},
+	{
+		"id": "wicked",
+		"desc": "Your wicked deeds put you on the sure path of evil. A few more steps, and there will be no turning back.",
+		"require": "g.evilamt>=250",
+		"result": {
+			"fame": 1
+		},
+		"mod": {
+			"shadowlore.max": 1,
+			"shadowlore.rate": 0.2
+		},
+		"name": "wicked"
+	},
+	{
+		"id": "evil",
+		"name": "邪恶",
+		"desc": "Freed of pitiful notions of right, and morality, the dark arts lie open before you.",
+		"require": "g.evilamt>500",
+		"disable": [
+			"light",
+			"good",
+			"lightlore"
+		],
+		"mod": {
+			"shadow.max": 1,
+			"shadowlore": {
+				"max": 1,
+				"rate": 0.1
+			}
+		}
+	}
+]

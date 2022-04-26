@@ -1,0 +1,1136 @@
+[
+	{
+		"id": "crafting",
+		"need": "workspace",
+		"desc": "对巫师来说，拥有制造奥术物品的能力是极其重要的。（译者注：必须学习该技能，才能继续推进游戏）",
+		"buy": {
+			"research": 20
+		},
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.1
+		},
+		"mod": {
+			"research.max": 1
+		},
+		"name": "制造"
+	},
+	{
+		"id": "lore",
+		"name": "学识",
+		"school": "arcane",
+		"tags": "t_school",
+		"verb": "阅读知识",
+		"desc": "对于一个巫师来说，一切都不如知识的深度重要。",
+		"locked": false,
+		"buy": {
+			"research": 20
+		},
+		"run": {
+			"stamina": 0.2
+		},
+		"result": {
+			"arcana": 1
+		},
+		"mod": {
+			"research.max": 5,
+			"spelllist.max": 0.5,
+			"arcana.max": 1
+		}
+	},
+	{
+		"id": "spellcraft",
+		"school": "arcane",
+		"verb": "学习咒语",
+		"desc": "将小法术融合成大法术的能力是学徒与大师的区别",
+		"require": "g.tier2>0&&g.lore>=15",
+		"level": 8,
+		"buy": {
+			"sp": 5
+		},
+		"run": {
+			"stamina": 0.2,
+			"research": 5
+		},
+		"mod": {
+			"research.max": 5,
+			"scraft": 1,
+			"userSpells.max": 0.7
+		},
+		"name": "法术融合"
+	},
+	{
+		"id": "concentrate",
+		"name": "专注",
+		"desc": "在压力下保持头脑清醒，神经敏锐。",
+		"verb": "专注",
+		"require": "(g.mustylibrary+g.loc_spring)>=2",
+		"run": {
+			"stamina": 0.2
+		},
+		"mod": {
+			"history.rate": "1%",
+			"stress.max": 1
+		}
+	},
+	{
+		"id": "composure",
+		"name": "沉着",
+		"desc": "在压力下保持镇定。",
+		"require": "g.concentrate>=4",
+		"level": 3,
+		"run": {
+			"stamina": 0.3
+		},
+		"mod": {
+			"stress.rate": -0.1
+		}
+	},
+	{
+		"id": "trickery",
+		"school": "arcane",
+		"verb": "计上心头",
+		"require": "g.prestidigitation>25",
+		"buy": {
+			"sp": 2
+		},
+		"run": {
+			"stamina": 0.2,
+			"gold": 1
+		},
+		"result": {
+			"sp": 0.15,
+			"arcana": 0.1
+		},
+		"mod": {
+			"luck": 0.4,
+			"dodge": 0.4
+		},
+		"flavor": "足够高端的手法与魔法是无法区分的",
+		"name": "诡术"
+	},
+	{
+		"id": "conjuration",
+		"school": "arcane",
+		"verb": "召唤中",
+		"desc": "",
+		"require": "g.lore>=10&&g.divination>3",
+		"run": {
+			"stamina": 0.2,
+			"spirit": 0.2
+		},
+		"result": {
+			"arcana": 0.2,
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 1,
+			"summoning.max": 0.2,
+			"summoning.rate": 0.1
+		},
+		"flavor": "谁知道东西从哪里来？ 他们只是出现。",
+		"name": "召唤学"
+	},
+	{
+		"id": "runelore",
+		"alias": "runes",
+		"name": "符文学",
+		"school": "arcane",
+		"verb": "翻译中",
+		"desc": "研究古老的传说符文。",
+		"require": "g.tier2>0&&g.dwarfbook>0",
+		"level": 7,
+		"buy": {
+			"sp": 3
+		},
+		"run": {
+			"stamina": 0.2,
+			"research": 1
+		},
+		"result": {
+			"arcana": 0.1,
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 5,
+			"languages.rate": "0.1+2%",
+			"languages.max": 0.2,
+			"lore.rate": 0.1,
+			"lore.max": 0.2
+		},
+		"flavor": ""
+	},
+	{
+		"id": "animals",
+		"name": "驯养动物",
+		"need": "t_pets",
+		"buy": {
+			"research": 20
+		},
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.05,
+			"research": 5
+		},
+		"mod": {
+			"research.max": 1
+		},
+		"flavor": "照顾小兔子，或者马"
+	},
+	{
+		"id": "magicbeasts",
+		"name": "魔法生物学",
+		"require": "g.animals>=7&&g.naturelore>=5",
+		"desc": "",
+		"level": 3,
+		"run": {
+			"stamina": 0.7
+		},
+		"effect": {
+			"naturelore.exp": 1
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"animals.rate": "1%",
+			"allies.max": 0.25,
+			"research.max": 5
+		}
+	},
+	{
+		"id": "charms",
+		"require": "g.enchanting>=5&&g.lore>=10",
+		"level": 3,
+		"run": {
+			"stamina": 0.3
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 1,
+			"minions.max": "10%",
+			"allies.max": 1
+		},
+		"name": "魅惑"
+	},
+	{
+		"id": "herbalism",
+		"school": "nature",
+		"require": "lore",
+		"need": "plantsource",
+		"buy": {
+			"research": 25
+		},
+		"run": {
+			"stamina": 0.25
+		},
+		"result": {
+			"sp": 0.01
+		},
+		"mod": {
+			"research.max": 2,
+			"herbs.max": 2
+		},
+		"name": "草药学"
+	},
+	{
+		"id": "weaving",
+		"need": "weavesource",
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"crafting.max": 0.2,
+			"crafting.rate": "0.1+1%"
+		},
+		"name": "纺织"
+	},
+	{
+		"id": "languages",
+		"school": "lore",
+		"require": "lore",
+		"desc": "许多书籍和卷轴都是用各种晦涩难懂的语言书写的。尽可能多的学习各种语言吧。",
+		"verb": "学习语言",
+		"buy": {
+			"research": 10
+		},
+		"run": {
+			"stamina": 0.2
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"research.rate": 0.05,
+			"research.max": 5,
+			"lore.rate": 0.1
+		},
+		"name": "语言"
+	},
+	{
+		"id": "history",
+		"name": "世界学识",
+		"require": "g.languages>=6",
+		"desc": "对过去发生的事情的认识可以预测将要发生的事情",
+		"verb": "学习历史中",
+		"run": {
+			"stamina": 0.2
+		},
+		"effect": {
+			"research": 0.5
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 15,
+			"arcana.max": 0.1,
+			"s_travel.max": 0.1,
+			"languages.rate": "1%"
+		}
+	},
+	{
+		"id": "anatomy",
+		"require": "g.neophyte>0&&g.lore>=6",
+		"school": [
+			"nature",
+			"shadow",
+			"light"
+		],
+		"desc": "对生理形态的研究。",
+		"level": 2,
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 1,
+			"hp.max": 1,
+			"hp.rate": 0.1
+		},
+		"name": "解剖学"
+	},
+	{
+		"id": "vivification",
+		"require": "g.tier4>0&&g.anatomy>0&&g.spiritlore>=5",
+		"desc": "",
+		"level": 3,
+		"run": {
+			"stamina": 1
+		},
+		"result": {
+			"sp": 0.01
+		},
+		"mod": {
+			"stamina.rate": 0.1,
+			"anatomy.rate": "2%"
+		},
+		"name": "生机勃勃"
+	},
+	{
+		"id": "dissection",
+		"need": "g.anatomy>=3",
+		"school": "shadow",
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.1,
+			"bones": 1
+		},
+		"mod": {
+			"research.max": 5
+		},
+		"name": "解剖"
+	},
+	{
+		"id": "embalming",
+		"require": "g.dissection>=3",
+		"school": "shadow",
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 1,
+			"shadow.rate": 0.01
+		},
+		"name": "尸体保存"
+	},
+	{
+		"id": "summoning",
+		"require": "g.tier1>0&&g.conjuration>=5",
+		"school": "arcane",
+		"level": 4,
+		"buy": {
+			"sp": 2
+		},
+		"run": {
+			"stamina": 0.7
+		},
+		"mod": {
+			"allies.max": 1,
+			"research.max": 5,
+			"minions.max": 0.5
+		},
+		"name": "召唤"
+	},
+	{
+		"id": "bloodlore",
+		"name": "血魔法",
+		"school": "blood",
+		"require": "(g.bloodmage+g.thanophage+g.alchemist)>0",
+		"level": 5,
+		"buy": {
+			"sp": 3
+		},
+		"run": {
+			"stamina": 1,
+			"hp": 1
+		},
+		"mod": {
+			"anatomy.rate": "1%",
+			"hp.max": 10,
+			"hp.rate": 0.1
+		}
+	},
+	{
+		"id": "bladelore",
+		"name": "剑术",
+		"desc": "将军用武器融入您的魔法中。",
+		"require": "g.spellblade>0||g.battlemage>0||g.dreadlord>0",
+		"need": "armssource",
+		"level": 3,
+		"buy": {
+			"sp": 2
+		},
+		"run": {
+			"stamina": 0.6
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"player.bonuses.slash": 1,
+			"player.bonuses.pierce": 1,
+			"player.hits.slash": 1,
+			"player.hits.pierce": 1
+		}
+	},
+	{
+		"id": "divination",
+		"desc": "预言的艺术",
+		"require": "g.spiritlore>=6||g.mysticism>=5",
+		"need": "spiritsource",
+		"school": "spirit",
+		"run": {
+			"stamina": 0.4
+		},
+		"effect": {
+			"arcana": 0.001
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"research.max": 1,
+			"spirit.rate": 0.01
+		},
+		"name": "占卜"
+	},
+	{
+		"id": "lightlore",
+		"tags": "t_school",
+		"name": "光明知识",
+		"school": "light",
+		"level": 2,
+		"desc": "对纯粹光明的研究",
+		"need": "lightsource",
+		"run": {
+			"stamina": 0.4
+		},
+		"mod": {
+			"research.max": 1,
+			"light.max": 1,
+			"light.rate": 0.01
+		},
+		"flavor": "梦幻般的光"
+	},
+	{
+		"id": "shadowlore",
+		"name": "暗影知识",
+		"tags": "t_school",
+		"level": 2,
+		"require": "g.dissection>=3||g.evil>0",
+		"school": "shadow",
+		"need": "shadowsource",
+		"run": {
+			"stamina": 0.5
+		},
+		"mod": {
+			"research.max": 1,
+			"shadow.max": 1,
+			"shadow.rate": 0.01
+		}
+	},
+	{
+		"id": "spiritlore",
+		"tags": "t_school",
+		"name": "精神交流",
+		"level": 2,
+		"desc": "看到隐形之物",
+		"require": "g.lore>=6",
+		"need": "spiritsource",
+		"school": "spirit",
+		"run": {
+			"stamina": 0.4
+		},
+		"mod": {
+			"research.max": 1,
+			"spirit.max": 1,
+			"spirit.rate": 0.01
+		}
+	},
+	{
+		"id": "firelore",
+		"tags": "t_school,elemental",
+		"name": "火焰知识",
+		"level": 2,
+		"desc": "对火的研究",
+		"need": "firesource",
+		"run": {
+			"stamina": 0.4,
+			"hp": 0.2
+		},
+		"mod": {
+			"research.max": 1,
+			"fire.max": 1,
+			"fire.rate": 0.01
+		},
+		"flavor": "干燥有风时更好"
+	},
+	{
+		"id": "earthlore",
+		"name": "大地知识",
+		"tags": "t_school,elemental",
+		"level": 2,
+		"need": "earthsource",
+		"run": {
+			"stamina": 0.4
+		},
+		"mod": {
+			"research.max": 1,
+			"earth": {
+				"max": 1,
+				"rate": 0.01
+			}
+		}
+	},
+	{
+		"id": "waterlore",
+		"name": "水知识",
+		"desc": "对水的研究",
+		"verb": "正在研究水",
+		"tags": "elemental,t_school",
+		"level": 2,
+		"need": "watersource",
+		"run": {
+			"stamina": 0.4
+		},
+		"mod": {
+			"research.max": 1,
+			"water": {
+				"max": 1,
+				"rate": 0.01
+			}
+		}
+	},
+	{
+		"id": "airlore",
+		"name": "气知识",
+		"desc": "对气的研究",
+		"verb": "正在研究气",
+		"tags": "elemental,t_school",
+		"level": 2,
+		"need": "airsource",
+		"run": {
+			"stamina": 0.3
+		},
+		"mod": {
+			"research.max": 1,
+			"air": {
+				"max": 1,
+				"rate": 0.01
+			}
+		}
+	},
+	{
+		"id": "naturelore",
+		"name": "自然知识",
+		"verb": "观察自然",
+		"tags": "t_school",
+		"level": 2,
+		"require": "g.herbalism>=3",
+		"run": {
+			"stamina": 0.4
+		},
+		"mod": {
+			"research.max": 1,
+			"nature": {
+				"max": 1,
+				"rate": 0.01
+			}
+		}
+	},
+	{
+		"id": "wizlore",
+		"name": "巫师知识",
+		"require": "(g.mage+g.highmage+g.wizard+g.wizard2+g.wizard3)>=2",
+		"school": "arcane",
+		"desc": "许多人问“如何？” 很少有人会问，“为什么？”",
+		"level": 5,
+		"run": {
+			"stamina": 1,
+			"research": 50,
+			"arcana": 0.5
+		},
+		"mod": {
+			"lore.rate": "5%",
+			"mana.rate": "3%",
+			"research.rate": "2%",
+			"arcana.rate": "1%"
+		}
+	},
+	{
+		"id": "firelore2",
+		"name": "火精通",
+		"desc": "火精通",
+		"level": 10,
+		"require": "g.firelore>=10",
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"fire": 0.5
+		},
+		"mod": {
+			"firerune.max": 2,
+			"fire.max": 1,
+			"fire.rate": "1%",
+			"player.bonuses.fire": 1,
+			"player.hits.fire": 1
+		},
+		"flavor": "干燥有风时更好"
+	},
+	{
+		"id": "waterlore2",
+		"name": "水精通",
+		"desc": "水精通",
+		"require": "g.waterlore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"water": 0.5
+		},
+		"mod": {
+			"waterrune.max": 2,
+			"water.max": 1,
+			"water.rate": "1%",
+			"player.bonuses.water": 1,
+			"player.hits.water": 1
+		}
+	},
+	{
+		"id": "airlore2",
+		"name": "风精通",
+		"desc": "气精通",
+		"require": "g.airlore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"air": 0.5
+		},
+		"mod": {
+			"airrune.max": 2,
+			"air.max": 1,
+			"air.rate": "1%",
+			"player.bonuses.air": 1,
+			"player.hits.air": 1
+		}
+	},
+	{
+		"id": "hammerlore",
+		"name": "学个锤子",
+		"desc": "铁砧或头骨，没有区别。",
+		"require": "g.geomancer>0||g.earthshaker>0||g.titan>0",
+		"need": "armssource",
+		"level": 3,
+		"buy": {
+			"sp": 2
+		},
+		"run": {
+			"stamina": 0.6
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"player.bonuses.blunt": 1,
+			"player.hits.blunt": 1
+		}
+	},
+	{
+		"id": "geosculpting",
+		"desc": "按照你的意愿改造大地。",
+		"require": "g.geomancer>0||g.earthshaker>0",
+		"level": 3,
+		"buy": {
+			"sp": 2
+		},
+		"run": {
+			"stamina": 0.6
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"player.defense": 1,
+			"player.dodge": -1,
+			"earthspire.mod.space.max": 1
+		},
+		"name": "地质雕刻"
+	},
+	{
+		"id": "earthlore2",
+		"name": "土精通",
+		"desc": "土精通",
+		"require": "g.earthlore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"earth": 0.5
+		},
+		"mod": {
+			"earthrune.max": 2,
+			"earth.max": 1,
+			"earth.rate": "1%",
+			"player.bonuses.earth": 1,
+			"player.hits.earth": 1
+		}
+	},
+	{
+		"id": "shadowlore2",
+		"name": "暗影精通",
+		"desc": "暗影精通",
+		"require": "g.shadowlore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"shadow": 0.5
+		},
+		"mod": {
+			"shadow.max": 1,
+			"shadow.rate": "1%",
+			"player.bonuses.shadow": 1,
+			"player.hits.shadow": 1
+		}
+	},
+	{
+		"id": "lightlore2",
+		"name": "光明精通",
+		"desc": "光精通",
+		"require": "g.lightlore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"light": 0.5
+		},
+		"mod": {
+			"light.max": 1,
+			"light.rate": "1%",
+			"player.bonuses.light": 1,
+			"player.hits.light": 1
+		}
+	},
+	{
+		"id": "spiritlore2",
+		"name": "精神精通",
+		"desc": "精神精通",
+		"require": "g.spiritlore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"souls": 10
+		},
+		"run": {
+			"stamina": 1,
+			"spirit": 0.5
+		},
+		"mod": {
+			"spirit.max": 1,
+			"spirit.rate": "1%",
+			"player.bonuses.spirit": 1,
+			"player.hits.spirit": 1
+		}
+	},
+	{
+		"id": "manalore2",
+		"name": "奥术精通",
+		"desc": "奥术精通",
+		"require": "g.lore>=20",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"mana": 0.5
+		},
+		"mod": {
+			"mana.max": 1,
+			"mana.rate": "1%",
+			"player.bonuses.mana": 1,
+			"player.hits.mana": 1
+		}
+	},
+	{
+		"id": "naturelore2",
+		"name": "自然精通",
+		"desc": "自然精通",
+		"require": "g.naturelore>=10",
+		"level": 10,
+		"buy": {
+			"arcana": 1,
+			"sp": 5,
+			"tomes": 30,
+			"runestones": 10
+		},
+		"run": {
+			"stamina": 1,
+			"nature": 0.5
+		},
+		"mod": {
+			"nature.max": 1,
+			"nature.rate": "1%",
+			"player.bonuses.nature": 1,
+			"player.hits.nature": 1
+		}
+	},
+	{
+		"id": "demonology",
+		"require": "tier1",
+		"level": 4,
+		"buy": {
+			"sp": 2,
+			"arcana": 1
+		},
+		"run": {
+			"stamina": 0.4,
+			"hp": 1
+		},
+		"result": {
+			"sp": 0.1
+		},
+		"mod": {
+			"arcana.max": 0.1,
+			"lore.rate": 0.2,
+			"research.max": 3
+		},
+		"name": "恶魔学"
+	},
+	{
+		"id": "reanimation",
+		"require": "g.evil>0&&g.embalming>=3",
+		"school": [
+			"shadow"
+		],
+		"run": {
+			"stamina": 0.5,
+			"shadow": 0.1
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"shadow.rate": 0.01,
+			"allies.max": 0.2,
+			"necromancy.rate": "1%"
+		},
+		"name": "复活术"
+	},
+	{
+		"id": "necromancy",
+		"require": "g.evil>0&&g.reanimation>=7&&g.souls.max>3",
+		"school": "shadow",
+		"desc": "被禁止的死亡魔法。",
+		"buy": {
+			"sp": 3
+		},
+		"run": {
+			"stamina": 0.4,
+			"shadow": 0.5
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"reanimation.rate": "2%",
+			"shadow.rate": 0.01
+		},
+		"name": "死灵术"
+	},
+	{
+		"id": "potions",
+		"require": "g.crafting>=3&&g.alchemy>=2",
+		"need": [
+			"workspace",
+			"potsource"
+		],
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.05
+		},
+		"mod": {
+			"alchemy.rate": "1%",
+			"research.max": 5
+		},
+		"name": "药剂学"
+	},
+	{
+		"id": "enchanting",
+		"require": "g.tier1>0&&g.lore>=14",
+		"desc": "给宝石或其它物品灌注魔法属性。",
+		"run": {
+			"stamina": 0.4,
+			"research": 1
+		},
+		"mod": {
+			"charms.rate": "1%",
+			"enchantslots.max": 1
+		},
+		"result": {
+			"sp": 0.05,
+			"arcana": 0.1
+		},
+		"name": "附魔"
+	},
+	{
+		"id": "alchemy",
+		"school": "elemental",
+		"require": "g.tier0>0&&g.herbalism>=4",
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.1,
+			"research": 5
+		},
+		"mod": {
+			"potions.rate": "1%",
+			"research.max": 5
+		},
+		"name": "炼金术"
+	},
+	{
+		"id": "astronomy",
+		"need": "starsource",
+		"run": {
+			"stamina": 0.5
+		},
+		"result": {
+			"sp": 0.04
+		},
+		"mod": {
+			"planeslore.rate": "1%",
+			"research.max": 5
+		},
+		"name": "天文学"
+	},
+	{
+		"id": "mysticism",
+		"require": "g.lore>=8",
+		"desc": "感知奥术能量流动和变化的能力",
+		"buy": {
+			"arcana": 1
+		},
+		"run": {
+			"stamina": 0.5
+		},
+		"mod": {
+			"mana.max": 0.5,
+			"arcana.rate": 0.001,
+			"prismatic.rate": 0.02
+		},
+		"name": "神秘学"
+	},
+	{
+		"id": "s_travel",
+		"name": "旅行",
+		"level": 2,
+		"require": "(g.languages+g.history)>=12",
+		"desc": "旅行为巫师的成长提供了新的研究方法与研究来源",
+		"run": {
+			"stamina": 0.5
+		},
+		"mod": {
+			"dist": "5%"
+		}
+	},
+	{
+		"id": "planeslore",
+		"name": "位面知识",
+		"require": "g.astronomy>=5&&g.tier1>0",
+		"level": 6,
+		"desc": "比星星更远，比指尖更近",
+		"buy": {
+			"sp": 2,
+			"arcana": 5
+		},
+		"run": {
+			"stamina": 0.7,
+			"research": 1,
+			"mana": 0.1
+		},
+		"mod": {
+			"dist": "1%",
+			"arcana.max": 1,
+			"research.max": 1
+		},
+		"flavor": "没有安全距离"
+	},
+	{
+		"id": "astrallore",
+		"name": "星光交流",
+		"require": "g.planeslore>=25&&g.tier5>0",
+		"desc": "任何人都可以看到星星。 很少有人能读懂它们。",
+		"level": 10,
+		"buy": {
+			"sp": 10,
+			"arcana": 1
+		},
+		"run": {
+			"stamina": 1,
+			"research": 10,
+			"arcana": 5
+		},
+		"mod": {
+			"sindel.rate": 0.0001,
+			"sindel.max": 0.4
+		}
+	},
+	{
+		"id": "voidlore",
+		"name": "深渊凝视",
+		"require": "g.planeslore>=10&&g.tier5>0",
+		"desc": "缺乏一切",
+		"level": 10,
+		"buy": {
+			"sp": 5,
+			"arcana": 5
+		},
+		"run": {
+			"stamina": 0.7,
+			"research": 5,
+			"arcana": 0.1
+		},
+		"mod": {
+			"space.max": "2%",
+			"dist": "1%",
+			"research.max": 1
+		},
+		"flavor": "会有什么问题呢"
+	},
+	{
+		"id": "chronomancy",
+		"require": "tier3",
+		"need": "timesource",
+		"tags": "t_school",
+		"level": 9,
+		"desc": "一定有方法",
+		"buy": {
+			"sp": 5
+		},
+		"run": {
+			"stamina": 0.3,
+			"research": 1,
+			"mana": 1
+		},
+		"mod": {
+			"tempus.max": 1,
+			"tempus.rate": 0.001
+		},
+		"flavor": "任务太多短时间无法完成（给这点时间我很难帮你做事啊）",
+		"name": "时间学识"
+	},
+	{
+		"id": "scrying",
+		"require": "g.divination>5",
+		"run": {
+			"stamina": 0.5
+		},
+		"effect": {
+			"arcana": 0.001
+		},
+		"mod": {
+			"mana.max": 0.2,
+			"research.max": 1,
+			"dist": "1%",
+			"arcana.max": 0.2
+		},
+		"name": "水晶球占卜"
+	}
+]
