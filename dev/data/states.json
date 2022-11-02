@@ -1,0 +1,88 @@
+[
+	{
+		"id": "charmed",
+		"flags": "charmed",
+		"kind": "charm",
+		"mod": {
+			"tohit": -5
+		},
+		"name": "charmed"
+	},
+	{
+		"id": "disgust",
+		"adj": "disgusted",
+		"kind": "disgust",
+		"flags": "noattack",
+		"name": "disgust"
+	},
+	{
+		"id": "enrage",
+		"adj": "enraged",
+		"kind": "rage",
+		"flags": "nodefend",
+		"name": "enrage"
+	},
+	{
+		"id": "entangle",
+		"adj": "entangled",
+		"kind": "entangle",
+		"flags": "noattack",
+		"name": "entangle"
+	},
+	{
+		"id": "fear",
+		"adj": "afraid",
+		"kind": "fear",
+		"flags": "noattack",
+		"mod": {
+			"defense": -5
+		},
+		"name": "fear"
+	},
+	{
+		"id": "paralyze",
+		"adj": "paralyzed",
+		"kind": "paralysis",
+		"flags": "noact",
+		"name": "paralyze"
+	},
+	{
+		"id": "prone",
+		"adj": "prone",
+		"kind": "knockdown",
+		"flags": "noact",
+		"name": "prone"
+	},
+	{
+		"id": "sacked",
+		"flags": "noattack,nodefend",
+		"mod": {
+			"tohit": -10
+		},
+		"name": "sacked"
+	},
+	{
+		"id": "sick",
+		"kind": "sickness",
+		"duration": 20,
+		"mod": {
+			"tohit": -5,
+			"defense": -5
+		},
+		"name": "sick"
+	},
+	{
+		"id": "silence",
+		"adj": "silenced",
+		"kind": "silence",
+		"flags": "nocast",
+		"name": "沉默"
+	},
+	{
+		"id": "sleep",
+		"adj": "asleep",
+		"kind": "sleep",
+		"flags": "noact",
+		"name": "sleep"
+	}
+]

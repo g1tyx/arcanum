@@ -1,0 +1,415 @@
+[
+	{
+		"id": "mustylibrary",
+		"name": "发霉的图书馆",
+		"level": 1,
+		"length": 15,
+		"sym": "📖",
+		"require": "evt_helper",
+		"desc": "一个好的学徒把所有的空闲时间都花在图书馆里。当然是在家务之后。",
+		"run": {
+			"stamina": 0.2
+		},
+		"result": {
+			"arcana": 0.1,
+			"research": 10
+		},
+		"loot": {
+			"scrolls": "1~4"
+		},
+		"encs": [
+			"enc_bookworm",
+			"enc_tapestry",
+			"enc_primer1",
+			"enc_chest1",
+			"enc_primer1",
+			"enc_workbook1"
+		]
+	},
+	{
+		"id": "loc_spring",
+		"name": "莉莉特之泉",
+		"level": 2,
+		"length": 20,
+		"require": "mustylibrary",
+		"desc": "传说有一处泉水被施了魔法。调查可能会揭示真相。",
+		"run": {
+			"stamina": 0.2
+		},
+		"result": {
+			"arcana": 0.1,
+			"research": 10
+		},
+		"loot": {
+			"herbs": "2~5",
+			"lillitscord": "5%"
+		},
+		"encs": [
+			"manatree",
+			"enc_heather",
+			"mysticwater",
+			"manatree",
+			"hiddencache",
+			"starrysky1"
+		]
+	},
+	{
+		"id": "eryleyot",
+		"name": "伊瑞尔之岛",
+		"level": 5,
+		"length": 30,
+		"desc": "一个名叫thyffr的隐士住在这个宁静的小岛上",
+		"run": {
+			"stamina": 0.22
+		},
+		"result": {
+			"arcana": 0.1,
+			"research": 10
+		},
+		"loot": {
+			"scrolls": "1~4",
+			"herbs": "2~5"
+		},
+		"encs": [
+			"enc_chest3",
+			"brightvista",
+			"enc_thyffr",
+			"starrysky1",
+			"mysticwater"
+		]
+	},
+	{
+		"id": "loc_treffil",
+		"name": "探索崔菲尔之林",
+		"level": 7,
+		"length": 40,
+		"desc": "The deeper woods posses many features of interest to the magical scholar. The spirits of the place make sure to keep the troublemakers out.",
+		"run": {
+			"stamina": 0.25
+		},
+		"result": {
+			"arcana": 0.1,
+			"naturelore.exp": 10,
+			"herbalism.exp": 5,
+			"animals.exp": 5
+		},
+		"loot": {
+			"herbs": "5~10"
+		},
+		"encs": [
+			"manatree",
+			"mysticwater",
+			"brightvista",
+			"hauntedglade",
+			"enc_delki",
+			"hiddencache"
+		]
+	},
+	{
+		"id": "pidwigcove",
+		"name": "皮德维希湾",
+		"level": 9,
+		"require": "g.history>=5&&g.eryleyot>0",
+		"length": 25,
+		"desc": "半兽人皮维格已经在他的海湾周围航行了几百年。在那段时间里，他收集了无数有趣的手工艺品。",
+		"run": {
+			"stamina": 0.3
+		},
+		"result": {
+			"arcana": 0.1
+		},
+		"loot": {
+			"gold": "20~30",
+			"gems": "4~10"
+		},
+		"encs": [
+			"enc_chest3",
+			"pidwigstars",
+			"enc_pidwig",
+			"murkywater",
+			"pidwigtreasure",
+			"enc_chest1",
+			"sombersunset",
+			"starrysky1"
+		]
+	},
+	{
+		"id": "rithel",
+		"level": 14,
+		"desc": "这个位于坦格莫尔中心的小前哨站甚至比柱子还长久",
+		"require": "g.evil<=0&&g.history>=7&&g.loc_treffil>0",
+		"run": {
+			"stamina": 0.33
+		},
+		"result": {
+			"arcana": 0.1,
+			"research": 10
+		},
+		"loot": {
+			"scrolls": "1~4"
+		},
+		"encs": [
+			"enc_chest2",
+			"enc_gnome",
+			"enc_primer2",
+			"enc_hettie",
+			"enc_delki",
+			"brightvista"
+		],
+		"name": "里瑟尔"
+	},
+	{
+		"id": "ruinedcrypt",
+		"name": "废弃的地穴",
+		"level": 4,
+		"length": 30,
+		"require": "tier0",
+		"desc": "一个用破碎的石头建造的古老地窖。",
+		"run": {
+			"stamina": 0.35
+		},
+		"result": {
+			"arcana": 0.15,
+			"research": 20
+		},
+		"loot": {
+			"scrolls": "2~4"
+		},
+		"encs": [
+			"enc_tapestry",
+			"enc_mummy",
+			"sarcophagus",
+			"enc_rats",
+			"strangebones",
+			"enc_embalm1",
+			"enc_chest2",
+			"eeriemoans",
+			"puppet_broken"
+		]
+	},
+	{
+		"id": "hallofmirrors",
+		"level": 12,
+		"require": "g.scrying>=999",
+		"length": 50,
+		"sym": "📖",
+		"desc": "",
+		"run": {
+			"stamina": 0.4
+		},
+		"result": {
+			"arcana": 0.1,
+			"research": 10
+		},
+		"loot": {
+			"scrolls": "1~4"
+		},
+		"encs": [
+			"enc_tapestry",
+			"enc_chest1",
+			"enc_mirror1",
+			"enc_mirror2",
+			"enc_futuremirror",
+			"enc_rageemirror",
+			"enc_mirrorhall",
+			"enc_voidmirror",
+			"enc_pastmirror",
+			"enc_farmirror",
+			"enc_watermirror"
+		],
+		"name": "hallofmirrors"
+	},
+	{
+		"id": "fazbitshop",
+		"name": "法兹比的工房",
+		"level": 9,
+		"length": 50,
+		"sym": "📖",
+		"require": "(g.alchemy+g.scrying)>=17",
+		"desc": "你可以在法兹比失落的工房里呆上一个世纪，也不会耗尽它的创意。",
+		"loot": {
+			"tomes": "2~3",
+			"gems": "3~5",
+			"airgem": "50%",
+			"firegem": "50%",
+			"fazbitfixate": true
+		},
+		"encs": [
+			"enc_alchemy",
+			"enc_chest1",
+			"enc_chest2",
+			"enc_furnace",
+			"enc_workbook1",
+			"enc_alchemy",
+			"enc_workbook2",
+			"puppet_fazbitservants"
+		]
+	},
+	{
+		"id": "genezereth",
+		"level": 15,
+		"require": "g.history>=7",
+		"length": 100,
+		"sym": "📖",
+		"desc": "一座古老的图书馆坐落在横跨马克尔峡谷的桥上。",
+		"flavor": "德鲁恩四堰的三分之一。",
+		"result": {
+			"title": "Historian"
+		},
+		"run": {
+			"stamina": 0.4
+		},
+		"loot": {
+			"tomes": "3~5",
+			"markhulcodex": true
+		},
+		"encs": [
+			"enc_tapestry",
+			"enc_tome",
+			"enc_chest1",
+			"enc_gap",
+			"enc_statue2",
+			"enc_history",
+			"enc_primer1",
+			"puppet_scrapmachina",
+			"puppet_crystal"
+		],
+		"name": "创世记"
+	},
+	{
+		"id": "loc_orrem",
+		"name": "奥雷姆之沙",
+		"require": "g.history>=7&&g.scrying>=5",
+		"start": {
+			"name": "Cities of Orrem",
+			"desc": "A vision in a crystal orb reveals to you the ruins of the lost cities of Orrem."
+		},
+		"desc": "只有一个小贸易站标志着奥雷姆失落城市的边界。 风化的砖石从沙子上突出，超越了难以想象的纪念碑。",
+		"length": 400,
+		"level": 19,
+		"run": {
+			"stamina": 4
+		},
+		"result": {
+			"title": "Nomad",
+			"fame": 1
+		},
+		"loot": {
+			"jazidscompass": "5%"
+		},
+		"encs": [
+			"enc_aeonclock",
+			"enc_caravan",
+			"enc_oasis",
+			"orrem_rains",
+			"enc_madwinds",
+			"enc_orrem_cave",
+			"enc_sandstorm",
+			"enc_mirage",
+			"enc_statue4",
+			"strangebones",
+			"enc_statue2",
+			"starrysky1",
+			"enc_chest3",
+			"enc_orremtrade",
+			"puppet_scrapmachina",
+			"puppet_broken"
+		]
+	},
+	{
+		"id": "loc_ettinmoors",
+		"name": "ettinmoors",
+		"require": "g.player.level>=9999"
+	},
+	{
+		"id": "loc_menagerie",
+		"name": "失落的动物园",
+		"level": 23,
+		"require": "g.tier5>0&&g.magicbeasts>=5",
+		"length": 200,
+		"desc": "在最高的伊德拉希尔下面，一个巨大的动物园在另一片天空下茁壮成长。",
+		"run": {
+			"stamina": 3
+		},
+		"mod": {
+			"magicbeasts.max": "?1"
+		},
+		"effect": {
+			"magicbeasts.exp": 1
+		},
+		"result": {
+			"title": "Wild Compiler"
+		},
+		"loot": {
+			"gems": "5~10",
+			"herbs": "10~20"
+		},
+		"encs": [
+			"e_agolith",
+			"e_balmuth",
+			"e_barghest",
+			"e_bestiary1",
+			"e_bestiary2",
+			"e_big_scale",
+			"e_cockatrice",
+			"e_flithy",
+			"e_gryffon",
+			"e_hydra",
+			"e_phoenix",
+			"e_pogler",
+			"e_snakemass",
+			"e_moss_portal",
+			"e_spidermass",
+			"e_trumple",
+			"e_wyvern"
+		],
+		"flavor": "它的创造者和目的是历史未知的。 也许所有的生物都存在于其中。"
+	},
+	{
+		"id": "loc_tenwick",
+		"name": "长途跋涉",
+		"level": 19,
+		"require": "g.s_travel>=5&&g.a_travel>=100",
+		"desc": "坦威克的足迹环绕着著名的杜伦地区。步行要花一年的时间才能完成。",
+		"length": 10000,
+		"run": {
+			"stamina": 2
+		},
+		"result": {
+			"title": "Dhrunic Wayfarer"
+		},
+		"loot": {
+			"tenwickstick": 1
+		},
+		"encs": [
+			"brightvista",
+			"e_pogler",
+			"e_agolith",
+			"enc_battle1",
+			"enc_blackcat",
+			"enc_chest4",
+			"enc_delki",
+			"enc_statue2",
+			"enc_statue4",
+			"enc_gap",
+			"e_bloodgrass",
+			"enc_gibber",
+			"enc_gnome",
+			"enc_mtpass",
+			"enc_oldstone",
+			"enc_sandstorm",
+			"enc_sindel",
+			"enc_tenwick",
+			"enc_wyrd",
+			"hauntedglade",
+			"foggydale",
+			"hiddencache",
+			"manatree",
+			"murkywater",
+			"mysticwater",
+			"sombersunset",
+			"starrysky1",
+			"strangebones"
+		]
+	}
+]

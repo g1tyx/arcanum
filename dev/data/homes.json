@@ -1,0 +1,596 @@
+[
+	{
+		"id": "alcove",
+		"desc": "你导师居所楼梯下方的碗柜（译者注：必须购买工作区类型的家具来解锁制造技能，才能继续推进游戏）",
+		"flavor": "再见了，干草棚。",
+		"require": "apprentice",
+		"mod": {
+			"space.max": 5
+		},
+		"name": "碗柜"
+	},
+	{
+		"id": "earthspire",
+		"name": "土制尖顶",
+		"desc": "由金属和石头制成的不透水尖顶。",
+		"cost": {
+			"research": 3000,
+			"gold": 3000,
+			"codices": 50
+		},
+		"require": "g.geosculpting>=5",
+		"mod": {
+			"minions.max": 10,
+			"space.max": 300,
+			"earthlore.max": 5,
+			"geosculpting.max": 3,
+			"earth.max": 5,
+			"earth.rate": 0.5
+		},
+		"flavor": "一座纪念您的地质雕刻技艺的纪念碑。"
+	},
+	{
+		"id": "atticbedroom",
+		"name": "阁楼卧室",
+		"desc": "你的导师注意到你的进步，不情愿地在阁楼给你提供一些空间",
+		"flavor": "不要让它落到你的头上。",
+		"require": "neophyte",
+		"lock": [
+			"alcove"
+		],
+		"cost": {
+			"research": 100
+		},
+		"mod": {
+			"space.max": 10
+		}
+	},
+	{
+		"id": "innroom",
+		"name": "旅馆小屋",
+		"desc": "当地旅馆的客房",
+		"require": "tier0",
+		"log": {
+			"name": "客房",
+			"desc": "您现在住在当地的旅馆里，需要花费宝贵的黄金来支付租金。"
+		},
+		"mod": {
+			"space.max": 12,
+			"gold.rate": -0.25
+		}
+	},
+	{
+		"id": "hut",
+		"desc": "村庄边上的一间小屋。",
+		"disable": "innroom",
+		"require": "tier0",
+		"cost": 300,
+		"mod": {
+			"space.max": 15
+		},
+		"name": "窝棚"
+	},
+	{
+		"id": "camp",
+		"desc": "一个野生营地及其周围地区。",
+		"require": "g.tier0>0&&g.naturelore>=5",
+		"tags": "outdoors,starsource",
+		"disable": "innroom",
+		"cost": 75,
+		"mod": {
+			"space.max": 14,
+			"lore.rate": -0.1,
+			"research.rate": -0.1,
+			"earthlore.max": 1,
+			"naturelore.max": 2,
+			"naturelore.rate": 0.1,
+			"animals.max": 1,
+			"animals.rate": 0.1
+		},
+		"name": "营地"
+	},
+	{
+		"id": "wagon",
+		"name": "修补匠的马车",
+		"desc": "适合游牧生活方式的轮式马车。目前用驴。",
+		"require": "g.tier0>0&&g.naturelore>=5",
+		"disable": "innroom",
+		"tags": "outdoors,t_pets",
+		"cost": 150,
+		"mod": {
+			"space.max": 12,
+			"naturelore.max": 2,
+			"earthlore.max": 1,
+			"naturelore.rate": 0.3,
+			"animals.max": 2,
+			"animals.rate": 0.15
+		}
+	},
+	{
+		"id": "cottage",
+		"desc": "舒适而古朴。",
+		"require": "tier0",
+		"disable": "innroom",
+		"cost": {
+			"gold": 500,
+			"gems": 5
+		},
+		"mod": {
+			"tapestries.max": 1,
+			"minions.max": 1,
+			"space.max": 20
+		},
+		"name": "茅屋"
+	},
+	{
+		"id": "house",
+		"desc": "小镇里的普通房子",
+		"cost": {
+			"gold": 900,
+			"gems": 10
+		},
+		"disable": "innroom",
+		"require": "g.tier0>0&&g.arcana.max>=8",
+		"mod": {
+			"tapestries.max": 2,
+			"minions.max": 3,
+			"space.max": 30
+		},
+		"name": "房子"
+	},
+	{
+		"id": "shop",
+		"desc": "繁华城市里的小商店。",
+		"cost": {
+			"gold": 850,
+			"gems": 9
+		},
+		"require": "g.tier1>0&&g.crafting>=9",
+		"mod": {
+			"tapestries.max": 1,
+			"minions.max": 2,
+			"magicgems.max": 1,
+			"space.max": 25,
+			"gold.rate": 0.2,
+			"gold.max": 25,
+			"nature.rate": "-5%",
+			"arcana.rate": -0.002
+		},
+		"name": "小商店"
+	},
+	{
+		"id": "inn",
+		"desc": "一个接待旅人的安静旅馆。",
+		"cost": {
+			"gold": 2000,
+			"gems": 15
+		},
+		"require": "g.tier1>0&&g.languages>=7",
+		"mod": {
+			"tapestries.max": 2,
+			"minions.max": 5,
+			"space.max": 50,
+			"research.rate": -0.5,
+			"gold.max": 40,
+			"gold.rate": 0.4,
+			"arcana.rate": -0.001
+		},
+		"name": "旅馆"
+	},
+	{
+		"id": "lodge",
+		"desc": "树林里的一座崎岖的小屋。",
+		"cost": {
+			"gold": 950,
+			"gems": 5
+		},
+		"require": "g.tier1>0&&g.naturelore>=7",
+		"mod": {
+			"tapestries.max": 3,
+			"minions.max": 5,
+			"space.max": 30,
+			"nature.max": 1,
+			"nature.rate": 0.1
+		},
+		"name": "小屋"
+	},
+	{
+		"id": "gabledhouse",
+		"name": "山墙庄园",
+		"desc": "带有许多山墙窗户的宽敞房屋。",
+		"cost": {
+			"gold": 2000,
+			"gems": 10
+		},
+		"require": "g.tier1>0&&g.arcana>=10",
+		"mod": {
+			"tapestries.max": 4,
+			"minions.max": 5,
+			"space.max": 65
+		}
+	},
+	{
+		"id": "halftimber",
+		"name": "半木制房屋",
+		"desc": "质朴设计的广阔家园",
+		"cost": {
+			"gold": 3000,
+			"gems": 15
+		},
+		"require": "g.tier1>0&&g.arcana>=10",
+		"mod": {
+			"tapestries.max": 3,
+			"minions.max": 7,
+			"space.max": 75
+		}
+	},
+	{
+		"id": "cave",
+		"desc": "非常适合特定研究领域的原始住所，其它方面则不足。",
+		"require": "g.tier0>0&&(g.shadow+g.earth+g.nature)>0",
+		"tags": "outdoors",
+		"cost": {
+			"gold": 150
+		},
+		"mod": {
+			"minions.max": 2,
+			"space.max": 25,
+			"research.rate": -0.5,
+			"earthlore.max": 2,
+			"earthlore.rate": 0.1,
+			"shadowlore.max": 1,
+			"shadowlore.rate": 0.1,
+			"light.max": -2,
+			"light.rate": "-2%"
+		},
+		"lock": [
+			"latticewindow"
+		],
+		"name": "洞穴"
+	},
+	{
+		"id": "pavilion",
+		"desc": "在广阔的场地上开放优雅的结构。",
+		"cost": {
+			"gold": 800,
+			"gems": 15
+		},
+		"tags": "lightsource",
+		"require": "oracle",
+		"mod": {
+			"minions.max": 3,
+			"space.max": 50,
+			"light.rate": 0.1,
+			"air.rate": 0.1,
+			"mana.rate": 0.1,
+			"shadow.max": -1,
+			"shadow.rate": "-5%"
+		},
+		"name": "亭子"
+	},
+	{
+		"id": "hauntedmanse",
+		"name": "闹鬼豪宅",
+		"desc": "这座豪宅的传说讲述了鬼魂和恐怖",
+		"cost": 2500,
+		"require": "hauntedmanor",
+		"tags": "spiritsource",
+		"mod": {
+			"tapestries.max": 2,
+			"space.max": 75,
+			"spiritlore.max": 1,
+			"spiritlore.rate": 0.1,
+			"shadow.rate": 0.1,
+			"demonology.max": 1
+		}
+	},
+	{
+		"id": "ancientruins",
+		"name": "远古遗址",
+		"desc": "一座摇摇欲坠的碎石堡垒。",
+		"cost": 5000,
+		"require": "g.spirit>=15&&g.arcana>=12",
+		"mod": {
+			"tapestries.max": 2,
+			"minions.max": 10,
+			"space.max": 110,
+			"runelore.max": 2,
+			"demonology.max": 1,
+			"runelore.rate": "10%",
+			"spiritlore.max": 1,
+			"spiritlore.rate": 0.1,
+			"lore.rate": "10%"
+		}
+	},
+	{
+		"id": "tower",
+		"desc": "一座石塔，可以在其中进行奥术调查。",
+		"cost": 2500,
+		"require": "g.magician>0&&g.arcana>=20",
+		"tags": "airsource",
+		"mod": {
+			"tapestries.max": 2,
+			"minions.max": 5,
+			"space.max": 55,
+			"airlore.max": 1,
+			"airlore.rate": 0.1
+		},
+		"name": "塔"
+	},
+	{
+		"id": "lighthouse",
+		"desc": "海边的一座灯塔。",
+		"cost": 3000,
+		"require": "(g.magician+g.darkmagician+g.mage+g.elementalist+g.windmage+g.hydromancer)>0&&g.arcana>=20",
+		"mod": {
+			"minions.max": 5,
+			"space.max": 80,
+			"waterlore.max": 3,
+			"waterlore.rate": 0.1,
+			"lightlore.max": 3,
+			"lightlore.rate": 0.1
+		},
+		"name": "灯塔"
+	},
+	{
+		"id": "cataract",
+		"desc": "隐藏在瀑布后面的深坑。",
+		"require": "g.water>=15&&g.naturelore>=10",
+		"cost": {
+			"gold": 1000,
+			"gems": 10
+		},
+		"tags": "watersource",
+		"mod": {
+			"minions.max": 4,
+			"space.max": 70,
+			"research.rate": "-10%",
+			"waterlore.max": 2,
+			"waterlore.rate": 0.2,
+			"naturelore.max": 1,
+			"naturelore.rate": 0.1,
+			"earthlore.max": 1,
+			"lightlore.max": -2,
+			"lightlore.rate": "-5%"
+		},
+		"lock": [
+			"latticewindow"
+		],
+		"name": "瀑布"
+	},
+	{
+		"id": "citadel",
+		"desc": "一个保护你免受世界小势力侵害的堡垒。",
+		"cost": 5000,
+		"require": "(g.magician+g.darkmagician+g.battlemage+g.dreadlord)>0&&g.arcana>=20",
+		"mod": {
+			"tapestries.max": 3,
+			"minions.max": 15,
+			"space.max": 200,
+			"nature.max": -1,
+			"nature.rate": "-5%"
+		},
+		"name": "堡垒"
+	},
+	{
+		"id": "academy",
+		"desc": "简朴的学习之家",
+		"cost": {
+			"gold": 10000,
+			"research": 500
+		},
+		"require": "g.research>=400&&g.magician>0",
+		"mod": {
+			"tapestries.max": 5,
+			"minions.max": 20,
+			"space.max": 300,
+			"research.max": 50,
+			"research.rate": 0.4
+		},
+		"name": "学院"
+	},
+	{
+		"id": "temple",
+		"desc": "冥想和孤独的圣地。",
+		"cost": 10000,
+		"require": "(g.oracle+g.seer)>0",
+		"mod": {
+			"tapestries.max": 4,
+			"composure.max": 1,
+			"virtue.rate": 0.001,
+			"arcana.rate": 0.001,
+			"minions.max": 8,
+			"lightlore.max": 1,
+			"space.max": 200,
+			"shadow.max": -3,
+			"shadow.rate": "-10%"
+		},
+		"name": "寺庙"
+	},
+	{
+		"id": "magetower",
+		"name": "法师塔",
+		"desc": "没有什么比塔中的巫师更具标志性的工艺了。",
+		"require": "g.tier3>0&&(g.magician+g.mage+g.highmage+g.wizard+g.wizard2+g.wizard3)>1",
+		"cost": {
+			"gold": 7000,
+			"research": 5000,
+			"managem": 30,
+			"tomes": 20
+		},
+		"mod": {
+			"tapestries.max": 1,
+			"minions.max": 10,
+			"space.max": 420,
+			"mysticism.max": 1,
+			"prismatic.rate": 0.05,
+			"history.max": 1,
+			"arcana.rate": 0.0001
+		}
+	},
+	{
+		"id": "sm_idrasil",
+		"alias": "idrasil tree",
+		"name": "生命树幼苗",
+		"desc": "生命之树的幼苗，长大后可以与山相抗衡",
+		"tags": "outdoors",
+		"cost": {
+			"gems": 30,
+			"herbs": 50
+		},
+		"require": "g.tier3>0&&g.nature>=10&&g.arcana>=10",
+		"mod": {
+			"minions.max": 10,
+			"space.max": 300,
+			"naturelore.max": 3,
+			"naturelore.rate": "2%",
+			"airlore.max": 1,
+			"fire.rate": "-3%"
+		}
+	},
+	{
+		"id": "palace",
+		"desc": "豪华宽敞的庄园，让您在最舒适的环境中学习。",
+		"cost": 10000,
+		"require": "tier2",
+		"mod": {
+			"tapestries.max": 4,
+			"minions.max": 20,
+			"space.max": 400,
+			"charms.max": 2,
+			"charms.rate": "10%",
+			"spirit.rate": "-2%",
+			"shadowlore.max": "-2%",
+			"research.rate": -0.5
+		},
+		"name": "宫殿"
+	},
+	{
+		"id": "castle",
+		"desc": "一个巨大而实用的堡垒，适合有敌人的魔法使用者。",
+		"require": "tier2",
+		"cost": 10000,
+		"mod": {
+			"tapestries.max": 5,
+			"minions.max": 20,
+			"space.max": 400,
+			"earthlore.max": 1,
+			"earthlore.rate": 0.2,
+			"earth.rate": 0.1
+		},
+		"name": "城堡"
+	},
+	{
+		"id": "cove",
+		"tags": "outdoors",
+		"desc": "隐藏的海湾",
+		"require": "g.tier3>0&&g.enchanter>0",
+		"cost": 3000,
+		"mod": {
+			"minions.max": 20,
+			"space.max": 350,
+			"airlore.max": 1,
+			"waterlore.max": 2,
+			"waterlore.rate": 0.2,
+			"water.max": 2,
+			"water.rate": 0.1
+		},
+		"name": "海湾"
+	},
+	{
+		"id": "volcano",
+		"name": "火山巢穴",
+		"desc": "史塔克巢穴雕刻成一座火山",
+		"require": "g.fire>=20",
+		"cost": {
+			"research": 500,
+			"gold": 3000,
+			"firegem": 2
+		},
+		"tags": "firesource",
+		"mod": {
+			"minions.max": 20,
+			"space.max": 200,
+			"research.rate": -0.5,
+			"fire.max": 4,
+			"fire.rate": 0.2,
+			"firelore.max": 2,
+			"firelore.rate": 0.2,
+			"earthlore.max": 3,
+			"earthlore.rate": 0.2,
+			"water.max": "-15%",
+			"water.rate": -2
+		},
+		"lock": [
+			"latticewindow"
+		]
+	},
+	{
+		"id": "cavern",
+		"desc": "地底深处的一个宽阔且不断打哈欠的洞穴",
+		"require": "g.tier2>0&&g.earthlore>=10",
+		"tags": "earthsource",
+		"cost": {
+			"research": 500,
+			"gold": 3000,
+			"earthgem": 20
+		},
+		"mod": {
+			"minions.max": 20,
+			"space.max": 200,
+			"research.rate": -0.5,
+			"earth.rate": 0.2,
+			"earthlore.max": 3,
+			"earthlore.rate": "20%",
+			"shadow.max": 3,
+			"shadow.rate": 0.2,
+			"demonology.max": 1,
+			"light.max": -3,
+			"lightlore.rate": -2,
+			"light.rate": "-10%"
+		},
+		"lock": [
+			"latticewindow"
+		],
+		"name": "洞穴"
+	},
+	{
+		"id": "grove",
+		"name": "附魔丛林",
+		"desc": "附魔丛林",
+		"tags": "outdoors",
+		"require": "g.tier3>0&&(g.enchanter+g.druid+g.witch)>0",
+		"cost": {
+			"gold": 5000,
+			"research": 2000,
+			"gems": 50
+		},
+		"mod": {
+			"minions.max": 20,
+			"space.max": 420,
+			"naturelore.max": 1,
+			"enchanting.max": 2,
+			"enchanting.rate": "10%"
+		}
+	},
+	{
+		"id": "island",
+		"name": "隐秘小岛",
+		"tags": "outdoors",
+		"desc": "海上孤岛",
+		"require": "g.tier3>0&&(g.enchanter+g.druid+g.witch)>0",
+		"cost": {
+			"gold": 5000,
+			"gems": 50,
+			"research": 2000
+		},
+		"mod": {
+			"minions.max": 25,
+			"space.max": 420,
+			"waterlore.max": 5,
+			"airlore.max": 2,
+			"water.rate": 0.1,
+			"air.rate": 0.05
+		}
+	}
+]

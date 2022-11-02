@@ -1,0 +1,2572 @@
+[
+	{
+		"id": "leavemaster",
+		"name": "学徒制毕业",
+		"desc": "花钱赎身来结束学徒制。您将成为独立的魔法实习者。",
+		"warn": true,
+		"require": "g.neophyte>0&&g.research.max>=100&&g.lore>=4",
+		"repeat": false,
+		"cost": {
+			"research": 225,
+			"arcana": 5,
+			"gold": 200
+		},
+		"result": "adept"
+	},
+	{
+		"id": "slaymaster",
+		"name": "谋杀导师",
+		"desc": "趁你的导师在睡觉的时候杀死他",
+		"require": "g.neophyte>0&&g.research.max>=100&&g.lore>=4",
+		"warn": true,
+		"repeat": false,
+		"flavor": "邪恶的力量可以帮你省一笔小钱",
+		"cost": {
+			"research": 225,
+			"arcana": 5
+		},
+		"log": {
+			"name": "杀戮大师",
+			"desc": "你的主人是个傻瓜。 黑暗中的快速谋杀结束了他们的琐碎要求，让您可以自由地追求自己的宏伟设计。"
+		},
+		"result": [
+			"adept",
+			"evil",
+			{
+				"bodies": 1,
+				"player.exp": 10
+			}
+		]
+	},
+	{
+		"id": "magicbroomstick",
+		"name": "魔法扫帚",
+		"require": "g.witch>0&&g.crafting>=7&&g.spirit.max>=5",
+		"flavor": "",
+		"slot": "mount",
+		"buy": {
+			"research": 200,
+			"nature": 5,
+			"spirit": 5,
+			"gold": 100,
+			"arcana": 1
+		},
+		"mod": {
+			"dist": 115,
+			"spirit.max": 1
+		}
+	},
+	{
+		"id": "ebonwoodbroomstick",
+		"name": "铁木扫帚",
+		"require": "g.witch>0&&g.crafting>=15&&g.tier3>0",
+		"flavor": "",
+		"slot": "mount",
+		"buy": {
+			"research": 1000,
+			"nature": 10,
+			"spirit": 10,
+			"gold": 1000,
+			"arcana": 1
+		},
+		"mod": {
+			"dist": 355,
+			"spirit.max": 1,
+			"spirit.rate": 0.1
+		}
+	},
+	{
+		"id": "flyingcarpet",
+		"name": "飞毯",
+		"require": "g.weaving>=5&&g.airlore>=10",
+		"flavor": "A whole new world",
+		"slot": "mount",
+		"buy": {
+			"gems": 20,
+			"research": 300,
+			"airgem": 5,
+			"gold": 300,
+			"arcana": 1
+		},
+		"mod": {
+			"dist": 300
+		}
+	},
+	{
+		"id": "timesplit",
+		"desc": "同时执行不同类型的任务。",
+		"require": "chronomancy",
+		"cost": {
+			"arcana": 10,
+			"tempus": 5
+		},
+		"mod": {
+			"runner.max": 1
+		},
+		"name": "时间分割"
+	},
+	{
+		"id": "mule",
+		"desc": "一个不需要太多训练的坐骑。",
+		"require": "g.player.level>=4||g.animals>=2",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"gold": 100
+		},
+		"mod": {
+			"dist": 15
+		},
+		"name": "骡子"
+	},
+	{
+		"id": "oldnag",
+		"name": "老弱马",
+		"desc": "这匹马曾经有辉煌的时刻。",
+		"require": "g.animals>=3",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"gold": 200
+		},
+		"mod": {
+			"dist": 30
+		}
+	},
+	{
+		"id": "gelding",
+		"name": "娴熟的凝胶",
+		"desc": "一匹平静而强壮的马，适合适度的旅行。",
+		"slot": "mount",
+		"tags": "steed",
+		"require": "stables",
+		"buy": {
+			"gold": 500,
+			"gems": 2
+		},
+		"mod": {
+			"dist": 55
+		}
+	},
+	{
+		"id": "bayhorse",
+		"name": "细湾",
+		"desc": "全盛时期的好马",
+		"require": "stables",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"gold": 900,
+			"gems": 5
+		},
+		"mod": {
+			"dist": 100
+		}
+	},
+	{
+		"id": "skelcharger",
+		"name": "骷髅骑士",
+		"desc": "它既不呼吸也不疲倦。",
+		"require": "g.reanimation>=5",
+		"need": "stables",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"gold": 400,
+			"bones": 10,
+			"shadowgem": 2,
+			"bonedust": 25
+		},
+		"mod": {
+			"dist": 270
+		}
+	},
+	{
+		"id": "firecharger",
+		"name": "装火机",
+		"desc": "火蹄在地上留下火线",
+		"require": "g.firelore>5&&g.magicbeasts>=5&&g.stables>0",
+		"need": "stables",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"research": 500,
+			"arcana": 1,
+			"fire": 5,
+			"firegem": 5
+		},
+		"mod": {
+			"dist": 275
+		}
+	},
+	{
+		"id": "fly",
+		"desc": "在风中飞翔",
+		"require": "g.airlore>=20",
+		"slot": "mount",
+		"buy": {
+			"arcana": 20,
+			"research": 10000,
+			"airgem": 20
+		},
+		"mod": {
+			"player.bonuses.air": 2,
+			"speed": 1,
+			"dist": 525
+		},
+		"name": "飞翔术"
+	},
+	{
+		"id": "firechariot",
+		"name": "火之战车",
+		"desc": "",
+		"require": "g.firelore>=20||g.lightlore>20",
+		"slot": "mount",
+		"buy": {
+			"research": 10000,
+			"arcana": 15,
+			"lightgem": 15,
+			"firegem": 15
+		},
+		"mod": {
+			"dist": 550
+		},
+		"flavor": "把我的火战车带给我"
+	},
+	{
+		"id": "pegasusmount",
+		"name": "天马",
+		"desc": "一匹带翅膀的马",
+		"require": "g.lightlore>=20&&g.stables>0",
+		"need": "stables",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"gold": 2000,
+			"gems": 5
+		},
+		"mod": {
+			"dist": 320
+		}
+	},
+	{
+		"id": "gryffonmount",
+		"name": "狮鹫",
+		"desc": "既快又可怕。",
+		"require": "g.magicbeasts>=7&&g.stables>0",
+		"need": "stables",
+		"slot": "mount",
+		"tags": "steed",
+		"buy": {
+			"gold": 2000,
+			"gems": 5
+		},
+		"mod": {
+			"dist": 325
+		}
+	},
+	{
+		"id": "magichorseshoe",
+		"name": "魔法马蹄铁",
+		"require": "g.enchanting>=5&&g.crafting>=10",
+		"need": "steed",
+		"cost": {
+			"gems": 10,
+			"research": 500
+		},
+		"mod": {
+			"dist": "20%"
+		}
+	},
+	{
+		"id": "tent",
+		"name": "旅行帐篷",
+		"require": "g.naturelore>=3",
+		"desc": "让你在野外停留更长时间。",
+		"cost": {
+			"gold": 100,
+			"research": 50
+		},
+		"mod": {
+			"naturelore.max": 1,
+			"dist": 5
+		}
+	},
+	{
+		"id": "up_map1",
+		"name": "旅行地图",
+		"require": "g.crafting>=6&&g.astronomy>=4",
+		"desc": "周边地区的地图。",
+		"cost": {
+			"research": 700
+		},
+		"mod": {
+			"dist": "5%"
+		}
+	},
+	{
+		"id": "up_pack",
+		"name": "旅行包",
+		"require": "tier0",
+		"desc": "方便长途旅行的背包。",
+		"cost": {
+			"gold": 800
+		},
+		"mod": {
+			"dist": "7%"
+		},
+		"flavor": "有人需要和制袋者公会谈谈。"
+	},
+	{
+		"id": "up_ten_map",
+		"name": "滕维克的旅游地图",
+		"require": "g.history>=4||g.crafting>=10",
+		"desc": "尽管他既不是法师也不是战士，但很少有人能像滕维克一样彻底地勇敢面对德鲁恩内的荒野。",
+		"cost": {
+			"gold": 800,
+			"research": 900
+		},
+		"mod": {
+			"dist": "25%"
+		}
+	},
+	{
+		"id": "magictent",
+		"name": "卡斯盖尔的魔法顶篷",
+		"desc": "为长途旅行召唤一个大帐篷。",
+		"require": "g.lore>=15&&g.conjuration>=5&&g.research.max>=800",
+		"cost": {
+			"research": 1000,
+			"arcana": 1,
+			"gems": 10
+		},
+		"mod": {
+			"dist": "25%"
+		}
+	},
+	{
+		"id": "waxcandle",
+		"name": "蜡烛",
+		"tags": "candle",
+		"desc": "一根小小的发光的蜡烛。",
+		"flavor": "你不能拿走我的蜡烛！",
+		"max": 1,
+		"require": "mana",
+		"cost": {
+			"gold": 10
+		},
+		"mod": {
+			"mana.rate": 0.02
+		}
+	},
+	{
+		"id": "mortar",
+		"name": "研钵和研杵",
+		"desc": "用于研磨草药和精细成分。",
+		"require": "g.herbalism>=2&&g.herbs>=5",
+		"cost": {
+			"gold": 40,
+			"research": 10
+		},
+		"mod": {
+			"research.max": 5,
+			"herbalism.rate": 0.1,
+			"herbalism.max": 1
+		}
+	},
+	{
+		"id": "pouch",
+		"desc": "保管好你的钱。",
+		"require": "g.gold>=5",
+		"max": 3,
+		"cost": {
+			"gold": 5
+		},
+		"flavor": "对于一个包来说，它似乎有点贵。",
+		"mod": {
+			"gold.max": 10
+		},
+		"name": "小袋"
+	},
+	{
+		"id": "gembag",
+		"name": "绒布袋",
+		"desc": "小袋子，可以保护宝石没有划痕。",
+		"require": "g.gems>=5",
+		"max": 2,
+		"cost": {
+			"gold": 300
+		},
+		"flavor": "谁给这些袋子定的价？",
+		"mod": {
+			"magicgems.max": 1,
+			"gems.max": 5
+		}
+	},
+	{
+		"id": "gembox",
+		"name": "宝石盒",
+		"desc": "制作精美的盒子，用于存放魔法宝石。",
+		"require": [
+			"tier0",
+			"magicgems"
+		],
+		"max": 5,
+		"cost": {
+			"gems": 15,
+			"gold": 800
+		},
+		"mod": {
+			"magicgems.max": 2,
+			"gems.max": 3
+		}
+	},
+	{
+		"id": "herbbag",
+		"name": "草药袋",
+		"desc": "装药草的袋子",
+		"require": "g.herbalism>=4",
+		"max": 3,
+		"cost": {
+			"gold": 100,
+			"research": 50
+		},
+		"mod": {
+			"herbs.max": 10
+		},
+		"flavor": "它用来装草药"
+	},
+	{
+		"id": "runebag",
+		"name": "符文袋",
+		"desc": "放置符文的袋子",
+		"require": "g.runelore>=5",
+		"max": 5,
+		"cost": {
+			"gems": 50,
+			"research": 1000
+		},
+		"mod": {
+			"runestones.max": 5
+		}
+	},
+	{
+		"id": "orb",
+		"name": "奥术球",
+		"desc": "储存魔法能量。",
+		"require": "g.mana.max>=10&&g.crafting>=7",
+		"max": 2,
+		"cost": {
+			"gems": 5,
+			"mana": 10,
+			"research": 200
+		},
+		"mod": {
+			"mana.rate": 0.03
+		}
+	},
+	{
+		"id": "unseenscribe",
+		"name": "无形抄写员",
+		"desc": "羽毛笔从桌子上抬起，开始写……",
+		"need": [
+			"writingdesk",
+			"air",
+			"spirit"
+		],
+		"max": 3,
+		"cost": {
+			"arcana": 1,
+			"spirit": 1,
+			"air": 1,
+			"research": 100
+		},
+		"flavor": "魔法现在会为我们施展魔法",
+		"mod": {
+			"scrolls.rate": 0.05
+		}
+	},
+	{
+		"id": "ghostcompiler",
+		"name": "幽灵编写员",
+		"desc": "一个无形的灵魂将你的卷轴绑定成抄本。",
+		"require": "g.tier1>0&&g.unseenscribe>0",
+		"max": 3,
+		"cost": {
+			"arcana": 1,
+			"spirit": 5,
+			"research": 200
+		},
+		"flavor": "Spirits never sleep",
+		"mod": {
+			"scrolls.rate": -0.01,
+			"codices.rate": 0.01
+		}
+	},
+	{
+		"id": "ghostchains",
+		"name": "鬼魂链接",
+		"require": "g.tier2>0&&g.spirit>=8&&g.ghostcompiler>1",
+		"desc": "让更多的精神在你的左右",
+		"max": 3,
+		"cost": {
+			"research": 200,
+			"tomes": 1,
+			"spirit": 7,
+			"air": 5
+		},
+		"mod": {
+			"ghostcompiler.max": 3,
+			"unseenscribe.max": 3
+		}
+	},
+	{
+		"id": "morbidtrinkets",
+		"name": "瘟疫饰品",
+		"desc": "你对令人毛骨悚然的事情有一种不健康的关注",
+		"require": "bonemonger",
+		"cost": {
+			"bones": 40,
+			"research": 800,
+			"spiritgem": 5
+		},
+		"mod": {
+			"bones.max": "15%"
+		}
+	},
+	{
+		"id": "unholyspecimens",
+		"name": "邪恶标本",
+		"desc": "你的阴郁收藏增加了。",
+		"require": "g.ossuary>=4",
+		"cost": {
+			"bones": 40,
+			"research": 800,
+			"gold": 300,
+			"gems": 10
+		},
+		"mod": {
+			"ossuary.mod.bones.max": 10
+		}
+	},
+	{
+		"id": "bonecollector",
+		"name": "骨头收集者",
+		"require": "g.reanimation>=5&&g.crafting>=7",
+		"desc": "创造一个喋喋不休的食尸鬼来寻找骨头。",
+		"max": 3,
+		"cost": {
+			"arcana": 1,
+			"shadow": 5,
+			"research": 500
+		},
+		"mod": {
+			"bones.rate": 0.005
+		},
+		"flavor": "不要问它在哪里找到的。"
+	},
+	{
+		"id": "woodpipe",
+		"name": "木管",
+		"desc": "雕刻精美的木管。 在凝视日落的同时沉思。",
+		"require": "g.scrying>=5&&g.crafting>=7",
+		"cost": {
+			"gems": 5
+		},
+		"mod": {
+			"divination.rate": "5%",
+			"scrying.max": 1,
+			"scrying.rate": 0.2
+		}
+	},
+	{
+		"id": "longpipe",
+		"name": "长杆管",
+		"desc": "",
+		"require": "g.scrying>=7&&g.crafting>=8",
+		"cost": {
+			"spiritgem": 5,
+			"research": 500,
+			"spirit": 5
+		},
+		"mod": {
+			"divination.rate": "10%",
+			"scrying.max": 1,
+			"scrying.rate": 0.3
+		}
+	},
+	{
+		"id": "pendulum",
+		"tags": "timesource",
+		"require": "g.lore>=20",
+		"cost": {
+			"managem": 1,
+			"research": 5000
+		},
+		"mod": {
+			"research.max": 5,
+			"tempus.rate": 0.001
+		},
+		"name": "钟摆"
+	},
+	{
+		"id": "metronome",
+		"desc": "时间同步的焦点",
+		"tags": "timesource",
+		"require": "g.crafting>=10&&g.tempus.max>=1",
+		"cost": {
+			"gold": 50,
+			"research": 300,
+			"gems": 10
+		},
+		"mod": {
+			"chronomancy.max": 1,
+			"tempus.rate": 0.001
+		},
+		"name": "节拍器"
+	},
+	{
+		"id": "celestialglobe",
+		"name": "天象仪",
+		"desc": "星星和星座的地球仪。",
+		"require": "g.astronomy>=9&&g.crafting>=9",
+		"cost": {
+			"arcana": 1,
+			"research": 200,
+			"gold": 200
+		},
+		"mod": {
+			"starcharts.max": 15,
+			"research.max": 10,
+			"divination.max": 1,
+			"divination.rate": "20%",
+			"astronomy.max": 1,
+			"astronomy.rate": "10%",
+			"starcharts.rate": 0.001
+		}
+	},
+	{
+		"id": "armillarysphere",
+		"name": "浑天仪",
+		"desc": "A small mechanical model of the known worlds",
+		"require": "g.astronomy>=7&&g.crafting>=7",
+		"cost": {
+			"arcana": 1,
+			"research": 100,
+			"gold": 200
+		},
+		"mod": {
+			"starcharts.max": 10,
+			"research.max": 10,
+			"planeslore.max": 1,
+			"planeslore.rate": 0.3,
+			"astronomy.max": 1,
+			"astronomy.rate": 0.3,
+			"starcharts.rate": 0.008
+		}
+	},
+	{
+		"id": "grimoire",
+		"desc": "The handbook of witches",
+		"require": "g.witch>0&&g.tier2>0",
+		"cost": {
+			"gold": 50,
+			"spirit": 2,
+			"research": 50,
+			"codices": 1
+		},
+		"result": {
+			"sp": 1
+		},
+		"mod": {
+			"codices.rate": 0.001,
+			"demonology.max": 1,
+			"research.max": 10,
+			"potions.max": 2,
+			"potions.rate": 0.1,
+			"spirit.rate": 0.1,
+			"potionessence.rate": 0.0001
+		},
+		"name": "魔导书"
+	},
+	{
+		"id": "lorecoda",
+		"name": "博学者的胜利",
+		"desc": "一本关于德鲁恩历史和成就的综合著作，大到足以填满一个图书馆。",
+		"require": "(g.wizard2+g.wizard3)>0",
+		"cost": {
+			"gold": 15000,
+			"research": 60000,
+			"codices": 1000,
+			"tomes": 200,
+			"runestones": 60
+		},
+		"result": {
+			"sp": 50,
+			"fame": 10
+		},
+		"mod": {
+			"codices.rate": 0.02,
+			"tomes.rate": 0.01,
+			"runestones.rate": 0.005,
+			"codices.mod.research.rate": 0.03,
+			"tomes.mod.research.max": 1,
+			"runestones.mod.research.max": "20%",
+			"potions.max": 2,
+			"lore.max": 5,
+			"lore.rate": "500%",
+			"history.max": 5,
+			"history.rate": "200+500%",
+			"mana.max": 15,
+			"mana.rate": 1
+		}
+	},
+	{
+		"id": "fourleaf",
+		"name": "四叶草",
+		"desc": "一个小而有用的魅力。",
+		"require": "g.trickery>=3&&g.herbs>=3",
+		"cost": {
+			"herbs": 4,
+			"nature": 4,
+			"research": 100,
+			"arcana": 1
+		},
+		"mod": {
+			"dodge": 1,
+			"luck": 1
+		}
+	},
+	{
+		"id": "restless",
+		"name": "不眠之夜",
+		"desc": "即使有空闲时间也要不停工作",
+		"require": "g.lore>2",
+		"cost": {
+			"research": 100
+		},
+		"mod": {
+			"gold.rate": 0.1
+		},
+		"flavor": "优秀的学徒明白，一天有30个小时。"
+	},
+	{
+		"id": "speakbirds",
+		"name": "和鸟说话",
+		"desc": "学习鸟类的秘密语言。",
+		"require": "g.falconer>0||(g.birdcage>0&&g.animals>7)",
+		"cost": {
+			"research": 250,
+			"nature": 1
+		},
+		"mod": {
+			"research.max": 5,
+			"naturelore.max": 2,
+			"naturelore.rate": "0.2+1%",
+			"languages.max": 1,
+			"languages.rate": 0.2,
+			"animals.rate": "0.2+1%"
+		}
+	},
+	{
+		"id": "dragontongue",
+		"name": "龙语",
+		"desc": "学习龙的古老语言。",
+		"require": "g.languages>12&&g.magicbeasts>=5",
+		"cost": {
+			"research": 1000
+		},
+		"mod": {
+			"languages.max": 2,
+			"languages.rate": "10%",
+			"magicbeasts.max": 2,
+			"magicbeasts.rate": 0.3
+		}
+	},
+	{
+		"id": "purse",
+		"desc": "最简单的携带硬币的方法。",
+		"require": "g.gold>=20",
+		"max": 2,
+		"cost": {
+			"gold": 15
+		},
+		"mod": {
+			"gold.max": 20
+		},
+		"name": "钱包"
+	},
+	{
+		"id": "transfusions",
+		"desc": "学习进行生命力输血",
+		"require": "g.anatomy>=5&&g.tier0>0",
+		"cost": {
+			"research": 100,
+			"arcana": 1
+		},
+		"name": "输血"
+	},
+	{
+		"id": "manatrans",
+		"name": "能量传输",
+		"desc": "输血现在从身体中吸取魔法能量。",
+		"require": "g.anatomy>=7&&g.lore>=8&&g.transfusions>0",
+		"cost": {
+			"research": 400,
+			"arcana": 1
+		},
+		"mod": {
+			"bloodsiphon.effect.manas": 1,
+			"bloodsiphon.effect.shadow": 1,
+			"bloodsiphon.effect.spirit": 1
+		}
+	},
+	{
+		"id": "hiddenpockets",
+		"require": "g.magician>0||g.trickster>0&&g.trickery>0",
+		"cost": {
+			"research": 300,
+			"arcana": 1
+		},
+		"max": 1,
+		"flavor": "Nothing up my sleeves...",
+		"mod": {
+			"purse.max": 3,
+			"pouch.max": 5,
+			"inv.max": 1
+		},
+		"name": "隐藏的口袋"
+	},
+	{
+		"id": "carddeck",
+		"name": "纸牌组",
+		"desc": "一套简单的卡牌",
+		"require": "g.prestidigitation>0",
+		"tags": "tricksource",
+		"cost": {
+			"gold": 50
+		},
+		"mod": {
+			"luck": 0.5
+		}
+	},
+	{
+		"id": "threesidecoin",
+		"name": "三面硬币",
+		"desc": "你创造你自己的运气",
+		"require": "g.trickery>=4",
+		"tags": "tricksource",
+		"cost": {
+			"research": 200,
+			"gold": 300
+		},
+		"mod": {
+			"trickery.max": 1,
+			"trickery.rate": 0.3
+		}
+	},
+	{
+		"id": "bloodbag",
+		"name": "膜袋",
+		"desc": "由活组织编织而成的袋子有助于保存宝石。",
+		"require": "g.bloodlore>=5&&g.weaving>5",
+		"max": 1,
+		"cost": {
+			"hp": 100,
+			"bloodgem": 5,
+			"bodies": 1
+		},
+		"mod": {
+			"bloodgem.max": 5
+		}
+	},
+	{
+		"id": "deepincisions",
+		"name": "深切口",
+		"desc": "存放贵重宝石最安全的地方就是您的心脏。",
+		"require": "g.bloodbag>0&&g.dissection>=5",
+		"max": 1,
+		"cost": {
+			"hp": 100,
+			"bloodgem": 15
+		},
+		"mod": {
+			"dissection.max": 1,
+			"bloodbag.max": 3
+		}
+	},
+	{
+		"id": "bagofholding",
+		"name": "次元袋",
+		"require": "g.lore>10&&g.conjuration>7",
+		"desc": "你可以自己做包，谢谢。",
+		"max": 1,
+		"cost": {
+			"gold": 1000,
+			"research": 2000,
+			"arcana": 3
+		},
+		"mod": {
+			"inv.max": 4,
+			"gold.max": 100,
+			"gems.max": 20,
+			"prismaticgems.max": 5
+		},
+		"flavor": "这项研究的花费比你预期的要多一点……"
+	},
+	{
+		"id": "deeppockets",
+		"name": "深口袋",
+		"require": "g.hiddenpockets>0&&g.trickster>0&&g.conjuration>2",
+		"desc": "比买袋子便宜。",
+		"cost": {
+			"research": 300,
+			"arcana": 1
+		},
+		"mod": {
+			"pouch.mod.gold.max": 5,
+			"purse.mod.gold.max": 10,
+			"inv.max": 1
+		},
+		"flavor": "这里的某个地方还有一枚硬币……"
+	},
+	{
+		"id": "retreat",
+		"alias": "expedientretreat",
+		"name": "双向传送门",
+		"desc": "只要地下城的等级不高于你，在撤退后会自动尝试重新进入。",
+		"require": "g.trickster>0||g.tier2>0",
+		"cost": {
+			"arcana": 10,
+			"research": 2000
+		},
+		"mod": {
+			"player.retreat": 1
+		}
+	},
+	{
+		"id": "gemcraft",
+		"require": "g.tier4>0&&g.crafting>=16",
+		"warn": true,
+		"cost": {
+			"research": 7500,
+			"tomes": 10,
+			"arcana": 15,
+			"sp": 5
+		},
+		"desc": "把灌注宝石改造成读条行动，这样它们就可以自动重复进行",
+		"mod": {
+			"gemimbue.perpetual": true,
+			"gemimbue.length": 5
+		},
+		"name": "宝石自动工艺"
+	},
+	{
+		"id": "advgems",
+		"name": "高级宝石工艺",
+		"require": "g.gemcraft>0&&g.crafting>=18",
+		"warn": true,
+		"cost": {
+			"research": 10000,
+			"tomes": 10,
+			"arcana": 15,
+			"sp": 10
+		},
+		"desc": "提高你的宝石附魔速度。",
+		"mod": {
+			"gemimbue.length": "-75%"
+		}
+	},
+	{
+		"id": "earthaffinity",
+		"desc": "土地亲和",
+		"require": "g.earth>10",
+		"cost": {
+			"research": 3000,
+			"earthgem": 10,
+			"tomes": 1
+		},
+		"mod": {
+			"player.resist.earth": 5
+		},
+		"name": "土地亲和"
+	},
+	{
+		"id": "poisonaffinity",
+		"name": "毒性亲和",
+		"desc": "对大多数毒药的天然抵抗力。",
+		"require": "g.nature>10&&g.druid>0",
+		"cost": {
+			"research": 3000,
+			"naturegem": 10,
+			"tomes": 1
+		},
+		"mod": {
+			"player.resist.poison": 7,
+			"player.resist.venom": 7
+		}
+	},
+	{
+		"id": "airaffinity",
+		"desc": "气性亲和",
+		"require": "g.air>10",
+		"cost": {
+			"research": 3000,
+			"airgem": 10,
+			"tomes": 1
+		},
+		"mod": {
+			"player.resist.air": 5
+		},
+		"name": "气性亲和"
+	},
+	{
+		"id": "wateraffinity",
+		"desc": "水性亲和",
+		"require": "g.water>10",
+		"cost": {
+			"research": 3000,
+			"watergem": 10,
+			"tomes": 1
+		},
+		"mod": {
+			"player.resist.water": 5
+		},
+		"name": "水性亲和"
+	},
+	{
+		"id": "fireaffinity",
+		"desc": "火焰亲和",
+		"require": "g.fire>10",
+		"cost": {
+			"research": 3000,
+			"firegem": 10,
+			"tomes": 1
+		},
+		"mod": {
+			"player.resist.fire": 5
+		},
+		"name": "火焰亲和"
+	},
+	{
+		"id": "firesign",
+		"name": "火象星座",
+		"require": "g.fireaffinity>0&&g.fire>14",
+		"warn": true,
+		"lock": [
+			"watersign",
+			"airsign",
+			"earthsign"
+		],
+		"desc": "生于火之星象下",
+		"cost": {
+			"research": 5000,
+			"firegem": 15,
+			"tomes": 5
+		},
+		"mod": {
+			"player.resist.fire": 15
+		}
+	},
+	{
+		"id": "watersign",
+		"name": "水象星座",
+		"require": "g.wateraffinity>0&&g.water>14",
+		"lock": [
+			"firesign",
+			"airsign",
+			"earthsign"
+		],
+		"warn": true,
+		"desc": "生于水之星象下",
+		"cost": {
+			"research": 5000,
+			"watergem": 15,
+			"tomes": 5
+		},
+		"mod": {
+			"player.resist.water": 15
+		}
+	},
+	{
+		"id": "earthsign",
+		"name": "土象星座",
+		"require": "g.earthaffinity>0&&g.earth>14",
+		"lock": [
+			"watersign",
+			"airsign",
+			"firesign"
+		],
+		"warn": true,
+		"desc": "生于土之星象下",
+		"cost": {
+			"research": 5000,
+			"earthgem": 15,
+			"tomes": 5
+		},
+		"mod": {
+			"player.resist.earth": 15
+		}
+	},
+	{
+		"id": "airsign",
+		"name": "风象星座",
+		"warn": true,
+		"require": "g.airaffinity>0&&g.air>14",
+		"lock": [
+			"watersign",
+			"firesign",
+			"earthsign"
+		],
+		"desc": "生于风之星象下",
+		"cost": {
+			"research": 5000,
+			"airgem": 15,
+			"tomes": 5
+		},
+		"mod": {
+			"player.resist.air": 15
+		}
+	},
+	{
+		"id": "poisonveins",
+		"name": "毒脉",
+		"desc": "你不怕毒",
+		"require": "g.poisonaffinity>0&&g.nature>14",
+		"cost": {
+			"research": 5000,
+			"naturegem": 15,
+			"tomes": 5
+		},
+		"mod": {
+			"player.resist.poison": 13,
+			"player.resist.venom": 13
+		}
+	},
+	{
+		"id": "coinmagic",
+		"name": "硬币戏法",
+		"require": "hiddenpockets",
+		"desc": "操纵硬币以产生更多硬币。",
+		"cost": {
+			"research": 400
+		},
+		"max": 1,
+		"flavor": "连巴掌都没拍。",
+		"mod": {
+			"gold.rate": 0.15
+		}
+	},
+	{
+		"id": "guidingstar",
+		"name": "启明星",
+		"require": "g.astronomy>=15&&g.evil<=0",
+		"desc": "天上的一道光指引着你的道路。",
+		"cost": {
+			"research": 5000,
+			"arcana": 15
+		},
+		"mod": {
+			"player.tohit": 4,
+			"scrying.max": 2,
+			"scrying.rate": "2%"
+		},
+		"flavor": "Mornië Alantië"
+	},
+	{
+		"id": "wishingwells",
+		"name": "许愿井",
+		"require": "g.divination>=4&&g.fountain>0",
+		"cost": {
+			"gold": 500,
+			"research": 500,
+			"water": 10
+		},
+		"mod": {
+			"fountain.mod.gold.max": 50,
+			"fountain.mod.gold.rate": 0.1
+		}
+	},
+	{
+		"id": "satchel",
+		"desc": "能携带更多卷轴。",
+		"require": "g.scrolls>=10",
+		"scale": 2,
+		"cost": {
+			"gold": 50
+		},
+		"max": 1,
+		"mod": {
+			"scrolls.max": 15
+		},
+		"name": "书包"
+	},
+	{
+		"id": "abstraction",
+		"desc": "巫师的力量是他们知识的总和",
+		"require": "g.lore>=14",
+		"cost": {
+			"research": 1000,
+			"tomes": 5,
+			"bloodgem": 10,
+			"arcana": 5,
+			"sp": 1
+		},
+		"mod": {
+			"research.rate": -0.2,
+			"hp.rate": 0.5
+		},
+		"name": "抽象"
+	},
+	{
+		"id": "alkahest",
+		"name": "万能溶剂",
+		"desc": "发现一种通用溶剂",
+		"require": "g.alchemy>=15&&g.crafting>=10",
+		"cost": {
+			"research": 700,
+			"gold": 300,
+			"tomes": 1,
+			"gems": 15
+		},
+		"mod": {
+			"alchemy.max": 2,
+			"alchemy.rate": 0.3
+		},
+		"flavor": "任何东西都可以是液体"
+	},
+	{
+		"id": "prism",
+		"desc": "用于进行光学实验的小晶体。",
+		"require": "neophyte",
+		"tags": "lightsource",
+		"cost": {
+			"gold": 50,
+			"research": 50
+		},
+		"mod": {
+			"research.max": 10,
+			"light.rate": 0.01
+		},
+		"name": "棱镜"
+	},
+	{
+		"id": "windchime",
+		"name": "风铃",
+		"tags": "airsource,spiritsource",
+		"desc": "专注于空气魔法",
+		"require": "g.space.max>10",
+		"cost": {
+			"gems": 10,
+			"research": 100
+		},
+		"mod": {
+			"air.rate": 0.01,
+			"air.max": 1,
+			"spirit.max": 1,
+			"spirit.rate": 0.005
+		}
+	},
+	{
+		"id": "dreamcatcher",
+		"name": "捕梦者",
+		"desc": "你可能不喜欢你抓到的东西。",
+		"tags": "spiritsource",
+		"require": "g.crafting>=5",
+		"max": 1,
+		"cost": {
+			"gold": 50,
+			"research": 50,
+			"mana": 2
+		},
+		"mod": {
+			"spiritlore.max": 1,
+			"spirit.rate": 0.01
+		}
+	},
+	{
+		"id": "heartcandle",
+		"name": "心形蜡烛",
+		"tags": "candle",
+		"desc": "温暖的发光蜡烛。",
+		"max": 2,
+		"flavor": "留点蜡烛，给我留点光。",
+		"require": "g.mana.max>=50",
+		"cost": {
+			"gold": 35
+		},
+		"mod": {
+			"fire.max": 0.04,
+			"fire.rate": 0.01
+		}
+	},
+	{
+		"id": "holycandle",
+		"name": "圣烛",
+		"tags": "candle",
+		"desc": "白色发光的蜡烛",
+		"max": 2,
+		"require": "g.light.max>=10",
+		"flavor": "It is better to light one candle than to curse the darkness.",
+		"cost": {
+			"gold": 75
+		},
+		"mod": {
+			"light.max": 0.2,
+			"light.rate": 0.01
+		}
+	},
+	{
+		"id": "sombercandle",
+		"name": "阴沉的蜡烛",
+		"tags": "candle",
+		"desc": "它微弱的光芒激起了躁动不安的灵魂。",
+		"repeat": true,
+		"max": 5,
+		"require": "g.spiritlore.max>=7",
+		"cost": {
+			"gold": 150,
+			"bonedust": 10
+		},
+		"mod": {
+			"spiritlore.max": 0.2,
+			"spirit.rate": 0.01
+		}
+	},
+	{
+		"id": "blackcandle",
+		"name": "邪烛",
+		"tags": "candle",
+		"desc": "什么火焰会投下阴影？",
+		"repeat": true,
+		"max": 2,
+		"require": "g.shadow.max>=10",
+		"flavor": "Darkness, Darkness.",
+		"cost": {
+			"gold": 75
+		},
+		"mod": {
+			"shadow.max": 0.2,
+			"shadow.rate": 0.01
+		}
+	},
+	{
+		"id": "urn",
+		"desc": "灰尘接收器",
+		"require": "g.crafting>=5&&g.spirit>4",
+		"max": 3,
+		"cost": {
+			"gold": 300,
+			"research": 100,
+			"spirit": 5
+		},
+		"mod": {
+			"bonedust.max": 5,
+			"spiritlore.max": 0.25,
+			"spiritlore.rate": 0.1
+		},
+		"name": "骨灰瓮"
+	},
+	{
+		"id": "ball",
+		"name": "水晶球",
+		"tags": "spiritsource",
+		"desc": "透过水晶球，可以看到遥远的地方。",
+		"require": "g.tier0>0&&g.gems>0",
+		"cost": {
+			"gems": 3,
+			"research": 200
+		},
+		"mod": {
+			"arcana.rate": 0.0001,
+			"spirit.max": 1,
+			"spirit.rate": 0.01
+		}
+	},
+	{
+		"id": "breviary",
+		"require": "pedestal",
+		"desc": "一个沉重的知识之书。",
+		"cost": {
+			"research": 50,
+			"gold": 100,
+			"codices": 1
+		},
+		"mod": {
+			"lore.max": 1,
+			"lore.rate": 0.1,
+			"study.effect.research": 0.01,
+			"study.effect.arcana": 0.001
+		},
+		"name": "祈祷日课"
+	},
+	{
+		"id": "thirdeye",
+		"name": "第三只眼",
+		"tags": "spiritsource",
+		"require": "g.scrying>=5&&g.spirit.max>=7",
+		"desc": "不见而见。",
+		"cost": {
+			"spirit": 5,
+			"arcana": 1,
+			"research": 200,
+			"gems": 1
+		},
+		"mod": {
+			"spirit.max": 1,
+			"spirit.rate": 0.01,
+			"divination.max": 1,
+			"scrying.max": 1
+		}
+	},
+	{
+		"id": "chakravarti",
+		"desc": "车轮上的车轮； 你把它们都转过来。",
+		"title": "Chakravarti",
+		"require": "(g.dreadlord+g.battlemage)>0&&g.player.level>=20",
+		"cost": {
+			"research": 800,
+			"hp": 100,
+			"tomes": 5
+		},
+		"mod": {
+			"anatomy.max": 2,
+			"arcanebody.max": 3,
+			"minions.max": 2,
+			"allies.max": 1
+		},
+		"name": "脉轮"
+	},
+	{
+		"id": "specialization",
+		"desc": "专攻魔法学校",
+		"require": "g.lore>999",
+		"unused": true,
+		"max": 1,
+		"cost": {
+			"tomes": 1,
+			"arcana": 1,
+			"gold": 300
+		},
+		"choice": {
+			"target": "t_school",
+			"mod": {
+				"max": 2,
+				"rate": "2%"
+			}
+		},
+		"name": "专业化"
+	},
+	{
+		"id": "crystalmind",
+		"name": "水晶心灵",
+		"max": 3,
+		"desc": "花费您的研究以增强您的心灵能量。",
+		"require": "tier0",
+		"warn": true,
+		"cost": {
+			"research.max": 25,
+			"mana": 5
+		},
+		"mod": {
+			"divination.max": 1,
+			"mana.max": 1,
+			"lore.max": 1
+		}
+	},
+	{
+		"id": "occultendure",
+		"name": "神秘耐力",
+		"max": 3,
+		"desc": "花费您的研究以发现耐力的新来源。",
+		"require": "tier1",
+		"warn": true,
+		"cost": {
+			"research.max": 25,
+			"mana": 5
+		},
+		"mod": {
+			"stamina.max": 1,
+			"stamina.rate": "0.12+1%"
+		}
+	},
+	{
+		"id": "arcanebody",
+		"name": "奥术身体",
+		"max": 1,
+		"desc": "花费您的研究以增强生命力。",
+		"require": "g.lore>=7&&g.tier0>0",
+		"warn": true,
+		"cost": {
+			"research.max": 25,
+			"mana": 5
+		},
+		"mod": {
+			"hp.max": 2
+		}
+	},
+	{
+		"id": "arcanebody2",
+		"name": "高等奥术身体",
+		"max": 3,
+		"desc": "魔法高于物质",
+		"require": "g.tier4>0",
+		"warn": true,
+		"cost": {
+			"arcana": 10,
+			"research.max": 50
+		},
+		"mod": {
+			"hp.rate": 0.25
+		},
+		"flavor": "魔法高于物质"
+	},
+	{
+		"id": "innerlight",
+		"name": "内在之光",
+		"require": "(g.oracle+g.seer)>0&&g.divination>=8",
+		"desc": "黑暗中的一盏灯",
+		"cost": {
+			"research": 500,
+			"lightgem": 10,
+			"arcana": 2
+		},
+		"mod": {
+			"composure.max": 1,
+			"lightlore.rate": "10%",
+			"hp.rate": 0.3,
+			"player.resist.light": 5
+		}
+	},
+	{
+		"id": "forewarned",
+		"require": "(g.seer+g.oracle)>0&&g.divination>=12",
+		"desc": "所有这些事情都在我的预料之中，还有更多……",
+		"cost": {
+			"lightgem": 20,
+			"research": 800,
+			"arcana": 3
+		},
+		"mod": {
+			"composure.max": 1,
+			"player.defense": 2,
+			"dodge": 2
+		},
+		"name": "征兆"
+	},
+	{
+		"id": "truesight",
+		"require": "(g.seer+g.oracle)>0&&g.tier4>0",
+		"desc": "对致命欺骗的免疫力。",
+		"cost": {
+			"tomes": 5,
+			"research": 1000,
+			"arcana": 4
+		},
+		"warn": true,
+		"disable": "trickery",
+		"mod": {
+			"composure.max": 1,
+			"lightlore.max": 1,
+			"scrying.max": 1,
+			"divination.max": 1,
+			"lightlore.rate": "5%",
+			"player.tohit": 2,
+			"player.defense": 2,
+			"dodge": 2
+		},
+		"name": "真知术"
+	},
+	{
+		"id": "fatalist",
+		"require": "(g.seer+g.oracle)>0&&g.tier5>0&&g.truesight>0",
+		"desc": "命运的指引之手。",
+		"cost": {
+			"tomes": 20,
+			"research": 2000,
+			"arcana": 5
+		},
+		"mod": {
+			"lightlore.max": 2,
+			"lightlore.rate": "10%",
+			"divination.max": 1,
+			"scrying.max": 1,
+			"player.tohit": 3,
+			"player.defense": 3,
+			"dodge": 3
+		},
+		"flavor": "上帝不会掷骰子。。。",
+		"name": "宿命论"
+	},
+	{
+		"id": "celerity",
+		"require": "g.tier1>0&&g.arcanebody>0",
+		"desc": "古代施法者通常以超自然的速度移动。",
+		"max": 3,
+		"warn": true,
+		"cost": {
+			"sp": 2,
+			"research": 500
+		},
+		"mod": {
+			"speed": 1
+		},
+		"name": "迅捷术"
+	},
+	{
+		"id": "infusedbody",
+		"name": "充盈之体",
+		"desc": "增加奥术身体的效果",
+		"max": 1,
+		"require": "tier2",
+		"cost": {
+			"tomes": 10,
+			"bloodgem": 5
+		},
+		"mod": {
+			"arcanebody.mod.hp.max": 2
+		}
+	},
+	{
+		"id": "chirography",
+		"desc": "通过对书法的细致关注来提高卷轴的效果。",
+		"require": "g.lore>12",
+		"cost": {
+			"research": 700,
+			"mana": 10
+		},
+		"mod": {
+			"scrolls.mod.research.max": 0.5
+		},
+		"name": "书法"
+	},
+	{
+		"id": "magicskull",
+		"name": "魔法头骨",
+		"require": "g.necromancer>0||g.witch>0",
+		"desc": "一个普通的人类头骨，注入了死灵魔法。",
+		"max": 1,
+		"cost": {
+			"skulls": 1,
+			"gems": 2,
+			"research": 500
+		},
+		"mod": {
+			"shadowlore.max": 1,
+			"shadowlore.rate": 0.3,
+			"shadow.rate": 0.01,
+			"spiritlore.max": 1,
+			"spiritlore.rate": 0.3
+		},
+		"flavor": "I knew him well"
+	},
+	{
+		"id": "voidtouch",
+		"name": "触摸虚空",
+		"require": "g.voidlore>=7",
+		"desc": "位面之外是一片巨大的虚空。 对于它的力量和危险，这些书是沉默的。",
+		"cost": {
+			"research": 10000,
+			"tomes": 30
+		},
+		"warn": true,
+		"mod": {
+			"void.rate": 0.01,
+			"stamina.rate": -0.5,
+			"voidlore.max": 3,
+			"voidlore.rate": 0.5
+		}
+	},
+	{
+		"id": "pursuit",
+		"name": "首选爱好",
+		"desc": "标记一个行动为爱好，当你空闲时自动执行（译者注：购买后，点击右侧行动条的F按钮标记爱好）",
+		"require": "g.tier2>0",
+		"cost": {
+			"research": 3000,
+			"arcana": 10
+		},
+		"mod": {
+			"pursuits.max": 1
+		},
+		"flavor": "偏执的追求是所有真正大师的特征。"
+	},
+	{
+		"id": "somnambulist",
+		"desc": "巫师的梦想就像醒着的时候一样充实。",
+		"require": "g.dreamchamber>0&&g.tier5>0",
+		"cost": {
+			"dreams": 1,
+			"tempus": 5
+		},
+		"mod": {
+			"dreams.rate": 0.0001,
+			"runner.max": 1
+		},
+		"flavor": "夜里的每一秒，我都过着另一种生活。",
+		"name": "梦游者"
+	},
+	{
+		"id": "demonicpact",
+		"name": "恶魔契约",
+		"require": "g.demonology>4",
+		"desc": "与恶魔的交易，被封印在血液中。 所提供的知识价值两倍于价格。",
+		"cost": {
+			"research": 300,
+			"arcana": 1,
+			"gems": 10,
+			"hp": 20
+		},
+		"mod": {
+			"lore.max": 2,
+			"demonology.max": 2,
+			"demonology.rate": 0.3,
+			"planeslore.max": 1
+		},
+		"flavor": "他们说血液必须是你的。"
+	},
+	{
+		"id": "siversgate",
+		"name": "希弗之门",
+		"desc": "希弗知道真正的力量只有付出巨大的代价",
+		"require": "g.lore>=30&&g.tier4>0",
+		"cost": {
+			"research": 4000,
+			"shadowgem": 15,
+			"spiritgem": 15,
+			"arcana": 10,
+			"tomes": 3
+		},
+		"warn": true,
+		"mod": {
+			"hp.rate": -1.5,
+			"player.defense": 30,
+			"stamina.rate": -0.5,
+			"sp.rate": 0.0001,
+			"planeslore.max": 2,
+			"shadowlore.max": 2,
+			"reanimation.max": 2,
+			"lore.max": 1,
+			"demonology.max": 3,
+			"demonology.rate": "10%",
+			"spiritlore.max": 2,
+			"spirit.rate": 0.3
+		},
+		"flavor": "To stand before it would kill most men. to step beyond..."
+	},
+	{
+		"id": "up_pitcher",
+		"name": "无底瓶",
+		"tags": "watersource",
+		"desc": "无限的水源。",
+		"flavor": "All you can drink",
+		"require": "g.water.max>=10",
+		"cost": {
+			"research": 200,
+			"watergem": 1,
+			"water": 5,
+			"arcana": 1
+		},
+		"mod": {
+			"waterlore.max": 1,
+			"waterlore.rate": 0.2,
+			"water.rate": 0.1
+		}
+	},
+	{
+		"id": "evanescence",
+		"name": "消逝",
+		"tags": "airsource",
+		"desc": "就像你根本不存在",
+		"require": "g.air.max>=8",
+		"cost": {
+			"research": 300,
+			"air": 5,
+			"airgem": 3,
+			"arcana": 2
+		},
+		"mod": {
+			"dodge": 2,
+			"airlore.max": 2,
+			"airlore.rate": 0.2,
+			"air.rate": 0.05
+		},
+		"flavor": "The nothing you've become"
+	},
+	{
+		"id": "autonomicmending",
+		"name": "自主修复",
+		"require": "g.anatomy>=5&&g.tier0>0",
+		"desc": "训练你的身体自行愈合。",
+		"max": 1,
+		"cost": {
+			"research": 300,
+			"mana": 10,
+			"bloodgem": 5,
+			"codices": 5
+		},
+		"mod": {
+			"hp.rate": 0.5
+		},
+		"flavor": "i've had worse"
+	},
+	{
+		"id": "earthworks",
+		"desc": "您家周围的坚固墙壁，以阻止不明智的攻击者",
+		"require": "g.geosculpting>=5",
+		"max": 2,
+		"cost": {
+			"gold": 300,
+			"research": 250
+		},
+		"mod": {
+			"geosculpting.max": 1,
+			"player.defense": 5
+		},
+		"flavor": "兼作墓地",
+		"name": "土方工程"
+	},
+	{
+		"id": "coretap",
+		"name": "核心开采",
+		"desc": "挖掘世界核心，无限热度",
+		"require": "g.earthshaker>0&&g.geosculpting>=6",
+		"max": 1,
+		"cost": {
+			"gold": 5000,
+			"research": 4000,
+			"earthrune": 5
+		},
+		"mod": {
+			"firelore.max": 3,
+			"earthlore.max": 3,
+			"geosculpting.max": 1,
+			"earth.rate": 0.2,
+			"fire.rate": 0.2
+		}
+	},
+	{
+		"id": "tamedroads",
+		"name": "驯服道路",
+		"require": "g.geomancer>0&&g.dist>=200",
+		"desc": "训练你家周围的道路行为。",
+		"cost": {
+			"gold": 3000,
+			"earthgem": 5,
+			"earth": 10
+		},
+		"mod": {
+			"dist": 100
+		},
+		"flavor": "那些好孩子最适合让不速之客远离"
+	},
+	{
+		"id": "hiddenchamber",
+		"name": "密室",
+		"desc": "一个在地底深处孤独冥想的地方",
+		"require": "g.geosculpting>0",
+		"max": 1,
+		"cost": {
+			"gold": 500,
+			"research": 500,
+			"earthgem": 5
+		},
+		"mod": {
+			"concentrate.max": 1
+		}
+	},
+	{
+		"id": "expandedlungs",
+		"name": "膨胀的肺",
+		"desc": "您需要的所有空气。",
+		"require": "(g.windmage+g.stormcaller+g.avatar)>0",
+		"cost": {
+			"arcana": 1,
+			"airgem": 50
+		},
+		"mod": {
+			"self.resist.water": 5,
+			"airlore.rate": "10%",
+			"breath.max": 10,
+			"breath.rate": 0.5
+		}
+	},
+	{
+		"id": "waterbreathing",
+		"name": "水下呼吸",
+		"desc": "水对你来说就像空气一样。",
+		"require": "(g.hydromancer+g.stormcaller+g.avatar)>0",
+		"cost": {
+			"arcana": 1,
+			"sp": 1,
+			"watergem": 100
+		},
+		"mod": {
+			"self.resist.water": 10,
+			"waterlore.rate": "10%",
+			"breath.max": "100%",
+			"breath.rate": 5
+		}
+	},
+	{
+		"id": "rockcollection",
+		"name": "矿物收集",
+		"desc": "按硬度排序。",
+		"require": "geomancer",
+		"max": 3,
+		"cost": {
+			"gold": 500,
+			"research": 1000
+		},
+		"mod": {
+			"hammerlore.max": 1
+		},
+		"flavor": "A fantastic way to test your strength"
+	},
+	{
+		"id": "artificialmountain",
+		"name": "高山",
+		"desc": "在这个世界上留下你的印记",
+		"require": "earthshaker",
+		"max": 1,
+		"cost": {
+			"gold": 5000,
+			"research": 7500,
+			"earthrune": 10
+		},
+		"result": {
+			"fame": 5
+		},
+		"mod": {
+			"gems.rate": 0.1,
+			"act_mine.effect.gems": 0.1,
+			"hammerlore.max": 2,
+			"geosculpting.max": 2
+		}
+	},
+	{
+		"id": "constructquarry",
+		"name": "魔法采石场",
+		"desc": "岩石峭壁，可以更有效地进行挖掘。",
+		"require": "geosculpting",
+		"max": 3,
+		"cost": {
+			"gold": 1500,
+			"research": 2000,
+			"earthgem": 20
+		},
+		"mod": {
+			"act_mine.effect.gems": 0.1,
+			"hammerlore.max": 1
+		}
+	},
+	{
+		"id": "mythicanvil",
+		"name": "神话铁砧",
+		"desc": "这个铁砧由神话般的金属制成，甚至可以承受泰坦的力量",
+		"require": "titan",
+		"max": 1,
+		"cost": {
+			"gold": 10000,
+			"research": 15000,
+			"tomes": 100,
+			"earthrune": 50
+		},
+		"mod": {
+			"hammerlore.max": 2,
+			"geosculpting.max": 2,
+			"crafting.max": 2
+		}
+	},
+	{
+		"id": "undertunnels",
+		"name": "地下通道",
+		"desc": "跨越您的领域的难以区分的通道的扭曲迷宫。",
+		"require": "g.geosculpting>=10",
+		"max": 1,
+		"cost": {
+			"gold": 5000,
+			"research": 10000,
+			"earthrune": 1
+		},
+		"mod": {
+			"dist": "25%"
+		}
+	},
+	{
+		"id": "innerfire",
+		"name": "内在之火",
+		"tags": "firesource",
+		"desc": "你的身体就是火焰源泉。",
+		"flavor": "Ashes to ashes",
+		"require": "g.fire.max>=10",
+		"cost": {
+			"research": 300,
+			"fire": 5,
+			"firegem": 1,
+			"arcana": 1
+		},
+		"mod": {
+			"player.bonuses.fire": 2,
+			"firelore.max": 1,
+			"firelore.rate": 0.2,
+			"fire.rate": 0.05
+		}
+	},
+	{
+		"id": "earthsoul",
+		"name": "土地之魂",
+		"tags": "earthsource",
+		"desc": "你的身体已经适应了土地。",
+		"require": "g.earth.max>=10",
+		"cost": {
+			"research": 300,
+			"earth": 5,
+			"earthgem": 1,
+			"arcana": 1
+		},
+		"mod": {
+			"stamina.max": 2,
+			"stamina.rate": 0.1,
+			"earthlore.max": 2,
+			"earthlore.rate": 0.2,
+			"earth.rate": 0.1
+		}
+	},
+	{
+		"id": "heartofstone",
+		"name": "石之心",
+		"tags": "earthsource",
+		"desc": "无情如贫瘠的大地",
+		"require": "g.geomancer>0||g.earth.max>=25",
+		"cost": {
+			"research": 300,
+			"earth": 5,
+			"earthgem": 10,
+			"arcana": 5
+		},
+		"mod": {
+			"player.bonuses.earth": 7,
+			"stamina.max": 1,
+			"earthlore.max": 1,
+			"earthlore.rate": "10%",
+			"earth.rate": 0.1
+		}
+	},
+	{
+		"id": "airglobe",
+		"name": "旋转球体",
+		"tags": "airsource",
+		"desc": "源源不断的空气供应。",
+		"flavor": "Out of nothing at all",
+		"require": "g.air.max>=5",
+		"cost": {
+			"research": 300,
+			"air": 5,
+			"airgem": 1,
+			"arcana": 1
+		},
+		"mod": {
+			"airlore.max": 1,
+			"airlore.rate": 0.2,
+			"air.rate": 0.05
+		}
+	},
+	{
+		"id": "bellows",
+		"name": "不竭风箱",
+		"desc": "这些波纹管自行运行。",
+		"require": "g.crafting>=7&&g.air>0",
+		"cost": {
+			"gold": 250,
+			"research": 300
+		},
+		"mod": {
+			"crafting.max": 1,
+			"crafting.rate": 0.1,
+			"alchemy.max": 1,
+			"alchemy.rate": 0.1
+		}
+	},
+	{
+		"id": "mendicant",
+		"desc": "放弃奢华以获得更高的成就感。",
+		"need": "g.evil<=0&&g.gold.max>1000&&g.light.max>7",
+		"warn": true,
+		"result": {
+			"fame": 10
+		},
+		"mod": {
+			"gold.max": "-10%",
+			"spiritlore.max": 2,
+			"spiritlore.rate": 0.5,
+			"lightlore.max": 2,
+			"lightlore.rate": 0.5
+		},
+		"name": "托钵化缘"
+	},
+	{
+		"id": "innersanctum",
+		"name": "内心圣殿",
+		"need": "g.mendicant>0&&g.truesight>0",
+		"desc": "心灵的殿堂是没有限制的。",
+		"cost": {
+			"lightgem": 5,
+			"research": 5000
+		},
+		"mod": {
+			"space.max": "10%"
+		}
+	},
+	{
+		"id": "alembic",
+		"desc": "炼金术中必不可少的仪器",
+		"require": "g.tier0>0&&g.alchemy>=3",
+		"cost": {
+			"gold": 150,
+			"research": 100
+		},
+		"mod": {
+			"potions.max": 1,
+			"potions.rate": 0.2,
+			"potionessence.rate": 0.0001
+		},
+		"name": "蒸馏器"
+	},
+	{
+		"id": "solidifier",
+		"name": "晶体固化剂",
+		"require": "g.alchemy>=7",
+		"cost": {
+			"research": 500,
+			"codices": 10
+		},
+		"mod": {
+			"gems.rate": 0.02,
+			"gold.rate": -0.1
+		}
+	},
+	{
+		"id": "wildmarket",
+		"name": "哥布林市场",
+		"require": "(g.druid+g.fey+g.kell)>0",
+		"desc": "将您的收获卖给野外的魔法市场",
+		"cost": {
+			"herbs": 50,
+			"research": 3000,
+			"naturegem": 10
+		},
+		"mod": {
+			"herbs.rate": -0.25,
+			"gold.rate": 0.2
+		}
+	},
+	{
+		"id": "crucible",
+		"name": "细坩埚",
+		"desc": "用于熔化物质的弹性容器",
+		"require": "g.tier0>0&&g.alchemy>0",
+		"cost": {
+			"gold": 150
+		},
+		"mod": {
+			"alchemy.rate": 0.1,
+			"alchemy.max": 1,
+			"fire.rate": 0.02
+		}
+	},
+	{
+		"id": "pot",
+		"name": "烹饪锅",
+		"desc": "一个标准的锅。",
+		"tags": "potsource",
+		"need": "firesource",
+		"flavor": "Boil 'em, mash 'em, stick 'em in a stew.",
+		"cost": {
+			"gold": 25
+		},
+		"mod": {
+			"rest.effect.stamina": 0.1
+		}
+	},
+	{
+		"id": "cauldron",
+		"name": "坩埚",
+		"desc": "像一个烹饪锅，但更大。",
+		"tags": "potsource",
+		"require": [
+			"tier1",
+			"firesource"
+		],
+		"disable": "pot",
+		"cost": {
+			"gold": 150
+		},
+		"flavor": "Fire burn and cauldron bubble",
+		"mod": {
+			"potions.rate": 0.2,
+			"rest.effect.stamina": 0.12,
+			"spirit.rate": 0.01,
+			"potionessence.rate": 0.0001
+		}
+	},
+	{
+		"id": "bagoftricks",
+		"name": "戏法袋",
+		"tags": "tricksource",
+		"require": "g.trickster>0&&g.crafting>=7",
+		"cost": {
+			"research": 100,
+			"codices": 1,
+			"gold": 200
+		},
+		"mod": {
+			"gold.max": 50,
+			"trickery.max": 1,
+			"trickery.rate": 0.3,
+			"gold.rate": 0.01
+		}
+	},
+	{
+		"id": "cellar",
+		"desc": "在您的住所添加一个地窖",
+		"require": "tier1",
+		"max": 1,
+		"cost": {
+			"gold": 500
+		},
+		"mod": {
+			"space.max": 5
+		},
+		"name": "地窖"
+	},
+	{
+		"id": "expandcellar",
+		"name": "扩张地窖",
+		"desc": "增加现有地窖的面积。",
+		"require": "cellar",
+		"cost": {
+			"gold": 700
+		},
+		"mod": {
+			"cellar.mod.space.max": 5
+		}
+	},
+	{
+		"id": "siegeperilous",
+		"name": "十面埋伏",
+		"desc": "传说中的命运之座",
+		"require": "g.fame>=10",
+		"cost": {
+			"gold": 4000,
+			"gems": 30
+		},
+		"result": {
+			"fame": 1
+		},
+		"mod": {
+			"allies.max": 4,
+			"minions.max": 2,
+			"lightlore.max": 2,
+			"lightlore.rate": "10%"
+		}
+	},
+	{
+		"id": "up_runecrafter",
+		"actname": "Hire Runecrafter",
+		"name": "符文工艺",
+		"desc": "雇佣一个矮人为你制作符文石。",
+		"require": "g.evil<=0&&g.runelore>=5&&g.tier3>0",
+		"max": 5,
+		"cost": {
+			"gems": 100
+		},
+		"mod": {
+			"space": 5,
+			"gold.rate": -0.5,
+			"runestones.rate": 0.01
+		}
+	},
+	{
+		"id": "up_apprentice",
+		"name": "学徒",
+		"desc": "收徒弟为你工作",
+		"require": "tier2",
+		"cost": {
+			"gold": 300,
+			"tomes": 1,
+			"research": 1000
+		},
+		"mod": {
+			"space": 5,
+			"gold.rate": 0.1,
+			"scrolls.rate": 0.02,
+			"codices.rate": 0.01,
+			"tomes.rate": 0.001
+		},
+		"flavor": "为什么要花钱?"
+	},
+	{
+		"id": "basement",
+		"desc": "在你家下面安装一个地下室",
+		"require": "g.tier1>0&&g.earthlore>=3",
+		"max": 1,
+		"cost": {
+			"gold": 1000,
+			"research": 500
+		},
+		"mod": {
+			"space.max": "25%"
+		},
+		"name": "地下室"
+	},
+	{
+		"id": "oracularinsight",
+		"name": "神谕洞察力",
+		"require": "oracle",
+		"desc": "你在事情发生之前就看到了",
+		"cost": {
+			"research": 300,
+			"arcana": 5
+		},
+		"mod": {
+			"dodge": 1
+		}
+	},
+	{
+		"id": "wizardhall",
+		"name": "巫师殿堂",
+		"tags": "t_hall",
+		"slot": "hall",
+		"require": "g.tier5>0",
+		"desc": "建造一个巫师殿堂",
+		"buy": {
+			"research": 35000,
+			"arcana": 30,
+			"gems": 50,
+			"managem": 25,
+			"airgem": 15,
+			"firegem": 15,
+			"earthgem": 15,
+			"watergem": 15,
+			"spiritgem": 15,
+			"runestones": 30,
+			"tomes": 50,
+			"gold": 15000
+		},
+		"result": {
+			"evt_hall": true
+		},
+		"mod": {
+			"t_runes.max": 10,
+			"tomes.rate": 0.003,
+			"sp.rate": 0.0001
+		}
+	},
+	{
+		"id": "fireplane",
+		"slot": "werry",
+		"name": "火之位面",
+		"desc": "灰烬与火位面的隐藏口袋",
+		"require": "g.tier5>0&&g.gate>0&&g.firelore>=10",
+		"buy": {
+			"firerune": 50,
+			"gold": 15000,
+			"tomes": 50,
+			"gate": 1
+		},
+		"mod": {
+			"space.max": "30%",
+			"firelore.max": 2,
+			"player.bonuses.water": -3,
+			"water.max": -2,
+			"player.resist.fire": "1+10%",
+			"player.bonuses.fire": 5
+		}
+	},
+	{
+		"id": "waterplane",
+		"name": "水之位面",
+		"slot": "werry",
+		"desc": "一望无际的大海的口袋",
+		"require": "g.tier5>0&&g.gate>0&&g.waterlore>=10",
+		"buy": {
+			"waterrune": 50,
+			"gold": 15000,
+			"tomes": 50,
+			"gate": 1
+		},
+		"mod": {
+			"space.max": "30%",
+			"waterlore.max": 2,
+			"player.bonuses.fire": -3,
+			"fire.max": -2,
+			"player.resist.water": "1+10%",
+			"player.bonuses.water": 5
+		}
+	},
+	{
+		"id": "earthplane",
+		"name": "土之位面",
+		"desc": "从地球平面雕刻的空间",
+		"slot": "werry",
+		"require": "g.tier5>0&&g.gate>0&&g.earthlore>=10",
+		"buy": {
+			"earthrune": 50,
+			"gold": 15000,
+			"tomes": 50,
+			"gate": 1
+		},
+		"mod": {
+			"space.max": "30%",
+			"earthlore.max": 2,
+			"player.bonuses.air": -3,
+			"air.max": -2,
+			"player.resist.earth": "1+10%",
+			"player.bonuses.earth": 5
+		}
+	},
+	{
+		"id": "airplane",
+		"name": "风之位面",
+		"desc": "漂浮在无尽天空中的岛屿",
+		"slot": "werry",
+		"require": "g.tier5>0&&g.gate>0&&g.airlore>=10",
+		"buy": {
+			"airrune": 50,
+			"gold": 15000,
+			"tomes": 50,
+			"gate": 1
+		},
+		"mod": {
+			"space.max": "30%",
+			"airlore.max": 2,
+			"player.bonuses.earth": -3,
+			"earth.max": -2,
+			"player.resist.air": "1+10%",
+			"player.bonuses.air": 5
+		}
+	},
+	{
+		"id": "familiarcat",
+		"name": "猫魔宠",
+		"desc": "你的魔宠是一只猫，和生他的黑夜一样黑暗。",
+		"require": "g.summonfamiliar>0",
+		"warn": true,
+		"tags": "familiar",
+		"lock": [
+			"familiarowl",
+			"familiarkobold",
+			"familiarimp",
+			"familiartome"
+		],
+		"mod": {
+			"demonology.max": 2,
+			"demonology.rate": "10%",
+			"planeslore.max": 1,
+			"charms.max": 1,
+			"charms.rate": 0.1,
+			"animals.max": 2,
+			"animals.rate": 0.2,
+			"bones.rate": 0.01,
+			"petfamiliar.result.stress": -50
+		}
+	},
+	{
+		"id": "familiarowl",
+		"name": "猫头鹰魔宠",
+		"desc": "你的魔宠是猫头鹰，在晚上最活跃，就像你一样。",
+		"require": "g.summonfamiliar>0",
+		"warn": true,
+		"tags": "familiar",
+		"lock": [
+			"familiarcat",
+			"familiarkobold",
+			"familiarimp",
+			"familiartome"
+		],
+		"mod": {
+			"demonology.max": 2,
+			"demonology.rate": "10%",
+			"planeslore.max": 1,
+			"concentrate.max": 1,
+			"concentrate.rate": 0.1,
+			"scrying.max": 1,
+			"scrying.rate": 0.2,
+			"petfamiliar.result.bonedust": 10,
+			"petfamiliar.result.stress": -25
+		}
+	},
+	{
+		"id": "familiarkobold",
+		"name": "狗头人魔宠",
+		"desc": "你的魔宠是狗头人，贪婪黄金。",
+		"require": "g.summonfamiliar>0",
+		"warn": true,
+		"tags": "familiar",
+		"lock": [
+			"familiarcat",
+			"familiarowl",
+			"familiarimp",
+			"familiartome"
+		],
+		"mod": {
+			"demonology.max": 2,
+			"demonology.rate": "10%",
+			"planeslore.max": 1,
+			"act_mine.effect.gold.min": 0.1,
+			"act_mine.effect.gold.max": 0.1,
+			"spingold.effect.gold": 0.1,
+			"petfamiliar.result.gold": 50,
+			"petfamiliar.result.stress": -25
+		}
+	},
+	{
+		"id": "familiarimp",
+		"name": "小鬼魔宠",
+		"desc": "你的魔宠是个小鬼，狡猾且容易恶作剧。",
+		"require": "g.summonfamiliar>0",
+		"warn": true,
+		"tags": "familiar",
+		"lock": [
+			"familiarcat",
+			"familiarkobold",
+			"familiarowl",
+			"familiartome"
+		],
+		"mod": {
+			"demonology.max": 2,
+			"demonology.rate": "10%",
+			"planeslore.max": 1,
+			"trickery.max": 1,
+			"trickery.rate": 0.1,
+			"heist.result.gold": 15,
+			"petfamiliar.result.gems": 1,
+			"petfamiliar.result.stress": -25
+		}
+	},
+	{
+		"id": "familiartome",
+		"name": "著作魔宠",
+		"desc": "你的魔宠是一本充满神秘知识和对扩张的渴望的会动的著作。",
+		"require": "g.summonfamiliar>0",
+		"warn": true,
+		"tags": "familiar",
+		"lock": [
+			"familiarcat",
+			"familiarkobold",
+			"familiarimp",
+			"familiarowl"
+		],
+		"mod": {
+			"demonology.max": 2,
+			"demonology.rate": "10%",
+			"planeslore.max": 1,
+			"tomes.max": 5,
+			"lore.max": 2,
+			"lore.rate": 0.2,
+			"petfamiliar.result.research": 100,
+			"petfamiliar.result.stress": -25
+		}
+	}
+]
