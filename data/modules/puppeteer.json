@@ -8,7 +8,7 @@
 			{
 				"id": "puppetry",
 				"require": "g.crafting>=8&&g.spiritlore>=5",
-				"desc": "Create and animate magical puppets",
+				"desc": "制作魔法木偶并赋予其生命",
 				"level": 1,
 				"run": {
 					"stamina": 0.4
@@ -28,7 +28,7 @@
 				"id": "magicalanimation",
 				"name": "机械学",
 				"require": "g.puppetry>=5&&g.spiritlore>=10",
-				"desc": "Imbue objects with the power of motion",
+				"desc": "将动能注入物体",
 				"level": 3,
 				"run": {
 					"stamina": 0.7
@@ -45,7 +45,7 @@
 				"id": "machinacreation",
 				"name": "机械魔法",
 				"require": "g.crafting>=12&&g.puppetry>=6&&g.magicalanimation>=5&&g.tier2>0",
-				"desc": "Assemble magic constructs",
+				"desc": "组装魔法结构",
 				"level": 3,
 				"run": {
 					"stamina": 0.7
@@ -111,7 +111,7 @@
 			{
 				"id": "puppetshow",
 				"name": "木偶戏",
-				"desc": "Put on a show with animated puppets",
+				"desc": "用栩栩如生的木偶来上演一出完美的木偶戏",
 				"verb": "puppeteering",
 				"require": "g.puppeteer>0",
 				"length": 15,
@@ -171,7 +171,7 @@
 			{
 				"id": "machinalabor",
 				"name": "租赁劳工",
-				"desc": "Lend some of your machinae to perform menial tasks",
+				"desc": "通过租出你的一些机器人来完成一些琐碎，同时赚点小钱",
 				"verb": "leasing",
 				"require": "g.mechanist>0",
 				"length": 50,
@@ -202,7 +202,7 @@
 			},
 			{
 				"id": "assemblemachina",
-				"name": "装配机",
+				"name": "装配机器",
 				"verb": "组装机器",
 				"require": "g.machinacreation>=1",
 				"need": "workspace",
@@ -959,7 +959,7 @@
 			},
 			{
 				"id": "shapinglab",
-				"name": "整形实验室",
+				"name": "塑形实验室",
 				"desc": "一种用于培育心灵水晶和预制机器人体的设施。",
 				"tags": "workspace",
 				"require": "mechamancer",
@@ -984,12 +984,12 @@
 				"desc": "易于控制，但基本上是惰性的。",
 				"group": "puppets",
 				"max": 20,
-				"flavor": "A skilled user could put on a marvellous show.",
+				"flavor": "一个熟练的操手可以用它带来一场精彩的演出",
 				"name": "木偶"
 			},
 			{
 				"id": "machinae",
-				"name": "机械",
+				"name": "机械飞船",
 				"desc": "高耸的金属船，随时准备执行主人的命令。",
 				"group": "puppets",
 				"max": 20,
