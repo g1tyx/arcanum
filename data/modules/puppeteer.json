@@ -202,11 +202,11 @@
 			},
 			{
 				"id": "assemblemachina",
-				"name": "装配机器",
+				"name": "装配机械造物",
 				"verb": "组装机器",
 				"require": "g.machinacreation>=1",
 				"need": "workspace",
-				"desc": "组装一台机器。",
+				"desc": "组装一台机械造物。",
 				"length": 10,
 				"fill": [
 					"machinae"
@@ -249,7 +249,7 @@
 			},
 			{
 				"id": "assembleautomata",
-				"name": "形状机器人",
+				"name": "创造机器人",
 				"verb": "塑造机器人",
 				"require": "g.automatasculpting>=1",
 				"need": "workspace",
@@ -989,8 +989,8 @@
 			},
 			{
 				"id": "machinae",
-				"name": "机械飞船",
-				"desc": "高耸的金属船，随时准备执行主人的命令。",
+				"name": "机械造物",
+				"desc": "高耸的金属智慧造物，随时准备执行主人的命令。",
 				"group": "puppets",
 				"max": 20,
 				"flavor": "B33P B00P."

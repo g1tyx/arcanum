@@ -176,7 +176,7 @@
 			},
 			{
 				"id": "hal_charger",
-				"name": "混沌战马",
+				"name": "无头骑士的神圣战马",
 				"desc": "一只被烟雾所笼罩的漆黑战马",
 				"tags": "steed",
 				"slot": "mount",
@@ -214,7 +214,7 @@
 			{
 				"id": "hal_broomstick",
 				"name": "万圣扫帚",
-				"desc": "碰一下这个扫帚，就算在远处你也能听到它咯咯的笑声",
+				"desc": "只要轻轻碰一下这个扫帚，就算在远处你也能听到它咯咯的阴笑声",
 				"flavor": "灶神赫斯提亚可不会用它...应该吧？",
 				"slot": "mount",
 				"buy": {},
@@ -348,13 +348,13 @@
 		"events": [
 			{
 				"id": "headless_ride",
-				"name": "无头骑士的坐骑",
+				"name": "无头骑士的神圣战马",
 				"desc": "一匹冒着黑烟的马，现在它归你了，记得喂它苹果"
 			},
 			{
 				"id": "hal_suspicion",
 				"name": "奇怪的村庄",
-				"desc": "外来者们对这里都只有一个观点：这地方很诡异"
+				"desc": "外来者们对这里都很恐惧，这地方很诡异的很！"
 			},
 			{
 				"id": "evt_hallomar",
@@ -370,19 +370,19 @@
 			{
 				"id": "evt_hal_imp",
 				"name": "一只奇怪的小恶魔",
-				"desc": "Outside the fields, an imp at a water barrel offers you a chance at magic riches, for a small fee."
+				"desc": "在田间，一只站在水桶旁的小恶魔提供给你了一个获得魔法物质的机会，当然，需要支付少量的费用就是了"
 			},
 			{
 				"id": "evt_hal_hestia_done",
-				"name": "purple amulet",
-				"desc": "As you leave her cottage, Hestia presses a small amulet into your hand."
+				"name": "紫色护身符",
+				"desc": "当你离开赫斯蒂亚的小木屋时，她偷偷的把一枚小小的护身符塞到你的手里"
 			}
 		],
 		"locales": [
 			{
 				"id": "hal_aspect",
-				"name": "Investigate Hallomar",
-				"desc": "Some people just vanish in thin air, and pop up unexpectedly.",
+				"name": "调查Hallomar",
+				"desc": "有些人突然消失的无影无踪，随后又突然出现的毫无征兆",
 				"require": "hal_suspicion",
 				"length": 20,
 				"level": 3,
@@ -404,8 +404,8 @@
 			},
 			{
 				"id": "loc_hal_hestia",
-				"name": "hestia's cottage",
-				"desc": "Deep in Thangmor Forest, the great witch Hestia keeps a small, secluded cabin. On rare occasions, she even takes visitors.",
+				"name": "赫斯蒂亚的小木屋",
+				"desc": "在Thangmor森林的深处，伟大的女巫赫斯蒂亚有着一间幽静的小木屋，在极少数的时候，她才会带着一些访客来到这里",
 				"level": 13,
 				"dist": 50,
 				"length": 50,
@@ -431,16 +431,16 @@
 			},
 			{
 				"id": "loc_hal_pumpkin",
-				"name": "hallomar",
+				"name": "Hallomar节",
 				"level": 0,
 				"length": 100,
-				"desc": "Nestled in the fog of the midlands, the village of Hallomar holds a yearly celebration in its pumpkin patch.",
+				"desc": "Hallomar村坐落在中部地区的雾中，每年都会在他们的南瓜地里举办庆典活动。",
 				"require": "evt_hallomar",
 				"run": {
 					"stamina": 0.2
 				},
 				"result": {
-					"title": "harvest reveller",
+					"title": "收获者的狂欢",
 					"pumpkins": "1~3",
 					"cobwebs": 1
 				},
@@ -461,14 +461,14 @@
 					"hiddencache",
 					"starrysky1"
 				],
-				"flavor": "Just don't wander too far from the village."
+				"flavor": "没什么需要提醒的，就是不要散步的时候离村子太远哦～"
 			}
 		],
 		"encounters": [
 			{
 				"id": "hal_oldman",
-				"name": "Old Harold",
-				"desc": "He keeps ranting about a wolf he saw in the granary.",
+				"name": "可怜的老哈罗德",
+				"desc": "他一直在抱怨他在粮仓里看到了一只狼",
 				"effect": {
 					"bf": 1,
 					"weary": 0.5
@@ -479,8 +479,8 @@
 			},
 			{
 				"id": "hal_fox",
-				"name": "Fox",
-				"desc": "A fox lurks at a corner. As you round the corner, you see the fox at the next corner. You chase it.",
+				"name": "狐狸",
+				"desc": "一只狐狸在拐角处里潜伏着，当你绕过这个拐角，你又发现了一只狐狸在新的拐角，你赶忙追过去",
 				"effect": {
 					"unease": 0.5
 				},
@@ -491,8 +491,8 @@
 			},
 			{
 				"id": "hal_grumpy",
-				"name": "Grumpy Granny",
-				"desc": "She appears from nowhere at every curse word, demanding you wash your mouth with soap.",
+				"name": "暴躁的奶奶",
+				"desc": "她在你说脏话的时候出现，并强烈要求你用肥皂洗洗你的脏嘴",
 				"effect": {
 					"unease": "-1~2",
 					"gold": -0.1
@@ -503,8 +503,8 @@
 			},
 			{
 				"id": "hal_stranger",
-				"name": "Outsider",
-				"desc": "A man stands just outside the village, visibly shaken. As you approach him, he warns you that something strange is going on in Hallomar.",
+				"name": "外来者",
+				"desc": "一个男人惊魂未定的站在一个村口外面，当他发现你逐渐靠近这个村子时，他警告你这个叫Hallomar村子里有古怪，要小心",
 				"effect": {
 					"madness": "0~2"
 				},
