@@ -4,6 +4,8 @@
  @author  : 麦子、JAR、小蓝、好阳光的小锅巴
  @version : V0.6.1 - 2019-07-09
  @website : http://www.g8hh.com
+ @idle games : http://www.gityx.com
+ @QQ Group : 627141737
 
 */
 
@@ -99,6 +101,13 @@ var cnItem = function (text, node) {
         }
     }
 
+    //尝试正则替换
+    for (let [key, value] of cnRegReplace.entries()) {
+        if (key.test(text)) {
+            return text_prefix + text.replace(key, value) + text_reg_exclude_postfix + text_postfix;
+        }
+    }
+
     //遍历尝试匹配
     for (let i in cnItems) {
         //字典已有词汇或译文、且译文不为空，则返回译文
@@ -116,13 +125,6 @@ var cnItem = function (text, node) {
         }
     }
 
-	//尝试正则替换
-	for (let [key, value] of cnRegReplace.entries()) {
-		if (key.test(text)) {
-			return text_prefix + text.replace(key, value) + text_reg_exclude_postfix + text_postfix;
-		}
-	}
-
     //调整收录的词条，0=收录原文，1=收录去除前后缀的文本
     let save_cfg = 1;
     let save_text = save_cfg ? text : textori;
@@ -135,7 +137,7 @@ var cnItem = function (text, node) {
             return text_prefix + text + text_reg_exclude_postfix + text_postfix;
     }
 
-    if (cnItems._OTHER_.length < 500) {
+    if (cnItems._OTHER_.length < 1000) {
         //未收录则保存
         cnItems._OTHER_.push(save_text);
         cnItems._OTHER_.sort(
@@ -228,12 +230,12 @@ function TransSubTextNode(node) {
 								node.innerText = cnItem(node.innerText, node);
                         } else {
                             TransSubTextNode(node);
-                            transTaskMgr.doTask();
                         }
                     }
                 }
             }
         }
+        transTaskMgr.doTask();
         observer.observe(targetNode, observer_config);
         //window.afterTransTime = performance.now();
         //console.log("捕获到页面变化并执行汉化，耗时" + (afterTransTime - beforeTransTime) + "毫秒");

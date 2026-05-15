@@ -7,7 +7,7 @@
 				"id": "evt_breakthrough0",
 				"name": "breakthrough",
 				"desc": "A breakthrough in your understanding of spirits! It seems so clear now",
-				"require": "g.spirit.max>19&&g.shian>0",
+				"require": "g.spirit.max>=20&&g.shian>0",
 				"mod": {
 					"spiritlore.max": 1
 				}
@@ -52,29 +52,26 @@
 				"id": "evt_hole",
 				"name": "public commotion",
 				"desc": "A large spire has risen closeby, quite a few are testing their luck, you better hurry if you want to be ahead",
-				"require": [
-					"mtgorborung",
-					"tier3"
-				]
+				"require": ["mtgorborung", "tier3"]
 			},
 			{
 				"id": "evt_hole2",
 				"name": "the first one",
-				"desc": "You're the first one to the top, you find some books unlike many you've seen",
+				"desc": "You're the first one to the top, you find some books unlike any you've seen",
 				"require": "g.tier3>0&&g.unstablespire>0&&g.tier4==0"
 			},
 			{
 				"id": "evt_hole3",
 				"name": "the top",
 				"desc": "You've reached the top, but it seems others have already taken what was here",
-				"require": "g.tier4>0&&g.unstablespire&&g.evt_hole2<0"
+				"require": "g.tier4>0&&g.unstablespire>0&&g.evt_hole2<=0"
 			}
 		],
 		"tasks": [
 			{
 				"id": "gathersouls",
-				"name": "幽灵捕手",
-				"require": "g.soulflag2>0",
+				"name": "ghost catcher",
+				"require": "g.shian>0",
 				"desc": "Bind the dead that haunt the world.",
 				"length": 180,
 				"cost": {
@@ -83,12 +80,13 @@
 				"result": {
 					"souls.max": 5,
 					"souls": 20
-				}
+				},
+				"group": "storage"
 			},
 			{
 				"id": "mkcave",
-				"name": "挖一个更大的洞",
-				"require": "(g.earthlore+g.spiritlore)>20&&g.shian>0",
+				"name": "Dig out a bigger cave",
+				"require": "(g.earthlore+g.spiritlore)>=20&&g.shian>0",
 				"desc": "Make a underground home where the magic is strong and spirits are plentiful",
 				"length": 1800,
 				"max": 1,
@@ -102,18 +100,18 @@
 					"spirit": 1
 				},
 				"mod": {
-					"cave.mod.minions.max": 8,
 					"cave.mod.space.max": 475,
+					"cave.mod.minions.max": 8,
 					"cave.mod.research.rate": 1.5,
 					"cave.mod.mana.rate": 0.2,
-					"cave.mod.spirit.rate": 0.5,
-					"cave.mod.spiritlore.rate": 150
+					"cave.mod.spirit.rate": 0.5
 				},
-				"flavor": "This will take a while..."
+				"flavor": "This will take a while...",
+				"group": "housing"
 			},
 			{
 				"id": "mkpagoda",
-				"name": "打造美丽的家",
+				"name": "Make a Beautiful Home",
 				"require": "g.mkcave>0&&g.tier6>0&&g.shian>0",
 				"desc": "Make a home where you can improve your mastery of the mysterious sword arts and spirits are plentiful",
 				"length": 1800,
@@ -127,12 +125,13 @@
 					"air": 1,
 					"spirit": 1
 				},
-				"flavor": "This will take a while..."
+				"flavor": "This will take another while...",
+				"group": "housing"
 			},
 			{
 				"id": "soulflag",
-				"name": "制作灵魂旗帜",
-				"require": "g.spiritlore>12&&g.shian>0",
+				"name": "craft soulflag",
+				"require": "g.spiritlore>=13&&g.shian>0",
 				"desc": "So many souls around, there has to be a way to keep them out of your way",
 				"length": 100,
 				"max": 1,
@@ -143,11 +142,12 @@
 				"mod": {
 					"souls.max": 5,
 					"souls.rate": 0.01
-				}
+				},
+				"group": "storage"
 			},
 			{
 				"id": "soulflag2",
-				"name": "提升灵魂旗帜",
+				"name": "improve soulflag",
 				"require": "g.soulflag>0&&g.shian>0",
 				"desc": "There is room for more souls",
 				"length": 900,
@@ -162,12 +162,15 @@
 					"spiritart.attack.damage.max": 3,
 					"spiritart.attack.damage.min": 3,
 					"spiritart.attack.tohit": 3
-				}
+				},
+				"group": "spellcasting"
 			},
 			{
 				"id": "soulflag3",
-				"name": "完整的灵魂旗帜",
+				"name": "complete soulflag",
 				"require": "g.soulflag2>0&&g.shian>0",
+				"need": "g.inv.max-g.inv._used>=1",
+				"needtext": "Must have at least 1 inventory space free.",
 				"desc": "Containing ten thousand souls, this is a powerful tool ",
 				"length": 9000,
 				"max": 1,
@@ -181,12 +184,15 @@
 				},
 				"loot": {
 					"itemsoulflag": 1
-				}
+				},
+				"group": "weapon"
 			},
 			{
 				"id": "soulflagreacquire",
 				"name": "re-weave soulflag",
 				"require": "g.soulflag3>0&&g.shian>0",
+				"need": "g.inv.max-g.inv._used>=1",
+				"needtext": "Must have at least 1 inventory space free.",
 				"desc": "Even if it's been reduced to scraps, it can be restored",
 				"length": 60,
 				"run": {
@@ -195,7 +201,8 @@
 				},
 				"loot": {
 					"itemsoulflag": 1
-				}
+				},
+				"group": "weapon"
 			}
 		],
 		"homes": [
@@ -205,8 +212,8 @@
 				"desc": "A peaceful structure where you can devote yourself fully to your arts.",
 				"require": "g.mkpagoda>0",
 				"mod": {
-					"minions.max": 10,
 					"space.max": 550,
+					"minions.max": 10,
 					"sworduse.max": 1,
 					"breakthrough.max": 1,
 					"spirit.rate": 0.3,
@@ -229,8 +236,10 @@
 				"mod": {
 					"swordart.attack.damage.max": 2,
 					"swordart.attack.damage.min": 2,
-					"swordart.attack.tohit": 2
-				}
+					"swordart.attack.tohit": 2,
+					"throw_swords.summon.0.max": 3
+				},
+				"group": "spellcasting"
 			},
 			{
 				"id": "breakthrough",
@@ -245,9 +254,10 @@
 					"spiritart.attack.damage.min": 2,
 					"spiritart.attack.tohit": 1,
 					"soulart.attack.dot.damage.max": 1,
-					"soulart.attack.dot.damage.min": 1
+					"soulart.attack.dot.damage.min": 1,
+					"throw_swords.summon.0.max": 1
 				},
-				"name": "breakthrough"
+				"group": "spellcasting"
 			},
 			{
 				"id": "fastsoul",
@@ -257,44 +267,72 @@
 				"mod": {
 					"soulflag3.length": "-50%",
 					"soulflag3.run.souls": 1
-				}
+				},
+				"group": "crafting"
 			}
 		],
 		"spells": [
 			{
 				"id": "throw_swords",
 				"name": "lost sword art: flying swords",
-				"school": "blade",
-				"require": "sworduse",
+				"sortOrder": 1740,
 				"level": 11,
+				"school": "shian",
 				"tags": "swordart",
+				"keywords": {
+					"type": ["damage", "summon"],
+					"target": ["enemy", "ally"],
+					"targets": ["multiple"],
+					"delivery": ["instant"]
+				},
+				"require": "sworduse",
 				"buy": {
 					"research": 1000,
 					"codices": 10,
 					"spiritgem": 10
 				},
 				"cost": {
-					"mana": 10
+					"mana": 10,
+					"vigor": 5
+				},
+				"result": {
+					"lore.exp": 1,
+					"weaponlore.exp": 0.5
 				},
 				"attack": {
 					"targets": "enemies",
+					"maxTargets": 999,
 					"damage": "20~30",
 					"kind": "slash",
-					"tohit": 10
+					"tohit": 2,
+					"potencies": ["spelldmg", "slashdmg", "sworddmg"]
 				},
-				"result": [
-					"magicblade",
-					"magicblade",
-					"magicblade"
-				]
+				"summon": [
+					{
+						"id": "sum_magicblade",
+						"count": 2,
+						"max": 0
+					}
+				],
+				"mod": {
+					"sum_magicblade.value": "?1"
+				},
+				"modtext": "Unlocks the Magic Blade entry in your bestiary after first cast."
 			},
 			{
 				"id": "giantkilling",
 				"name": "lost sword art: giant slayer",
-				"school": "blade",
-				"require": "g.sworduse>1",
+				"sortOrder": 300,
 				"level": 12,
+				"school": "shian",
 				"tags": "swordart",
+				"keywords": {
+					"type": ["damage", "debuff"],
+					"target": ["enemy"],
+					"targets": ["single"],
+					"delivery": ["instant"]
+				},
+				"require": "g.sworduse>=2",
 				"buy": {
 					"research": 1000,
 					"codices": 10,
@@ -302,16 +340,22 @@
 				},
 				"cost": {
 					"gems": 1,
-					"mana": 12
+					"mana": 12,
+					"vigor": 7
+				},
+				"result": {
+					"lore.exp": 1.4,
+					"weaponlore.exp": 0.9
 				},
 				"attack": {
 					"damage": "35~65",
 					"kind": "slash",
-					"tohit": 10,
+					"potencies": ["spelldmg", "slashdmg", "sworddmg"],
+					"tohit": 2,
 					"dot": {
 						"duration": 10,
 						"mod": {
-							"defense": -10
+							"self.defense": -10
 						}
 					}
 				}
@@ -319,10 +363,17 @@
 			{
 				"id": "soulstrike",
 				"name": "spirit art: soulstrike",
-				"school": "spirit",
-				"require": "g.shian>0&&g.soulflag>0",
+				"sortOrder": 1001,
 				"level": 6,
+				"school": "shian",
 				"tags": "spiritart",
+				"keywords": {
+					"type": ["damage"],
+					"target": ["enemy"],
+					"targets": ["single"],
+					"delivery": ["instant"]
+				},
+				"require": "g.shian>0&&g.soulflag>0",
 				"buy": {
 					"research": 1000,
 					"codices": 10,
@@ -332,20 +383,31 @@
 					"souls": 1,
 					"spirit": 1
 				},
+				"result": {
+					"spiritlore.exp": 0.2
+				},
 				"attack": {
 					"damage": "20~29",
 					"kind": "spirit",
-					"tohit": 15
+					"tohit": 3,
+					"potencies": ["spelldmg", "spiritdmg"]
 				}
 			},
 			{
 				"id": "soullure",
 				"name": "soul card: soul lure",
-				"school": "spirit",
-				"require": "g.shian>0&&g.soulflag2>0",
-				"level": 10,
-				"tags": "soulart",
 				"desc": "Lure the souls of enemies from out their mortal bodies",
+				"sortOrder": 1002,
+				"level": 10,
+				"school": "shian",
+				"tags": "soulart",
+				"keywords": {
+					"type": ["damage"],
+					"target": ["enemy"],
+					"targets": ["multiple"],
+					"delivery": ["over time"]
+				},
+				"require": "g.shian>0&&g.soulflag2>0",
 				"buy": {
 					"research": 1000,
 					"codices": 10,
@@ -354,24 +416,36 @@
 				"cost": {
 					"spirit": 10
 				},
+				"result": {
+					"spiritlore.exp": 1
+				},
 				"attack": {
-					"tohit": 20,
+					"tohit": 4,
 					"targets": "enemies",
+					"maxTargets": 999,
 					"dot": {
 						"id": "soullure",
 						"kind": "spirit",
 						"duration": 10,
-						"damage": "10~15"
+						"damage": "10~15",
+						"potencies": ["spelldmg", "spiritdmg"]
 					}
 				}
 			},
 			{
 				"id": "soulriver",
 				"name": "spirit art: soul river",
-				"school": "spirit",
-				"require": "g.shian>0&&g.soulflag3>0",
+				"sortOrder": 1000,
 				"level": 15,
+				"school": "shian",
 				"tags": "spiritart",
+				"keywords": {
+					"type": ["damage"],
+					"target": ["enemy"],
+					"targets": ["single"],
+					"delivery": ["instant"]
+				},
+				"require": "g.shian>0&&g.soulflag3>0",
 				"buy": {
 					"research": 1000,
 					"codices": 10,
@@ -381,10 +455,14 @@
 					"souls": 15,
 					"spirit": 5
 				},
+				"result": {
+					"spiritlore.exp": 2
+				},
 				"attack": {
 					"damage": "80~110",
 					"kind": "spirit",
-					"tohit": 25
+					"tohit": 5,
+					"potencies": ["spelldmg", "spiritdmg"]
 				}
 			}
 		],
@@ -394,23 +472,16 @@
 				"name": "shian anchorite",
 				"desc": "An ancient magic from beyond the sea, combining spirit and blade.",
 				"secret": true,
-				"tags": "t_tier4",
-				"require": "g.tier3>0&&g.unstablespire>0",
+				"tags": "t_tier4,t_swordclass,t_spiritclass",
+				"require": "g.t4unlocker>0&&(g.unstablespire>0||g.up_shian>0)&&g.spiritlore>=15&&g.weaponlore>=8",
 				"cost": {
-					"research": 25000,
-					"arcana": 25,
-					"tomes": 100,
 					"ichor": 2
 				},
-				"result": {
-					"sp": 2
-				},
 				"mod": {
-					"tier4": true,
-					"spiritlore.max": 3,
-					"bladelore": true
+					"spiritlore.max": 3
 				},
-				"flavor": "Contemplation of the small as well as great."
+				"flavor": "Contemplation of the small as well as great.",
+				"sortOrder": 259
 			}
 		],
 		"rares": [
@@ -419,23 +490,25 @@
 				"name": "soulflag",
 				"desc": "Ten thousand souls muffled in its fabric.",
 				"type": "weapon",
+				"slot": "mainhand",
 				"unique": true,
+				"damage": "60~70",
 				"attack": {
 					"kind": "spirit",
-					"damage": "60~70"
+					"damage": "(i.damage||0)"
 				},
-				"mod": {
-					"spirit.max": 10,
-					"souls.rate": 0.5,
-					"spiritart.attack.damage.max": 5,
-					"spiritart.attack.damage.min": 5,
-					"spiritart.attack.tohit": 5
+				"alter": {
+					"mod": {
+						"spirit.max": 10,
+						"souls.rate": 0.5,
+						"spiritart.attack.damage.max": 5,
+						"spiritart.attack.damage.min": 5,
+						"spiritart.attack.tohit": 5
+					}
 				},
-				"hands": 2,
 				"kind": "flag",
 				"tags": "flag",
 				"level": 15,
-				"enchants": 15,
 				"sell": {
 					"souls": 1
 				}
@@ -444,30 +517,52 @@
 		"dungeons": [
 			{
 				"id": "unstablespire",
-				"name": "不稳定的尖塔",
-				"desc": "A large spire which rose from the ground. It looks like it might collapse any day now",
+				"name": "The unstable spire",
+				"flavor": "Some things are left to time.",
+				"desc": "A large spire which rose from the ground. It looks like it might collapse any day now.",
+				"biome": ["cave", "mountain"],
+				"difficulty": "💀💀💀",
+				"sortOrder": 49,
 				"require": "evt_hole",
-				"level": 15,
 				"dist": 50,
-				"run": {
-					"stamina": 2
-				},
-				"length": 10000,
+				"run": { "stamina": 2 },
 				"result": {
 					"fame": 1,
 					"gems": "10~20",
-					"gold": "100~200"
+					"gold": "100~200",
+					"basiliskhide": "10~20"
 				},
-				"biome": [
-					"cave",
-					"mountain"
-				],
+				"length": 400,
 				"spawns": {
-					"level": "4~15",
-					"range": 2
-				},
-				"flavor": "some things are left to time"
+					"level": "4~42",
+					"range": 3,
+					"quantity": "1~3",
+					"quantitypenalty": 0.16
+				}
 			}
-		]
+		],
+		"hall": {
+			"data": {
+				"upgrades": [
+					{
+						"id": "up_shian",
+						"name": "Treatise of Soul Arts",
+						"sym": "🏰",
+						"max": 1,
+						"desc": "A series of tomes obtained from atop the Unstable Spire, detailing methods of manipulating souls thought long lost to time.",
+						"tags": "spiritsource,hall",
+						"extdesc": "The 'Shian Anchorite' Tier 4 Class will no longer require defeating the Unstable Spire.",
+						"require": "g.evt_hole2>0",
+						"mod": {
+							"spiritlore.buy.arcana": "-100%",
+							"spiritlore.mod.spirit.rate": 0.01
+						},
+						"result": {
+							"fame": 5
+						}
+					}
+				]
+			}
+		}
 	}
 }

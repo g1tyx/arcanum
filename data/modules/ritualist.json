@@ -8,7 +8,7 @@
 			{
 				"id": "ritualism",
 				"name": "rituals",
-				"require": "g.runner.max>1&&g.ritualchamber>0",
+				"require": "g.runner.max>=2&&g.ritualchamber>0",
 				"desc": "Practice in the various magic rituals and their dangers",
 				"level": 25,
 				"buy": {
@@ -31,7 +31,7 @@
 		"tasks": [
 			{
 				"id": "ritual_arcane",
-				"name": "奥术仪式",
+				"name": "ritual of the arcane",
 				"tags": "t_ritual",
 				"desc": "A simple ritual, suitable for beginners.",
 				"perpetual": true,
@@ -52,12 +52,12 @@
 			},
 			{
 				"id": "ritual_lightbinding",
-				"name": "光结合仪式",
+				"name": "ritual of light binding",
 				"tags": "t_ritual",
 				"desc": "For those who have forsaken the light, the only option is force.",
 				"perpetual": true,
 				"verb": "lightbinding ritual",
-				"require": "g.evil>0&&g.ritualist>0",
+				"require": "g.evil3>0&&g.ritualist>0",
 				"buy": {
 					"ritualward": 3
 				},
@@ -74,12 +74,12 @@
 			},
 			{
 				"id": "ritual_curse",
-				"name": "诅咒仪式",
+				"name": "ritual of cursing",
 				"tags": "t_ritual",
 				"desc": "Empower souls with malice to shield you from harm.",
 				"perpetual": true,
 				"verb": "cursing ritual",
-				"require": "g.ritualism>3&&g.evil>0",
+				"require": "g.ritualism>=3&&g.evil1>0",
 				"buy": {
 					"ritualward": 1
 				},
@@ -98,12 +98,12 @@
 			},
 			{
 				"id": "ritual_cultivation",
-				"name": "栽培仪式",
+				"name": "ritual of cultivation",
 				"tags": "t_ritual",
 				"desc": "Command the plants to grow and blossom",
 				"perpetual": true,
 				"verb": "cultivation ritual",
-				"require": "g.ritualism>3&&(g.druid+g.fey+g.kell+g.highkell)>0",
+				"require": "g.ritualism>=3&&(g.druid+g.kell)>0",
 				"buy": {
 					"ritualward": 1
 				},
@@ -121,13 +121,13 @@
 			},
 			{
 				"id": "ritual_healing",
-				"name": "治愈仪式",
+				"name": "ritual of healing",
 				"tags": "t_ritual",
 				"desc": "Fortify your body with light",
 				"perpetual": true,
 				"verb": "healing ritual",
-				"need": "g.evil<1",
-				"require": "g.ritualism>3&&g.evil<1",
+				"need": "g.good2==1",
+				"require": "g.ritualism>=3&&g.good2==1",
 				"buy": {
 					"ritualward": 1
 				},
@@ -145,12 +145,12 @@
 			},
 			{
 				"id": "ritual_refresh",
-				"name": "复活仪式",
+				"name": "ritual of refreshment",
 				"tags": "t_ritual",
 				"desc": "Drain vitality from living tissues to replenish your stamina.",
 				"perpetual": true,
 				"verb": "energy ritual",
-				"require": "g.ritualism>5",
+				"require": "g.ritualism>=6",
 				"buy": {
 					"ritualward": 1
 				},
@@ -170,12 +170,12 @@
 			},
 			{
 				"id": "ritual_arcane_greater",
-				"name": "更大的奥术仪式",
+				"name": "greater ritual of the arcane",
 				"tags": "t_ritual",
 				"desc": "An advanced ritual for those adept in ritual magic",
 				"perpetual": true,
 				"verb": "greater arcane ritual",
-				"require": "g.ritualism>6",
+				"require": "g.ritualism>=7",
 				"buy": {
 					"ritualward": 4
 				},
@@ -192,12 +192,13 @@
 			},
 			{
 				"id": "ritual_curse_greater",
-				"name": "更大的诅咒仪式",
+				"name": "greater ritual of cursing",
 				"tags": "t_ritual",
 				"desc": "Empower legions of cursed souls to guard your mortal form",
 				"perpetual": true,
 				"verb": "greater cursing ritual",
-				"require": "g.ritualism>8&&g.evil>0",
+				"require": "g.ritualism>=9&&g.evil2>0",
+				"need": "g.evil2>0",
 				"buy": {
 					"ritualward": 4
 				},
@@ -217,12 +218,12 @@
 			},
 			{
 				"id": "ritual_cultivation_greater",
-				"name": "更大的栽培仪式",
+				"name": "greater ritual of cultivation",
 				"tags": "t_ritual",
 				"desc": "Use the lifeforce of multiple bodies to create a field of herbs in a blink of an eye",
 				"perpetual": true,
 				"verb": "greater cultivation ritual",
-				"require": "g.ritualism>8&&(g.druid+g.fey+g.kell+g.highkell)>0",
+				"require": "g.ritualism>=9&&(g.druid+g.kell)>0",
 				"buy": {
 					"ritualward": 4
 				},
@@ -241,13 +242,12 @@
 			},
 			{
 				"id": "ritual_healing_greater",
-				"name": "更大的治愈仪式",
+				"name": "greater ritual of healing",
 				"tags": "t_ritual",
 				"desc": "Infuse yourself with a healing radiance",
 				"perpetual": true,
 				"verb": "greater healing ritual",
-				"need": "g.evil<1",
-				"require": "g.ritualism>8&&g.evil<1",
+				"require": "g.ritualism>=9&&g.good3==1",
 				"buy": {
 					"ritualward": 4
 				},
@@ -266,12 +266,12 @@
 			},
 			{
 				"id": "ritual_refresh_greater",
-				"name": "更大的能量仪式",
+				"name": "greater ritual of energy",
 				"tags": "t_ritual",
 				"desc": "Pass on your exhaustion to others",
 				"perpetual": true,
 				"verb": "greater energy ritual",
-				"require": "g.ritualism>10",
+				"require": "g.ritualism>=10",
 				"buy": {
 					"ritualward": 4
 				},
@@ -292,12 +292,12 @@
 			},
 			{
 				"id": "ritual_time",
-				"name": "时间仪式",
+				"name": "ritual of time",
 				"tags": "t_ritual",
 				"desc": "Control the ebb and flow of time to your benefit",
 				"perpetual": true,
 				"verb": "time ritual",
-				"require": "g.ritualism>15&&g.masterritualist>0",
+				"require": "g.ritualism>=15&&g.masterritualist>0",
 				"buy": {
 					"ritualward": 10
 				},
@@ -315,12 +315,12 @@
 			},
 			{
 				"id": "ritual_void",
-				"name": "虚空仪式",
+				"name": "ritual of void",
 				"tags": "t_ritual",
 				"desc": "Null",
 				"perpetual": true,
 				"verb": "void ritual",
-				"require": "g.ritualism>15&&g.masterritualist>0",
+				"require": "g.ritualism>=15&&g.masterritualist>0",
 				"buy": {
 					"ritualward": 10
 				},
@@ -339,12 +339,12 @@
 			},
 			{
 				"id": "ritual_dreams",
-				"name": "梦想仪式",
+				"name": "ritual of dreams",
 				"tags": "t_ritual",
 				"desc": "Don't let your dreams be dreams",
 				"perpetual": true,
 				"verb": "dream ritual",
-				"require": "g.ritualism>15&&g.masterritualist>0",
+				"require": "g.ritualism>=15&&g.masterritualist>0",
 				"buy": {
 					"ritualward": 10
 				},
@@ -371,7 +371,7 @@
 			},
 			{
 				"id": "ritual_fire",
-				"name": "火之仪式",
+				"name": "ritual of fire",
 				"tags": "t_ritual",
 				"desc": "Blazing fire fills your soul",
 				"perpetual": true,
@@ -394,7 +394,7 @@
 			},
 			{
 				"id": "ritual_water",
-				"name": "水之仪式",
+				"name": "ritual of water",
 				"tags": "t_ritual",
 				"desc": "Flowing water fills your soul",
 				"perpetual": true,
@@ -417,7 +417,7 @@
 			},
 			{
 				"id": "ritual_air",
-				"name": "空气仪式",
+				"name": "ritual of air",
 				"tags": "t_ritual",
 				"desc": "Rushing wind fills your soul",
 				"perpetual": true,
@@ -440,7 +440,7 @@
 			},
 			{
 				"id": "ritual_earth",
-				"name": "土之仪式",
+				"name": "ritual of earth",
 				"tags": "t_ritual",
 				"desc": "Crushing earth fills your soul",
 				"perpetual": true,
@@ -463,7 +463,7 @@
 			},
 			{
 				"id": "ritual_mana",
-				"name": "法力仪式",
+				"name": "ritual of mana",
 				"tags": "t_ritual",
 				"desc": "Arcane power fills your soul",
 				"perpetual": true,
@@ -486,7 +486,7 @@
 			},
 			{
 				"id": "ritual_penance",
-				"name": "忏悔仪式",
+				"name": "ritual of penance",
 				"tags": "t_ritual",
 				"desc": "Rapturous guilt fills your soul",
 				"perpetual": true,
@@ -512,7 +512,7 @@
 			},
 			{
 				"id": "ritual_dawn",
-				"name": "黎明仪式",
+				"name": "ritual of dawn",
 				"tags": "t_ritual",
 				"desc": "A part of one whole, useless by itself, yet powerful nonetheless",
 				"perpetual": true,
@@ -537,7 +537,7 @@
 			},
 			{
 				"id": "ritual_dusk",
-				"name": "黄昏仪式",
+				"name": "ritual of dusk",
 				"tags": "t_ritual",
 				"desc": "A part of one whole, useless by itself, yet powerful nonetheless",
 				"perpetual": true,
@@ -560,7 +560,7 @@
 			},
 			{
 				"id": "ritual_mandala",
-				"name": "曼荼罗仪式",
+				"name": "ritual of mandalas",
 				"tags": "t_ritual",
 				"desc": "The ultimate creation of a master ritualist, maintaining this ritual allows the user to perform any number of rituals within.",
 				"perpetual": true,
@@ -583,14 +583,12 @@
 			},
 			{
 				"id": "ritualpaper_raw",
-				"name": "制作仪式纸",
+				"name": "create ritual paper",
 				"verb": "inscribing",
 				"require": "g.ritualism>=5",
 				"need": "workspace",
 				"desc": "To sustain advanced rituals, special papers inscribed with magical sigils needs to be prepared",
-				"fill": [
-					"ritualpaper"
-				],
+				"fill": ["ritualpaper"],
 				"length": 5,
 				"cost": {
 					"gold": 250,
@@ -607,14 +605,12 @@
 			},
 			{
 				"id": "ritualpaper_prepared",
-				"name": "铭刻仪式纸",
+				"name": "inscribe ritual paper",
 				"verb": "inscribing",
 				"require": "(g.ritualist+g.masterritualist)>0",
 				"need": "workspace",
 				"desc": "By using pre-infused paper, the creation of ritual paper can be vastly simplified",
-				"fill": [
-					"ritualpaper"
-				],
+				"fill": ["ritualpaper"],
 				"length": 2,
 				"cost": {
 					"rawritualpaper": 1,
@@ -769,7 +765,7 @@
 				"id": "ritual_notestorage",
 				"name": "an accurate magical index",
 				"desc": "Cataloguing your notes reduces clutter.",
-				"require": "g.ritualism>10",
+				"require": "g.ritualism>=10",
 				"max": 1,
 				"cost": {
 					"ritualward": 10,
@@ -785,7 +781,7 @@
 				"id": "ritual_paperfolders",
 				"name": "reinforced folders",
 				"desc": "Specialized folders for unstable materials",
-				"require": "g.ritualism>5",
+				"require": "g.ritualism>=6",
 				"max": 1,
 				"cost": {
 					"ritualward": 10,
@@ -801,7 +797,7 @@
 				"id": "ritual_furtherstudy",
 				"name": "study ritual notes",
 				"desc": "Acquire further understanding of ritualistic magic",
-				"require": "g.ritualism>5",
+				"require": "g.ritualism>=6",
 				"max": 500,
 				"cost": {
 					"ritualnotes": 3
@@ -1015,13 +1011,11 @@
 					"gold": 500
 				},
 				"mod": {
-					"tier2": true,
 					"ritualism.max": 2,
 					"ritualward.rate": 0.0002,
 					"rawritualpaper.rate": 0.001
 				},
-				"flavor": "The first rule of ritual magic is thus: 'Make sure you are prepared to contain the explosions.'",
-				"name": "ritualist"
+				"flavor": "The first rule of ritual magic is thus: 'Make sure you are prepared to contain the explosions.'"
 			},
 			{
 				"id": "masterritualist",
@@ -1037,13 +1031,35 @@
 					"ritualnotes": 15
 				},
 				"mod": {
-					"tier5": true,
 					"ritualism.max": 2,
 					"ritualward.rate": 0.0003,
 					"rawritualpaper.rate": 0.002
 				},
 				"flavor": "The last rule of ritual magic is thus: 'No cost is too great if it guarantees success.'"
 			}
-		]
+		],
+		"hall": {
+			"data": {
+				"upgrades": [
+					{
+						"id": "ritualchamber",
+						"name": "ritual chamber",
+						"tags": "hall",
+						"sym": "🏰",
+						"require": "g.ritualist>0&&g.tier6>0",
+						"desc": "A warded room deep within the hall, dedicated to carrying out rituals in safety.",
+						"max": 1,
+						"cost": {
+							"prestige": 30
+						},
+						"mod": {
+							"ritualism.max": 2,
+							"ritualnotes.max": 12,
+							"ritualward.max": 7
+						}
+					}
+				]
+			}
+		}
 	}
 }

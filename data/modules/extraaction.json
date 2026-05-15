@@ -6,40 +6,45 @@
 				"id": "timespiral",
 				"name": "time spiral",
 				"desc": "Take a step back and do it again.",
-				"require": "g.tier5>0&&g.timewell>0&&g.dreamchamber>0",
-				"lock": "autoagents",
+				"require": "g.tier5>0&&g.runner.max>=3&&g.evt_timerip>0",
+				"lock": "t_actionexpansion",
+				"tags": "t_actionexpansion",
 				"cost": {
 					"stillroom": 1,
 					"chargedtimepiece": 6
 				},
 				"mod": {
 					"runner.max": 1
-				}
+				},
+				"group": "actions"
 			}
 		],
 		"resources": [
 			{
 				"id": "stillroom",
 				"name": "still room",
-				"group": "spacetime",
+				"group": "materials",
 				"desc": "Nothing occurs within this room.",
 				"max": 1,
+				"sortOrder": 542,
 				"flavor": "Perfect for extremely specialized experiments."
 			},
 			{
 				"id": "chargedtimepiece",
 				"name": "charged timepiece",
-				"group": "spacetime",
+				"group": "materials",
 				"desc": "Imbued with time energies, this timepiece shows the current time no matter when you are.",
 				"max": 6,
+				"sortOrder": 541,
 				"flavor": "How many of you have one?"
 			},
 			{
 				"id": "emptytimepiece",
-				"name": "empty timepiece",
-				"group": "spacetime",
+				"name": "intricate timepiece",
+				"group": "materials",
 				"desc": "An ordinary timepiece, crafted with remarkable materials.",
 				"max": 6,
+				"sortOrder": 540,
 				"flavor": "The time is L1:69."
 			}
 		],
@@ -48,25 +53,19 @@
 				"id": "crafttimepiece",
 				"name": "craft timepiece",
 				"verb": "clockmaking",
-				"require": "g.tier5>0&&g.timewell>0&&g.dreamchamber>0",
-				"need": [
-					"workspace",
-					"timesource"
-				],
+				"require": "g.tier5>0&&g.runner.max>=3&&g.evt_timerip>0",
+				"need": ["workspace", "timesource"],
 				"desc": "Create an intricate timepiece.",
-				"length": 600,
-				"fill": [
-					"emptytimepiece"
-				],
+				"length": 120,
+				"fill": ["emptytimepiece"],
 				"cost": {
-					"gold": 10000,
-					"research": 15000,
-					"runestones": 50,
-					"firerune": 15,
-					"airrune": 15,
-					"earthrune": 15,
-					"waterrune": 15,
-					"timerune": 1
+					"gold": 1000,
+					"research": 750,
+					"runestones": 1,
+					"firerune": 1,
+					"airrune": 1,
+					"earthrune": 1,
+					"waterrune": 1
 				},
 				"run": {
 					"stamina": 2,
@@ -74,68 +73,61 @@
 				},
 				"result": {
 					"emptytimepiece": 1
-				}
+				},
+				"group": "crafting"
 			},
 			{
 				"id": "imbuetimepiece",
 				"name": "imbue timepiece",
 				"verb": "weaving time",
 				"require": "g.emptytimepiece>0",
-				"need": [
-					"workspace",
-					"timesource"
-				],
+				"need": ["workspace", "timesource"],
 				"desc": "Weave time energies into the empty timepiece.",
-				"length": 600,
-				"fill": [
-					"chargedtimepiece"
-				],
+				"length": 60,
+				"fill": ["chargedtimepiece"],
 				"cost": {
-					"sindel": 2,
-					"gold": 15000,
-					"research": 10000,
-					"timerune": 2,
-					"tomes": 200,
-					"runestones": 40,
-					"codices": 500,
+					"gold": 1500,
+					"research": 100,
+					"timerune": 3,
+					"tomes": 2,
+					"timegem": 10,
+					"runestones": 1,
+					"codices": 25,
 					"emptytimepiece": 1
 				},
 				"run": {
 					"stamina": 3,
 					"tempus": 3,
 					"gold": 25,
-					"research": 35,
+					"research": 7,
+					"timegem": 0.5,
 					"bloodgem": 0.25,
 					"managem": 0.25,
-					"runestones": 0.15,
-					"timegem": 0.07
+					"sindel": 0.0025
 				},
 				"result": {
 					"chargedtimepiece": 1
-				}
+				},
+				"group": "crafting"
 			},
 			{
 				"id": "createstillroom",
 				"name": "create still room",
 				"verb": "stilling",
-				"require": "g.tier5>0&&g.timewell>0&&g.dreamchamber>0",
-				"need": [
-					"workspace",
-					"timesource"
-				],
+				"require": "g.tier5>0&&g.runner.max>=3&&g.evt_timerip>0",
+				"need": ["workspace", "timesource"],
 				"desc": "Stop.",
-				"length": 3600,
-				"fill": [
-					"stillroom"
-				],
+				"length": 720,
+				"fill": ["stillroom"],
 				"cost": {
 					"timegem": 100,
 					"timerune": 3,
-					"clepsydra": 200
+					"clepsydra100": 2
 				},
 				"result": {
 					"stillroom": 1
-				}
+				},
+				"group": "crafting"
 			}
 		]
 	}
