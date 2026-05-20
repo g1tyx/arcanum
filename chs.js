@@ -1,7 +1,7 @@
 /*
 
  @name    : 锅巴汉化 - Web汉化插件
- @author  : 麦子、JAR、小蓝、好阳光的小锅巴
+ @author  : 麦子、JAR、小蓝、好阳光的小锅巴、人民當家做主
  @version : V0.6.1 - 2019-07-09
  @website : http://www.g8hh.com
  @idle games : http://www.gityx.com
