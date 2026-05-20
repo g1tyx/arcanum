@@ -1,5 +1,44 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/login.bundle.js","assets/login.css","js/activities.bundle.js","assets/activities.css","arcanum/js/choice.bundle.js","assets/choice.css","js/skills.bundle.js","js/filterbox.bundle.js","assets/filterbox.css","assets/skills.css","js/equipment.bundle.js","assets/equipment.css","js/inventory.bundle.js","assets/inventory.css","js/potions.bundle.js","assets/potions.css","js/home.bundle.js","js/slotpick.bundle.js","assets/home.css","js/player.bundle.js","assets/player.css","js/bestiary.bundle.js","assets/bestiary.css","js/travelogue.bundle.js","assets/travelogue.css","js/spells.bundle.js","js/spellschool.bundle.js","assets/spellschool.css","assets/spells.css","js/adventure.bundle.js","assets/adventure.css","js/minions.bundle.js","assets/minions.css","js/scraft.bundle.js","assets/scraft.css","js/glossary.bundle.js","assets/glossary.css","js/confirm.bundle.js","assets/confirm.css"])))=>i.map(i=>d[i]);
-__vite__mapDeps = __vite__mapDeps.map(p => 'arcanum/' + p);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=[
+    "arcanum/js/login.bundle.js",
+    "arcanum/assets/login.css",
+    "arcanum/js/activities.bundle.js",
+    "arcanum/assets/activities.css",
+    "arcanum/js/choice.bundle.js",
+    "arcanum/assets/choice.css",
+    "arcanum/js/skills.bundle.js",
+    "arcanum/js/filterbox.bundle.js",
+    "arcanum/assets/filterbox.css",
+    "arcanum/assets/skills.css",
+    "arcanum/js/equipment.bundle.js",
+    "arcanum/assets/equipment.css",
+    "arcanum/js/inventory.bundle.js",
+    "arcanum/assets/inventory.css",
+    "arcanum/js/potions.bundle.js",
+    "arcanum/assets/potions.css",
+    "arcanum/js/home.bundle.js",
+    "arcanum/js/slotpick.bundle.js",
+    "arcanum/assets/home.css",
+    "arcanum/js/player.bundle.js",
+    "arcanum/assets/player.css",
+    "arcanum/js/bestiary.bundle.js",
+    "arcanum/assets/bestiary.css",
+    "arcanum/js/travelogue.bundle.js",
+    "arcanum/assets/travelogue.css",
+    "arcanum/js/spells.bundle.js",
+    "arcanum/js/spellschool.bundle.js",
+    "arcanum/assets/spellschool.css",
+    "arcanum/assets/spells.css",
+    "arcanum/js/adventure.bundle.js",
+    "arcanum/assets/adventure.css",
+    "arcanum/js/minions.bundle.js",
+    "arcanum/assets/minions.css",
+    "arcanum/js/scraft.bundle.js",
+    "arcanum/assets/scraft.css",
+    "arcanum/js/glossary.bundle.js",
+    "arcanum/assets/glossary.css",
+    "arcanum/js/confirm.bundle.js",
+    "arcanum/assets/confirm.css"
+  ])))=>i.map(i=>d[i]);
 var rc=Object.defineProperty;var lc=(t,e,s)=>e in t?rc(t,e,{enumerable:!0,configurable:!0,writable:!0,value:s}):t[e]=s;var gs=(t,e,s)=>lc(t,typeof e!="symbol"?e+"":e,s);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const r of n)if(r.type==="childList")for(const l of r.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function s(n){const r={};return n.integrity&&(r.integrity=n.integrity),n.referrerPolicy&&(r.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?r.credentials="include":n.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(n){if(n.ep)return;n.ep=!0;const r=s(n);fetch(n.href,r)}})();/**
 * @vue/shared v3.4.30
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
