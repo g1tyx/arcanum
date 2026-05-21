@@ -1,7 +1,7 @@
 /*
 
  @name    : 锅巴汉化 - Web汉化插件
- @author  : 麦子、JAR、小蓝、好阳光的小锅巴
+ @author  : 麦子、JAR、小蓝、好阳光的小锅巴、人民當家做主
  @version : V0.6.1 - 2019-07-09
  @website : http://www.g8hh.com
  @idle games : http://www.gityx.com
@@ -104,7 +104,17 @@ var cnItem = function (text, node) {
     //尝试正则替换
     for (let [key, value] of cnRegReplace.entries()) {
         if (key.test(text)) {
-            return text_prefix + text.replace(key, value) + text_reg_exclude_postfix + text_postfix;
+            let replaced;
+            if (typeof value === 'function') {
+                let match = text.match(key);
+                // 传入 match 和 node
+                replaced = value(match, text, node);
+            } else {
+                replaced = text.replace(key, value);
+                // 对普通字符串替换结果递归处理（可选）
+                replaced = cnItem(replaced, node);
+            }
+            return text_prefix + replaced + text_reg_exclude_postfix + text_postfix;
         }
     }
 
