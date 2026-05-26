@@ -9,6 +9,10 @@
 
  
 */
+var cnConfig = {
+    ignoreCase: true,
+    trimSpaces: true,
+};
 var cnResourceNames = {
  // Theory of Magic - 魔法理论 完整汉化翻译
 // 包含所有名词名称描述文本等静态文本
@@ -293,6 +297,42 @@ var cnResourceNames = {
 "training spars": "训练对打",
 "true benevolence": "真仁慈",
 "urn": "骨灰瓮",
+
+"Consumed Shade": "被吞噬之影",
+"Consumed Shade Encountered": "遭遇被吞噬之影",
+"Consumed": "被吞噬",
+"Consuming Flame": "吞噬之焰",
+"What must have once been a man, it has been consumed by flames from inside out": "曾经是人的形体，已被火焰从内到外彻底吞噬",
+"Magic Blade": "魔法之刃",
+"Magic Sword": "魔法剑",
+"Fists": "拳击",
+"Wizrobe": "巫师",
+"The Locale": "所在地",
+"Searing Bolt": "灼热弹",
+"searingbolt": "灼热弹",
+"Fire Dart": "火焰箭",
+"firedart": "火焰箭",
+"Magma Bolt": "岩浆弹",
+"magmabolt": "岩浆弹",
+"Lost Sword Art: Giant Slayer": "失传剑术·巨人杀手",
+"Lost Sword Art: Flying Swords": "失传剑术·飞剑",
+"Spirit Art: Soulstrike": "灵术·灵魂冲击",
+
+"Arag Wastes": "阿拉格荒原",
+"⚔Arag Wastes": "⚔阿拉格荒原",
+"⚔Seredite Temple": "⚔塞雷迪特神庙",
+"Seredite Temple": "塞雷迪特神庙",
+"Sand Mite": "沙螨",
+"Sand Mite Encountered": "遭遇沙螨",
+"Vulture": "秃鹫",
+"Vulture Encountered": "遭遇秃鹫",
+"Bugbear": "熊地精",
+"Bugbear Encountered": "遭遇熊地精",
+"Scuttling Crab": "迅捷蟹",
+"Scuttling Crab Encountered": "遭遇迅捷蟹",
+"clockmaking": "制表术",
+
+
 "weapon Servicing": "武器保养",
 "🌳eryl eyot": "🌳艾瑞尔岛",
 "🔥beltane arrives": "🔥贝尔坦节到来",
@@ -4025,6 +4065,20 @@ var cnResourceNames = {
 "Rumour has it, such ancient runestones still lay hidden on Eryl Eyot.": "传说这样的古代符文石仍藏在艾瑞尔岛上。",
 "Scribe a copy of the seminal text in practical alchemy.": "抄写实用炼金术的开创性文本。",
 "Study ancient Dhrunic runes.": "研究古代德鲁尼符文。",
+"Animated": "活化",
+"Scrapling": "废料怪",
+"Scrapling Encountered": "遭遇废料怪",
+"Bandit": "强盗",
+"Bandit Encountered": "遭遇强盗",
+"Hawk": "鹰",
+"Hawk Encountered": "遭遇鹰",
+"Coyote": "郊狼",
+"Coyote Encountered": "遭遇郊狼",
+
+// --- 攻击/描述 ---
+"Scratch": "抓挠",
+"Surprisingly swift, but fragile": "出奇地迅捷，但很脆弱",
+"Tiny creature made from random pieces of scrap metal, animated by residual magical energy": "由零碎废金属拼凑而成的小型生物，被残余的魔法能量活化",
 
 
 "A spiral of致命icicles.": "一道致命的冰锥螺旋。",
@@ -4456,6 +4510,12 @@ var cnResourceNames = {
 'arcane': '奥术',
 'physical': '物理',
 'natural': '自然',
+// --- 掉落物 ---
+"Cotton, Gold": "棉花、金币",
+
+// --- 地点 ---
+"⚔Arag Heights": "⚔阿拉格高地",
+"Arag Heights": "阿拉格高地",
 'poison': '毒素',
 'disease': '疾病',
 'Stop All': '全部停止',
@@ -4644,6 +4704,7 @@ var cnResourceNames = {
 "Training Grounds": "训练场",
 "Treffil Woods Edges": "特雷菲尔林地边缘",
 "Veldran's Storehouse": "威尔德伦仓库",
+"⚔Veldran's Storehouse": "威尔德伦仓库",
 "Veldran's Wreck": "威尔德伦残骸",
 "Village Fields": "村庄田野",
 "Arcana": "奥术秘能",
@@ -6027,6 +6088,20 @@ var cnResourceNames = {
 "Carve the runes of strength and protection into your puppets": "将力量与保护的符文雕刻到你的傀儡上。",
 "The faint glow of the runes looks quite striking": "符文的微弱光芒相当引人注目。",
 "A layer of polish": "一层抛光。",
+"Angry Bird": "愤怒之鸟",
+"Kobold": "狗头人",
+"Warg": "座狼",
+"Quasit": "夸塞魔",
+"Skeleton": "骷髅",
+"Troll": "巨魔",
+"Wight": "尸妖",
+
+// --- 地点 ---
+"⚔Desilla's Grotto": "⚔德西拉洞穴",
+"Desilla's Grotto": "德西拉洞穴",
+"⚔Mount Gorborung": "⚔戈博朗山",
+"Mount Gorborung": "戈博朗山",
+
 "Precision to the millimeter.": "精确到毫米。",
 "Adapt a common magical item as a lubricant for your machinae.": "将一种常见的魔法物品改造为你的机械体润滑剂。",
 "Comes in handy in multiple situations": "在多种情况下都能派上用场。",
@@ -6162,6 +6237,7 @@ var cnResourceNames = {
 "⚔Seredite Temple ": "⚔塞雷迪特神庙 ",
 "It is a rare opportunity to be able to fight one of the infamous Archlocks. Slay the greatest butcher of men in history who still stalks these lands.": "能够与臭名昭著的远古锁之一战斗是一个难得的机会。击杀这个仍在世间徘徊的历史上最伟大的屠夫。",
 "⚔Charred Keep ": "⚔烧焦堡垒 ",
+"⚔Charred Keep": "⚔烧焦堡垒 ",
 "A wizard's hall is where the mightiest mages gather, exchanging the most closely guarded of secrets amongst each other. Truly unstoppable as a combined force.": "巫师大厅是最强大的法师聚集之地，彼此交换最严密守护的秘密。作为一股联合力量，真正不可阻挡。",
 "Where Desilla's harem still lays together in happy union. Bring about an end to their insidious playtime.": "德西拉的后宫仍快乐地团结在一起。终结他们阴险的玩乐时光。",
 "⚔Desilla's Grotto ": "⚔德西拉洞穴 ",
@@ -13502,7 +13578,15 @@ var cnItems = {
 "Unlocks the Magic Blade entry in your bestiary after first cast. ": "首次施放后解锁怪物图鉴中的「魔法剑刃」条目。",
 "Unlocks the Wisp entry in your bestiary after first cast. ": "首次施放后解锁怪物图鉴中的「幽魂」条目。",
 // ===== cnItems =====
-
+"Dodges {{0}}": "闪避了{{0}}",
+" By {{0}}": " 通过{{0}}",
+"{{0}} hits {{1}} for {{2}} damage": "{{0}}对{{1}}造成{{2}}点伤害",
+"{{0}} Casts {{1}}": "{{0}}施放了{{1}}",
+"{{0}} Slain": "{{0}}已被击杀",
+"{{*}} {{d}}%":"{{*}} {{d}}%",
+// --- 进度模板 ---
+"clockmaking {{0}}": "制表术 {{0}}",
+"⚔Arag Wastes {{0}}%": "⚔阿拉格荒原 {{0}}%",
 "Enemies Speed: {{0}} ": "敌人速度：{{0}} ",
 "Enemy Tohit: {{0}} ": "敌人命中：{{0}} ",
 "Minions Defense: {{0}} ": "仆从防御：{{0}} ",
@@ -14243,12 +14327,14 @@ var cnItems = {
 
 "🏰Hallsize: {{0}} ":"🏰大厅规模：{{0}} ",
 "{{0}} 🏰Dimensions Probed":"{{0}} 🏰已探测维度",
-
+"⚔Arag Heights {{0}}%": "⚔阿拉格高地 {{0}}%",
 "Veldran's Earring: {{0}}% ": "威尔德伦耳环：{{0}}% ",
 "Tenwick's Walking Stick: {{0}} ": "坦威克手杖：{{0}} ",
 "Jazid's Compass: {{0}}% ": "贾兹德指南针：{{0}}% ",
 "Minions Regen: {{0}} ": "仆从生命恢复：{{0}} ",
-
+"{{0}} Encountered": "遭遇{{0}}",
+"{{0}} Dodges {{1}}": "{{0}}闪避了{{1}}",
+"⚔Mount Gorborung {{0}}%": "⚔戈博朗山 {{0}}%",
 "Automated Miner ({{0}})": "自动采矿机 ({{0}})",
 "Breakthrough ({{0}})": "突破 ({{0}})",
 "Ghost Chains ({{0}})": "幽灵锁链 ({{0}})",
@@ -14708,7 +14794,6 @@ var cnItems = {
     "had a close call.": "险些出事。",
     "Historian": "历史学家",
     "Leaving ⚔💀Fire-cursed Shack": "离开⚔💀烈焰诅咒囚屋",
-    "⚔💀Fire-cursed Shack 0%": "⚔💀烈焰诅咒囚屋{{0}}%",
     "Leaving ⚔Goblin Camp": "离开⚔哥布林营地",
     "⚔Goblin Camp 0%": "⚔哥布林营地{{0}}%",
     "Leaving ⚔Orc Camp": "离开⚔兽人营地",
