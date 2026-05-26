@@ -1,9 +1,9 @@
 /*
  @name    : 锅巴汉化 - Web汉化插件 (高性能稳定版)
- @version : V0.8.1 - 2026-05-22
+ @version : V0.8.1 - 2026-05-26
  @features: 静态词条索引 O(1) | 资源名索引 O(1) | 无缓存 | 支持 {{*}} | 忽略首字母大小写
 */
-
+// ==/UserScript==
 var CNITEM_DEBUG = 0;
 
 // ============================================================
@@ -147,6 +147,13 @@ function translateNoun(text) {
     if (!window.cnResourceNames) return null;
     let trimmed = text.trim();
     if (trimmed === "") return null;
+    // 精确原文匹配：先试原文（含尾部空格），再试trimmed
+    if (window.cnResourceNames.hasOwnProperty(text)) {
+        return window.cnResourceNames[text];
+    }
+    if (window.cnResourceNames.hasOwnProperty(trimmed)) {
+        return window.cnResourceNames[trimmed];
+    }
     let normKey = normalizeForMatching(trimmed);
     if (_resourceNameIndex.hasOwnProperty(normKey)) {
         return _resourceNameIndex[normKey];
