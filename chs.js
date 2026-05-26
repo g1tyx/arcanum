@@ -172,7 +172,7 @@ var cnResourceNames = {
 "As you currently own the Wizard hall": "由于你当前拥有巫师大厅",
 "Complete to discover": "完成后发现",
 "Sell Scrolls Length": "出售卷轴长度",
-"quicksteel": "速干修补膏",
+"quicksteel": "迅钢",
 "leather": "皮革",
 "adversities": "磨难",
 "debt": "债务",
@@ -3333,6 +3333,164 @@ var cnResourceNames = {
 "adamantine warhammer": "合金战锤",
 "adamantine wings": "合金翼甲",
 
+// ======== 装备制作 - 材料 ========
+"Runecloth": "符文布",
+"Runestitch": "符缝",
+"Spellweave": "法织",
+"Manabound": "魔缚",
+"Carmine": "胭红",
+"Crystalline": "水晶",
+"Golden": "金色",
+"Wood": "木质",
+"Ruby": "红宝石",
+"Diamond": "钻石",
+
+// ======== 装备制作 - 头盔 ========
+"Helmet": "头盔",
+"Bascinet": "尖顶盔",
+"Great Helm": "巨盔",
+"Hood": "兜帽",
+"Gambler Hat": "赌徒帽",
+"Tricorne": "三角帽",
+"Cap": "软帽",
+"Turban": "缠头巾",
+"Pointed Hat": "尖顶帽",
+
+// ======== 装备制作 - 胸甲 ========
+"Chain Mail": "锁甲",
+"Lamellar": "鳞甲",
+"Plate Mail": "板甲",
+"Tunic": "束腰上衣",
+"Jerkin": "皮质短衣",
+"Doublet": "紧身衣",
+"Shirt": "衬衫",
+"Vestment": "法衣",
+"Robe": "长袍",
+
+// ======== 装备制作 - 手部 ========
+"Bracers": "臂铠",
+"Vambraces": "前臂甲",
+"Gauntlets": "铁手套",
+"Grips": "握柄",
+"Wrist Cuffs": "腕甲",
+"Gloves": "手套",
+"Wraps": "裹手",
+"Mitts": "连指套",
+"Sleeves": "护袖",
+
+// ======== 装备制作 - 腿部 ========
+"Shin Guards": "护胫",
+"Greaves": "胫甲",
+"Legplates": "腿甲",
+"Leggings": "护腿",
+"Trousers": "长裤",
+"Chausses": "护腿铠甲",
+"Legwraps": "裹腿",
+"Pantalons": "马裤",
+"Breeches": "马裤",
+
+// ======== 装备制作 - 脚部 ========
+"Boots": "靴子",
+"Treads": "战靴",
+"Sabatons": "铁靴",
+"Moccasins": "软皮鞋",
+"Shoes": "鞋子",
+"Slippers": "拖鞋",
+"Striders": "漫步靴",
+"Walkers": "行者靴",
+"Sandals": "凉鞋",
+
+// ======== 装备制作 - 披风 ========
+"Aegis Mantle": "神盾披风",
+"Artifact cape": "神器披风",
+"Ethereal Shroud": "以太裹尸布",
+"Phantom Veil": "幻影面纱",
+
+// ======== 装备制作 - 腰带 ========
+"Belt": "腰带",
+"Cincture": "束腰",
+"Sash": "饰带",
+
+// ======== 装备制作 - 项链 ========
+"Pendant": "吊坠",
+"Lariat": "拉里亚特项链",
+
+// ======== 装备制作 - 戒指 ========
+"Loop": "指环",
+"Ring": "戒指",
+"Signet": "印章戒指",
+
+// ======== 装备制作 - 主手武器 ========
+"Training sword": "训练剑",
+"Training knife": "训练匕首",
+"Training hammer": "训练锤",
+"Shortsword": "短剑",
+"Longsword": "长剑",
+"Greatsword": "巨剑",
+"Hatchet": "手斧",
+"Battleaxe": "战斧",
+"Halberd": "长戟",
+"Epee": "重剑",
+"Rapier": "细剑",
+"Estoc": "刺剑",
+"Dagger": "匕首",
+"Spear": "长矛",
+"Lance": "长枪",
+"Mace": "狼牙棒",
+"Maul": "大锤",
+"Warhammer": "战锤",
+"Caestus": "拳套",
+"Flail": "链枷",
+"Quarterstaff": "长棍",
+"Focus": "魔印",
+"Mirror": "魔镜",
+"Twin Staves": "双杖",
+"Wand": "魔杖",
+"Sceptre": "权杖",
+"Greatstaff": "巨杖",
+"Orb": "宝珠",
+"Caduceus": "双蛇杖",
+"Effigy": "肖像",
+"Elemental Bonk": "元素敲击",
+
+// ======== 装备制作 - 其他标签 ========
+"Martial": "物理",
+"Training": "训练",
+"Knife": "匕首",
+"Weapon": "武器",
+"Spell": "法术",
+"Pure": "纯净",
+"Material": "材料",
+
+// ======== 装备制作 - 描述 ========
+"A plain wooden sword": "一把普通木剑",
+"A plain wooden knife": "一把普通木刀",
+"A plain wooden hammer": "一把普通木锤",
+"Creates a taunting summon which inflicts undefendable mana type damage to you on its death equal to its max Life (1000).": "创造一个嘲讽召唤物，其死亡时对你造成等同于其最大生命值(1000)的无法防御的魔力伤害。",
+"conjure beartrap": "召唤捕熊夹",
+
+// ======== 装备制作 - 其他 ========
+"Enemy, prioritizing those affected by engagement": "敌人，优先攻击受交战影响的目标",
+
+"x1": "×1",
+
+// ======== 装备制作 - 补充部位名 ========
+"Helm": "头盔",
+"Chestplate": "胸甲",
+"Accessory": "饰品",
+"Necklace": "项链",
+
+// ======== 装备制作 - 标签词 ========
+"Physical": "物理",
+"Slashing": "挥砍",
+"Sword": "剑",
+"Bludgeoning": "钝击",
+"Runic": "符文",
+"Hammer": "锤",
+"Slashing, Physical": "挥砍，物理",
+
+// ======== 装备制作 - 描述 ========
+"Perfect for extremely specialized experiments.": "非常适合极度专业的实验。",
 
 //怪物名（准备中）
 
@@ -7463,7 +7621,7 @@ var cnItems = {
     "beholding {{0}}%": "洞察中{{0}}%",
     "unspinning": "逆转纺纱",
     "unspinning {{0}}%": "逆转纺纱{{0}}%",
-
+    "Primary Potencies: {{0}}": "主要威力：{{0}}",
     // ======== 任务名称补充翻译 (from tasks.json) ========
     "book of exeter": "埃克塞特之书",
     "win riddle competition": "赢得谜语比赛",
@@ -7473,6 +7631,77 @@ var cnItems = {
     // ======== 带Emoji的任务 + 进度百分比 ========
     "🔥Gather Hawthorn Blossoms {{0}}%": "🔥采摘山楂花{{0}}%",
 
+    // ======== 季节任务 ========
+    "❄️Nixifer's Study 0%": "❄️尼西弗研究{{0}}%",
+    "❄️Nixifer's Study {{0}}%": "❄️尼西弗研究{{0}}%",
+    "🎃Reveler's Rite 0%": "🎃狂欢者仪式{{0}}%",
+    "🎃Reveler's Rite {{0}}%": "🎃狂欢者仪式{{0}}%",
+
+    // ======== 装备制作 - 分类标题 ========
+    " Crafting: {{0}}": " 制作：{{0}}",
+
+    // ======== 装备制作 - 出售价格 ========
+    "Sell {{0}}: {{1}} ": "出售{{0}}：{{1}} ",
+
+    // ======== 装备制作 - 属性模板 ========
+    "Min Damage: {{0}}% ": "最小伤害：{{0}}% ",
+    "➢ Spell Potency: {{0}} ": "➢法术强度：{{0}} ",
+    "➢ Wizrobe Dodge: {{0}} ": "➢闪避：{{0}} ",
+    "➢ Wizrobe Negate Silence: {{0}} ": "➢沉默免疫：{{0}} ",
+    "➢ Wizrobe Extra Spell Casts: {{0}} ": "➢额外施法次数：{{0}} ",
+    "➢ Wizrobe Speed: {{0}} ": "➢速度：{{0}} ",
+    "➢ Wizrobe Tohit: {{0}} ": "➢命中：{{0}} ",
+    "➢ Max Barrier: {{0}} ": "➢最大屏障：{{0}} ",
+    "➢ Wizrobe Resist Mana: {{0}} ": "➢魔力抗性：{{0}} ",
+
+    // ======== 装备制作 - 类型标签（模板） ========
+    "Martial, {{*}}": "物理，{{*}}",
+
+    // ======== 装备制作 - 护盾 ========
+    "Shield: {{0}}": "护盾：{{0}}",
+    "Shield: {{0}} ": "护盾：{{0}} ",
+
+    // ======== 装备制作 - 更多属性模板 ========
+    "➢ Max Life: {{0}} ": "➢最大生命：{{0}} ",
+    "➢ Max Mana: {{0}} ": "➢最大法力：{{0}} ",
+    "➢ Wizrobe Defense: {{0}} ": "➢防御：{{0}} ",
+    "➢ Wizrobe Resist Blunt: {{0}} ": "➢钝击抗性：{{0}} ",
+    "➢ Wizrobe Resist Pierce: {{0}} ": "➢穿刺抗性：{{0}} ",
+    "➢ Wizrobe Resist Slash: {{0}} ": "➢挥砍抗性：{{0}} ",
+    "➢ Wizrobe Negate Paralysis: {{0}} ": "➢麻痹免疫：{{0}} ",
+    "➢ Wizrobe Resist Fire: {{0}} ": "➢火焰抗性：{{0}} ",
+
+    // ======== 装备制作 - 部位标签（后缀 Armor） ========
+    "{{*}}, Armor": "{{*}}，护甲",
+
+    // ======== 装备制作 - 类型标签（前缀 Physical） ========
+    "Physical, {{*}}": "物理，{{*}}",
+
+    // ======== 装备制作 - 法术学派标签 ========
+    "Spell, Mana, Water, Air, Fire, Earth": "法术，魔力，水，风，火，地",
+
+    "Amber Root {{0}}":"琥珀根{{0}}",
+    "Artifact cape {{0}}":"神器披风{{0}}",
+    "Basilisk Hide {{0}}":"蛇怪皮{{0}}",
+    "Carmine {{0}}":"胭脂红{{0}}",
+    "Crystalline {{0}}":"水晶{{0}}",
+    "Diamond {{0}}":"钻石{{0}}",
+    "Dragon Scales {{0}}":"龙鳞{{0}}",
+    "Fish {{0}}":"鱼{{0}}",
+    "Gold {{0}}":"金币{{0}}",
+    "Golden {{0}}":"金色{{0}}",
+    "Iron {{0}}":"铁{{0}}",
+    "Leather {{0}}":"皮革{{0}}",
+    "Manabound {{0}}":"魔力束缚{{0}}",
+    "Quicksteel {{0}}":"迅钢{{0}}",
+    "Ruby {{0}}":"红宝石{{0}}",
+    "Runecloth {{0}}":"符文布{{0}}",
+    "Runestitch {{0}}":"符文缝合{{0}}",
+    "Serpent Skin {{0}}":"蛇皮{{0}}",
+    "Spellweave {{0}}":"法术编织{{0}}",
+    "Spider Silk {{0}}":"蛛丝{{0}}",
+    "Wood {{0}}":"木材{{0}}",
+    "Adamant {{0}}":"精金{{0}}",
 };
 
 // ==========================================
