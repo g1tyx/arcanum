@@ -1,11 +1,10 @@
 /**
  * chs_search.js — 搜索框直接中文搜索 v4
- * 原理：修改游戏实体的 name getter，让 name 返回 "英文 中文" 双语格式。
- * 这样游戏原有的搜索函数（检查 e.name）无论输入中文还是英文都能匹配到。
- * 大部分视图使用 sname 显示（不受影响），少部分使用 name 的地方会显示双语。
+ * 原理：修改游戏实体的 name getter，让 name 返回中文。
+ * 游戏原有的搜索函数（检查 e.name）输入中文时能匹配到。
  */
 
-(function() {
+(function () {
     'use strict';
 
     let patched = false;
@@ -64,24 +63,37 @@
             const origSet = desc.set;
 
             Object.defineProperty(target, 'name', {
-                get: function() {
+                get: function () {
                     const en = origGet.call(this);
                     if (!en || typeof en !== 'string') return en;
-                    if (/[\u4e00-\u9fff]/.test(en)) return en;
+                    // 已完全翻译为中文
+                    if (/^[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]+$/.test(en)) return en;
+                    // 中英文混合（如 "精金Shell"），翻译其中的英文部分
+                    if (/[\u4e00-\u9fff]/.test(en) && /[a-zA-Z]/.test(en)) {
+                        const mixed = en;
+                        // 查找所有连续的英文字段并翻译
+                        const translated = mixed.replace(/[a-zA-Z]+/g, function (match) {
+                            const c = toCn(match);
+                            return c || match;
+                        });
+                        if (translated !== mixed) return translated;
+                    }
+                    // 纯英文，整体翻译
                     const cn = toCn(en);
                     if (cn) return cn;
                     return en;
                 },
-                set: function(v) {
+                set: function (v) {
                     if (origSet) origSet.call(this, v);
                     else if (this._name !== undefined) this._name = v;
                 },
                 configurable: true, enumerable: true
             });
 
+            // cnItem 修补不再需要，name getter 只返回中文
             patched = true;
             console.log('[CN Search] 中文搜索已启用！直接在搜索框输入中文即可查找');
-        } catch(e) {
+        } catch (e) {
             console.warn('[CN] 补丁失败:', e.message);
         }
     }
@@ -104,13 +116,13 @@
     // 诊断工具
     // ============================================================
     window.CN_Search = {
-        test: function() {
+        test: function () {
             console.log('=== CN Search 诊断 ===');
             console.log('补丁状态:', patched ? '已生效' : '未生效');
             console.log('translateNoun:', !!window.translateNoun);
             console.log('cnResourceNames 条目:', window.cnResourceNames ? Object.keys(window.cnResourceNames).length : 0);
             if (window.game && window.game.state) {
-                for (let id of ['apprentice','lore','firelore','gold','arcana trickster']) {
+                for (let id of ['apprentice', 'lore', 'firelore', 'gold', 'arcana trickster']) {
                     const e = window.game.state.getData(id);
                     if (e) console.log(`  ${id}: name="${e.name}"`);
                 }
